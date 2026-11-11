@@ -127,3 +127,75 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire); else wire();
 })();
+
+
+/* ---------- 3. Blog: danh sách bài ở cột trái ----------
+   Tự đọc các thẻ .blog-card trong blog.html nên đăng bài mới chỉ cần cập nhật blog.html. */
+(function () {
+  'use strict';
+  var box = document.querySelector('[data-blog-list]');
+  if (!box) return;
+  var root = document.documentElement, cur = location.pathname.split('/').pop() || '', items = [];
+  var okHref = /^[\w.\-]+\.html$/, okImg = /^(https:\/\/|[\w.\-\/]+$)/;
+  function render() {
+    var en = root.lang === 'en';
+    box.textContent = '';
+    if (!items.length) { var p = document.createElement('p'); p.className = 'bl-empty'; p.textContent = en ? 'The post list appears once the page is online.' : 'Danh sách bài viết sẽ hiện khi trang được đăng lên web.'; box.appendChild(p); return; }
+    items.forEach(function (it) {
+      var a = document.createElement('a'); a.className = 'bl-item' + (it.href === cur ? ' on' : ''); a.href = it.href;
+      var im = new Image(); im.alt = ''; im.loading = 'lazy'; im.src = (en && it.imgEn) ? it.imgEn : it.img;
+      var s = document.createElement('span'), t = document.createElement('b'), d = document.createElement('small');
+      t.textContent = (en && it.en) ? it.en : it.vi; d.textContent = (en && it.dEn) ? it.dEn : it.dVi;
+      s.appendChild(t); s.appendChild(d); a.appendChild(im); a.appendChild(s); box.appendChild(a);
+    });
+  }
+  render();
+  new MutationObserver(render).observe(root, { attributes: true, attributeFilter: ['lang'] });
+  if (!window.fetch) return;
+  fetch('blog.html', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.text() : Promise.reject(); }).then(function (h) {
+    var doc = new DOMParser().parseFromString(h, 'text/html');
+    doc.querySelectorAll('.blog-card').forEach(function (c) {
+      var a = c.querySelector('.bc-title'), im = c.querySelector('.bc-cover img'), d = c.querySelector('.bc-date');
+      if (!a || !okHref.test(a.getAttribute('href') || '')) return;
+      var src = im && im.getAttribute('src') || '', se = im && im.getAttribute('data-en-src') || '';
+      items.push({ href: a.getAttribute('href'), vi: a.textContent.trim(), en: a.getAttribute('data-en') || '',
+        img: okImg.test(src) ? src : '', imgEn: okImg.test(se) ? se : '',
+        dVi: d ? d.textContent.trim() : '', dEn: d && d.getAttribute('data-en') || '' });
+    });
+    render();
+  }).catch(function () {});
+})();
+
+
+/* ---------- 4. Quảng cáo thật (Google AdSense) ----------
+   CÁCH GẮN: tạo "Đơn vị quảng cáo" trong AdSense (Quảng cáo → Theo đơn vị quảng cáo → Quảng cáo hiển thị),
+   lấy dãy số trong data-ad-slot="..." rồi dán vào đúng vị trí bên dưới. Để trống '' = vẫn hiện ô giữ chỗ.
+   Mã client (ca-pub-...) đã được nạp sẵn trong <head> của mọi trang. */
+(function () {
+  'use strict';
+  var CFG = window.ANLAB_ADS || {
+    client: 'ca-pub-7331246969751790',
+    slots: {
+      'sidebar':     '',   /* cột phải — ô 1 (blog, ứng dụng)   300×250 / 300×600 */
+      'sidebar-2':   '',   /* cột phải — ô 2 (trang Blog)       300×250 / 300×600 */
+      'post-top':    '',   /* đầu bài viết                      728×90 / 336×280  */
+      'post-bottom': '',   /* cuối bài viết                     728×90 / 336×280  */
+      'infeed':      ''    /* xen giữa các thẻ ứng dụng         responsive        */
+    }
+  };
+  function run() {
+    document.querySelectorAll('.adzone[data-ad-target]').forEach(function (z) {
+      if (z.__adDone) return;
+      var key = (z.getAttribute('data-ad-target') || '').replace(/^anlab-slot-/, ''), id = CFG.slots[key];
+      if (!/^\d{6,}$/.test(id || '')) return;
+      z.__adDone = 1;
+      var e = z.querySelector('.ad-empty'); if (e) e.remove();
+      var ins = document.createElement('ins'); ins.className = 'adsbygoogle'; ins.style.display = 'block';
+      ins.setAttribute('data-ad-client', CFG.client); ins.setAttribute('data-ad-slot', id);
+      ins.setAttribute('data-ad-format', 'auto'); ins.setAttribute('data-full-width-responsive', 'true');
+      z.appendChild(ins);
+      try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (err) {}
+    });
+  }
+  window.addEventListener('load', function () { setTimeout(run, 300); });
+})();
