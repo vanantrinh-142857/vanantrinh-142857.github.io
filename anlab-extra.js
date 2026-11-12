@@ -93,7 +93,7 @@
       '<button type="button" class="dn-x" aria-label="Đóng" data-en-aria="Close">×</button>' +
       '<h2 id="dn-title"><span data-en="Support">Ủng hộ</span> An<span>LAB</span></h2>' +
       '<p data-en="If AnLAB’s free apps help you, you can chip in to keep the site running and growing. Entirely voluntary — thank you!">Nếu các phần mềm miễn phí của AnLAB hữu ích với bạn, bạn có thể ủng hộ để trang web được duy trì và phát triển thêm. Hoàn toàn tự nguyện — cảm ơn bạn!</p>' +
-      '<img src="images/ung-ho-qr.jpg" alt="Mã VietQR ủng hộ AnLAB — Techcombank, TRINH VAN AN" data-en-alt="VietQR code to support AnLAB — Techcombank, TRINH VAN AN" width="460" height="540"/>' +
+      '<img src="images/ung-ho-qr.webp" alt="Mã VietQR ủng hộ AnLAB — Techcombank, TRINH VAN AN" data-en-alt="VietQR code to support AnLAB — Techcombank, TRINH VAN AN" width="460" height="540"/>' +
       '<div class="dn-acc"><span data-en="Account holder">Chủ tài khoản</span>: <b>TRINH VAN AN</b><br/>Techcombank · <b>' + ACC + '</b></div>' +
       '<button type="button" class="dn-copy" id="dn-copy">Sao chép số tài khoản</button>' +
       '<p class="dn-note" data-en="Scan with any banking app that supports VietQR.">Quét bằng ứng dụng ngân hàng bất kỳ có hỗ trợ VietQR.</p>' +
@@ -126,44 +126,6 @@
     if (location.hash === '#ung-ho' || location.hash === '#donate') openModal();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire); else wire();
-})();
-
-
-/* ---------- 3. Blog: danh sách bài ở cột trái ----------
-   Tự đọc các thẻ .blog-card trong blog.html nên đăng bài mới chỉ cần cập nhật blog.html. */
-(function () {
-  'use strict';
-  var box = document.querySelector('[data-blog-list]');
-  if (!box) return;
-  var root = document.documentElement, cur = location.pathname.split('/').pop() || '', items = [];
-  var okHref = /^[\w.\-]+\.html$/, okImg = /^(https:\/\/|[\w.\-\/]+$)/;
-  function render() {
-    var en = root.lang === 'en';
-    box.textContent = '';
-    if (!items.length) { var p = document.createElement('p'); p.className = 'bl-empty'; p.textContent = en ? 'The post list appears once the page is online.' : 'Danh sách bài viết sẽ hiện khi trang được đăng lên web.'; box.appendChild(p); return; }
-    items.forEach(function (it) {
-      var a = document.createElement('a'); a.className = 'bl-item' + (it.href === cur ? ' on' : ''); a.href = it.href;
-      var im = new Image(); im.alt = ''; im.loading = 'lazy'; im.src = (en && it.imgEn) ? it.imgEn : it.img;
-      var s = document.createElement('span'), t = document.createElement('b'), d = document.createElement('small');
-      t.textContent = (en && it.en) ? it.en : it.vi; d.textContent = (en && it.dEn) ? it.dEn : it.dVi;
-      s.appendChild(t); s.appendChild(d); a.appendChild(im); a.appendChild(s); box.appendChild(a);
-    });
-  }
-  render();
-  new MutationObserver(render).observe(root, { attributes: true, attributeFilter: ['lang'] });
-  if (!window.fetch) return;
-  fetch('blog.html', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.text() : Promise.reject(); }).then(function (h) {
-    var doc = new DOMParser().parseFromString(h, 'text/html');
-    doc.querySelectorAll('.blog-card').forEach(function (c) {
-      var a = c.querySelector('.bc-title'), im = c.querySelector('.bc-cover img'), d = c.querySelector('.bc-date');
-      if (!a || !okHref.test(a.getAttribute('href') || '')) return;
-      var src = im && im.getAttribute('src') || '', se = im && im.getAttribute('data-en-src') || '';
-      items.push({ href: a.getAttribute('href'), vi: a.textContent.trim(), en: a.getAttribute('data-en') || '',
-        img: okImg.test(src) ? src : '', imgEn: okImg.test(se) ? se : '',
-        dVi: d ? d.textContent.trim() : '', dEn: d && d.getAttribute('data-en') || '' });
-    });
-    render();
-  }).catch(function () {});
 })();
 
 

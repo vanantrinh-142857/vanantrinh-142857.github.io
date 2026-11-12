@@ -1,0 +1,65 @@
+/* AnLAB — KHUNG DÙNG CHUNG: cây thư mục (trái) + nội dung (giữa) + quảng cáo (phải).
+   Dùng lại .blog-layout / .blog-left / .blog-right / .bl-box của anlab-extra.css. */
+.nx-tree{padding:10px}
+.nx-tree .nx-head{margin:4px 10px 8px;font-size:11px;font-weight:800;letter-spacing:.14em;color:#718096}
+.nx-search{display:flex;margin:0 4px 8px;border:1px solid #e3e6f1;border-radius:10px;background:#f8f9fc;overflow:hidden}
+.nx-search input{flex:1;min-width:0;border:0;background:none;padding:8px 10px;font:inherit;font-size:13px;outline:none}
+.nx-search button{border:0;background:none;padding:0 10px;cursor:pointer;color:#6253d4;font-size:14px}
+.nx-tree details{margin:1px 0}
+.nx-tree summary{list-style:none;cursor:pointer;padding:9px 10px;border-radius:10px;font-weight:700;display:flex;gap:8px;align-items:center;color:#1b2540}
+.nx-tree summary::-webkit-details-marker{display:none}
+.nx-tree summary:hover{background:#f3f1ff}
+.nx-tree summary em{margin-left:auto;font-style:normal;font-size:11px;color:#718096;transition:transform .2s}
+.nx-tree details[open]>summary{background:#f3f1ff;color:#4a3fc0}
+.nx-tree details[open]>summary em{transform:rotate(90deg)}
+.nx-sub{margin:2px 0 6px 20px;border-left:2px solid #ece9ff;padding-left:6px}
+.nx-sub a{display:flex;justify-content:space-between;gap:6px;padding:6px 10px;border-radius:8px;color:#4a5370;font-size:14px;text-decoration:none;line-height:1.35}
+.nx-sub a:hover{background:#f6f7fb}
+.nx-sub a.on{background:#6253d4;color:#fff}
+.nx-sub i{font-style:normal;font-size:12px;opacity:.7}
+.nx-sub .nx-soon{padding:6px 10px;font-size:13px;color:#98a0b3;font-style:italic}
+.nx-tree hr{border:0;border-top:1px solid #e8ebf3;margin:8px 6px}
+.nx-tree .nx-lk{display:block;padding:5px 10px;color:#718096;font-size:13px;text-decoration:none}
+.nx-tree .nx-lk:hover{color:#6253d4}
+/* nội dung giữa */
+.nx-main{min-width:0}
+.nx-main .nx-crumb{color:#718096;font-size:13px;margin:0 0 8px}
+.nx-main .nx-crumb a{color:inherit;text-decoration:none}.nx-main .nx-crumb a:hover{color:#6253d4}
+.nx-main h2.nx-title{margin:0 0 4px;font-size:24px;letter-spacing:-.4px;color:#11182a}
+.nx-chips{display:flex;gap:8px;margin:10px 0 14px;flex-wrap:wrap}
+.nx-chips a{border:1px solid #e8ebf3;background:#fff;border-radius:999px;padding:4px 13px;font-size:13px;font-weight:600;color:#3b445c;text-decoration:none}
+.nx-chips a.on{background:#6253d4;color:#fff;border-color:#6253d4}
+.nx-sec{display:flex;align-items:center;justify-content:space-between;margin:26px 0 12px}
+.nx-sec h3{margin:0;font-size:18px;color:#11182a}.nx-sec a{font-size:13px;color:#6253d4;font-weight:700;text-decoration:none}
+.nx-box{background:#fff;border:1px solid #e8ebf3;border-radius:16px;box-shadow:0 9px 27px #17203807}
+.nx-post{display:grid;grid-template-columns:220px 1fr;overflow:hidden;margin-bottom:14px;max-height:180px;text-decoration:none;color:inherit;transition:box-shadow .2s,transform .2s}
+.nx-post:hover{box-shadow:0 18px 38px #17203816;transform:translateY(-2px)}
+.nx-post img{width:100%;height:100%;min-height:140px;max-height:180px;object-fit:cover;display:block;background:#eef0f7}
+.nx-post .b{padding:14px 18px;min-width:0;overflow:hidden}
+.nx-tg{font-size:11px;font-weight:800;color:#6253d4;letter-spacing:.9px;text-transform:uppercase}
+.nx-post h3{margin:4px 0 6px;font-size:17px;line-height:1.3;color:#11182a}
+.nx-post p{margin:0 0 6px;color:#5a6380;font-size:14px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.nx-dt{font-size:12px;color:#8a93a6}
+.nx-apps{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}
+.nx-app{overflow:hidden;text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.nx-app:hover{box-shadow:0 18px 38px #17203816;transform:translateY(-2px)}
+.nx-app img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:#eef0f7}
+.nx-app div{padding:10px 12px}.nx-app b{display:block;font-size:14px;line-height:1.35;color:#11182a}.nx-app span{font-size:12px;color:#718096}
+.nx-topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.nx-topic{padding:15px;text-decoration:none;color:inherit;display:block;transition:box-shadow .2s}
+.nx-topic:hover{box-shadow:0 18px 38px #17203816}
+.nx-topic .ic{width:40px;height:40px;border-radius:12px;background:#f3f1ff;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:8px}
+.nx-topic b{display:block;font-size:14px;color:#11182a}.nx-topic span{font-size:12px;color:#718096}
+.nx-empty{padding:26px;text-align:center;color:#718096;font-size:14px}
+@media(max-width:860px){.nx-post{grid-template-columns:120px 1fr;max-height:none}.nx-post img{min-height:110px}.nx-main h2.nx-title{font-size:21px}}
+/* bố cục trang chủ */
+.blog-layout>.nx-main{grid-area:main;min-width:0}
+.nx-layout{margin-top:30px;margin-bottom:34px}
+.bl-box[data-tree]{padding:12px 10px}.bl-box[data-tree] .nx-tree{padding:0}
+/* trang ứng dụng do Blog Editor tạo */
+.nx-appinfo{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:0 0 16px}
+.nx-appinfo div{background:#f8f9fc;border:1px solid #e8ebf3;border-radius:12px;padding:10px 12px}
+.nx-appinfo span{display:block;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:#718096;font-weight:700}
+.nx-appinfo b{font-size:15px;color:#11182a}
+.nx-cta{display:inline-block;margin:4px 0 20px;padding:13px 26px;border-radius:12px;background:#6253d4;color:#fff!important;font-weight:800;text-decoration:none!important;box-shadow:0 10px 24px #6253d440}
+.nx-cta:hover{background:#4f42b8}
