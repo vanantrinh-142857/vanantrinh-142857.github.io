@@ -15,6 +15,8 @@
   var HOME = 'index.html';
   var OK = /^[\w.\-\/]+$/;
   var opened = {};
+  var KEY = 'anlab_tree_collapsed', collapsed = false;
+  try { collapsed = localStorage.getItem(KEY) === '1'; } catch (e) {}
 
   var T = {
     all: ['Tất cả bài viết', 'All posts'], allChip: ['Tất cả', 'All'], folders: ['THƯ MỤC', 'FOLDERS'], soon: ['Sắp có…', 'Coming soon…'],
@@ -23,6 +25,7 @@
     empty: ['Chưa có bài trong mục này.', 'No posts in this folder yet.'], emptyApps: ['Chưa có ứng dụng trong mục này — sắp có.', 'No apps here yet — coming soon.'],
     results: ['Kết quả cho', 'Results for'], none: ['Không tìm thấy kết quả.', 'No results found.'],
     about: ['Giới thiệu', 'About'], contact: ['Liên hệ', 'Contact'], privacy: ['Chính sách bảo mật', 'Privacy policy'],
+    fold: ['Thu nhỏ khung thư mục', 'Collapse folder panel'], unfold: ['Ghim mở cây thư mục', 'Pin folder panel open'],
     kdesc: ['Hướng dẫn, kinh nghiệm QC – hàn – kết cấu thép', 'Guides and know-how: QC, welding, structural steel']
   };
   function en() { return root.lang === 'en'; }
@@ -62,40 +65,69 @@
     var r = route(), cur = currentItem();
     var actF = main ? (r[0] && folder(r[0]) ? r[0] : (!r[0] ? 'blog' : '')) : (cur ? cur.folder : '');
     var actS = main ? r[1] : (cur ? cur.sub : '');
-    var box = h('div', { 'class': 'nx-tree' });
-    box.appendChild(h('div', { 'class': 'nx-head' }, [t('folders')]));
-    var inp = h('input', { type: 'search', placeholder: t('search'), 'aria-label': t('search') });
-    var form = h('form', { 'class': 'nx-search', role: 'search' }, [inp, h('button', { type: 'submit', 'aria-label': t('search') }, ['↗'])]);
-    form.addEventListener('submit', function (e) {
-      e.preventDefault(); var v = inp.value.trim(); if (!v) return;
-      if (main) location.hash = '#/q/' + encodeURIComponent(v); else location.href = link('q/' + encodeURIComponent(v));
-    });
-    box.appendChild(form);
-    D.folders.forEach(function (f) {
-      var list = items(f.id), d = h('details'), isAct = f.id === actF;
-      if (opened[f.id] === undefined ? isAct : opened[f.id]) d.setAttribute('open', '');
-      d.addEventListener('toggle', function () { opened[f.id] = d.open; });
-      d.appendChild(h('summary', null, [f.icon + ' ' + tx(f), h('em', null, ['▶'])]));
-      var s = h('div', { 'class': 'nx-sub' });
-      if (f.kind === 'posts') {
-        s.appendChild(h('a', { href: link(f.id), 'class': (isAct && !actS && (main ? true : false)) ? 'on' : '' }, [t('all'), h('i', null, [String(list.length)])]));
-        (f.subs || []).forEach(function (sb) {
-          s.appendChild(h('a', { href: link(f.id + '/' + sb.id), 'class': (isAct && actS === sb.id) ? 'on' : '' }, [tx(sb), h('i', null, [String(items(f.id, sb.id).length)])]));
-        });
-      } else if (!list.length) {
-        s.appendChild(h('div', { 'class': 'nx-soon' }, [t('soon')]));
-      } else {
-        if (list.length > 1) s.appendChild(h('a', { href: link(f.id), 'class': (main && isAct && !actS && r[0] === f.id) ? 'on' : '' }, [t('all'), h('i', null, [String(list.length)])]));
-        list.forEach(function (it) { s.appendChild(h('a', { href: href(it), 'class': it.href === page ? 'on' : '' }, [tx(it)])); });
-      }
-      d.appendChild(s); box.appendChild(d);
-    });
-    box.appendChild(h('hr'));
-    [['gioi-thieu.html', 'about'], ['lien-he.html', 'contact'], ['chinh-sach-bao-mat.html', 'privacy']].forEach(function (x) {
-      box.appendChild(h('a', { 'class': 'nx-lk', href: x[0] }, [t(x[1])]));
-    });
-    treeBox.textContent = ''; treeBox.appendChild(box);
+    var lay = treeBox.closest('.blog-layout');
+    if (lay) lay.classList.toggle('nx-collapsed', collapsed);
+    function toggle() {
+      collapsed = !collapsed;
+      try { localStorage.setItem(KEY, collapsed ? '1' : '0'); } catch (e) {}
+      renderTree();
+    }
+    /* cây đầy đủ; btn = nút ở đầu cây (thu nhỏ khi đang mở, ghim mở khi đang là hộp nổi) */
+    function full(foldChar, foldKey) {
+      var box = h('div', { 'class': 'nx-tree' });
+      var fb = h('button', { type: 'button', 'class': 'nx-fold', title: t(foldKey), 'aria-label': t(foldKey) }, [foldChar]);
+      fb.addEventListener('click', toggle);
+      box.appendChild(h('div', { 'class': 'nx-head' }, [h('span', null, [t('folders')]), fb]));
+      var inp = h('input', { type: 'search', placeholder: t('search'), 'aria-label': t('search') });
+      var form = h('form', { 'class': 'nx-search', role: 'search' }, [inp, h('button', { type: 'submit', 'aria-label': t('search') }, ['↗'])]);
+      form.addEventListener('submit', function (e) {
+        e.preventDefault(); var v = inp.value.trim(); if (!v) return;
+        if (main) location.hash = '#/q/' + encodeURIComponent(v); else location.href = link('q/' + encodeURIComponent(v));
+      });
+      box.appendChild(form);
+      D.folders.forEach(function (f) {
+        var list = items(f.id), d = h('details'), isAct = f.id === actF;
+        if (opened[f.id] === undefined ? isAct : opened[f.id]) d.setAttribute('open', '');
+        d.addEventListener('toggle', function () { opened[f.id] = d.open; });
+        d.appendChild(h('summary', null, [f.icon + ' ' + tx(f), h('em', null, ['▶'])]));
+        var sb = h('div', { 'class': 'nx-sub' });
+        if (f.kind === 'posts') {
+          sb.appendChild(h('a', { href: link(f.id), 'class': (isAct && !actS && main) ? 'on' : '' }, [t('all'), h('i', null, [String(list.length)])]));
+          (f.subs || []).forEach(function (x) {
+            sb.appendChild(h('a', { href: link(f.id + '/' + x.id), 'class': (isAct && actS === x.id) ? 'on' : '' }, [tx(x), h('i', null, [String(items(f.id, x.id).length)])]));
+          });
+        } else if (!list.length) {
+          sb.appendChild(h('div', { 'class': 'nx-soon' }, [t('soon')]));
+        } else {
+          if (list.length > 1) sb.appendChild(h('a', { href: link(f.id), 'class': (main && isAct && !actS && r[0] === f.id) ? 'on' : '' }, [t('all'), h('i', null, [String(list.length)])]));
+          list.forEach(function (it) { sb.appendChild(h('a', { href: href(it), 'class': it.href === page ? 'on' : '' }, [tx(it)])); });
+        }
+        d.appendChild(sb); box.appendChild(d);
+      });
+      box.appendChild(h('hr'));
+      [['gioi-thieu.html', 'about'], ['lien-he.html', 'contact'], ['chinh-sach-bao-mat.html', 'privacy']].forEach(function (x) {
+        box.appendChild(h('a', { 'class': 'nx-lk', href: x[0] }, [t(x[1])]));
+      });
+      return box;
+    }
+    treeBox.textContent = '';
+    if (!collapsed) { treeBox.appendChild(full('‹', 'fold')); return; }
+    /* thu nhỏ: thanh biểu tượng; rê chuột (hoặc Tab vào) thì cây đầy đủ bung ra đè lên nội dung */
+    var rail = h('div', { 'class': 'nx-rail' });
+    D.folders.forEach(function (f) { rail.appendChild(h('a', { href: link(f.id), title: tx(f), 'class': f.id === actF ? 'on' : '' }, [f.icon])); });
+    var fly = h('div', { 'class': 'nx-fly' }); fly.appendChild(full('📌', 'unfold'));
+    treeBox.appendChild(rail); treeBox.appendChild(fly);
   }
+  /* rê chuột vào khung cây (đang thu nhỏ) → bung ra; rời đi → thu lại */
+  (function () {
+    if (!treeBox) return;
+    var lay = treeBox.closest('.blog-layout'), tm = 0;
+    if (!lay) return;
+    function on() { clearTimeout(tm); lay.classList.add('nx-hover'); }
+    function off() { clearTimeout(tm); tm = setTimeout(function () { lay.classList.remove('nx-hover'); }, 180); }
+    treeBox.addEventListener('mouseenter', on); treeBox.addEventListener('mouseleave', off);
+    treeBox.addEventListener('focusin', on); treeBox.addEventListener('focusout', off);
+  })();
 
   /* ---------- thẻ nội dung ---------- */
   function tagOf(it) { var f = folder(it.folder), s = f && sub(f, it.sub); return s ? tx(s) : (f ? tx(f) : ''); }
