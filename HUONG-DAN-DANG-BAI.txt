@@ -1,0 +1,10 @@
+CÁCH ĐĂNG BÀI LÊN WEB
+=====================
+1. Giải nén file zip này.
+2. Vào repo GitHub của trang → Add file → Upload files.
+3. Kéo TẤT CẢ file vừa giải nén (trừ file hướng dẫn này) vào trang upload. File blog.html sẽ ghi đè bản cũ.
+4. Bấm Commit changes, chờ 1–2 phút rồi bấm Ctrl+Shift+R trên anlabstudio.org/blog.html để xem.
+
+Bài: RÙA VÀ THỎ – BỐN CUỘC ĐUA, BỐN BÀI HỌC VỀ QUẢN LÝ SẢN XUẤT
+Tên file: blog-rua-va-tho-bon-cuoc-dua-bon-bai-hoc-ve-quan-ly-san-xuat.html
+Ngày: 12/11/2026
