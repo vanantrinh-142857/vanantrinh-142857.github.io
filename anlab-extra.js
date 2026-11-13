@@ -152,6 +152,8 @@
       if (!/^\d{6,}$/.test(id || '')) return;
       z.__adDone = 1;
       var e = z.querySelector('.ad-empty'); if (e) e.remove();
+      var pr = z.querySelector('.dlpromo'); if (pr) pr.remove();
+      z.classList.remove('adzone-promo', 'adzone-spare');
       var ins = document.createElement('ins'); ins.className = 'adsbygoogle'; ins.style.display = 'block';
       ins.setAttribute('data-ad-client', CFG.client); ins.setAttribute('data-ad-slot', id);
       ins.setAttribute('data-ad-format', 'auto'); ins.setAttribute('data-full-width-responsive', 'true');
@@ -160,4 +162,50 @@
     });
   }
   window.addEventListener('load', function () { setTimeout(run, 300); });
+})();
+
+
+/* ---------- 5. Ô quảng cáo còn trống ở cột phải → thẻ tải EasyPDF ----------
+   Khi ô 300×250 chưa có quảng cáo thật, hiện thẻ tải EasyPDF (Android + Windows) cho đỡ trống.
+   Ô đầu tiên hiện thẻ, các ô trống còn lại ẩn. Khi dán mã đơn vị quảng cáo ở mục 4, quảng cáo thật tự thay thẻ này. */
+(function () {
+  'use strict';
+  var PLAY = 'https://play.google.com/store/apps/details?id=com.PDF.easypdf';
+  var WIN = 'https://drive.google.com/uc?export=download&id=17luR7AphG3OmTRMkQB3Bk9q2Bu0xy9mV';
+  if (/easypdf\.html$/.test(location.pathname)) return;           /* trang EasyPDF đã có khung tải riêng */
+  function el(tag, cls, text, en) {
+    var e = document.createElement(tag); if (cls) e.className = cls;
+    if (text) e.textContent = text; if (en) e.setAttribute('data-en', en); return e;
+  }
+  function link(cls, href, text, en) {
+    var a = el('a', cls, text, en); a.href = href;
+    if (/^https:/.test(href)) { a.target = '_blank'; a.rel = 'noopener noreferrer'; } return a;
+  }
+  function promo() {
+    var c = el('div', 'dlpromo');
+    c.appendChild(el('div', 'dlp-kick', 'TẢI PHẦN MỀM', 'FREE DOWNLOAD'));
+    var h = el('div', 'dlp-head'), img = document.createElement('img');
+    img.src = 'images/easypdf-logo.webp'; img.alt = 'EasyPDF'; img.width = 52; img.height = 52; img.loading = 'lazy';
+    var t = el('div'), nm = el('div', 'dlp-name', 'Easy'); nm.appendChild(el('span', 'pdf-red', 'PDF'));
+    t.appendChild(nm); t.appendChild(el('div', 'dlp-sub', 'Đọc & chỉnh sửa PDF', 'Read & edit PDF'));
+    h.appendChild(img); h.appendChild(t); c.appendChild(h);
+    c.appendChild(el('p', 'dlp-desc', 'Xem, chú thích, tách, ghép, OCR và mở Word / Excel / PowerPoint. Miễn phí.',
+      'View, annotate, split, merge, OCR and open Word / Excel / PowerPoint. Free.'));
+    c.appendChild(link('dl-btn', PLAY, '📱  Tải cho Android', '📱  Download for Android'));
+    c.appendChild(link('dl-btn dl-win', WIN, '💻  Tải cho máy tính (Windows)', '💻  Download for computer (Windows)'));
+    c.appendChild(link('dlp-more', 'easypdf.html', 'Xem chi tiết →', 'Details →'));
+    return c;
+  }
+  function mount() {
+    var zs = [].slice.call(document.querySelectorAll('.adzone-rect')).filter(function (z) {
+      return !z.closest('#ad-staging') && z.querySelector('.ad-empty');
+    });
+    zs.forEach(function (z, i) {
+      if (i > 0) { z.classList.add('adzone-spare'); return; }
+      z.classList.add('adzone-promo');
+      var lab = z.querySelector('.adlabel'); if (lab) lab.remove();
+      z.querySelector('.ad-empty').replaceWith(promo());
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount); else mount();
 })();

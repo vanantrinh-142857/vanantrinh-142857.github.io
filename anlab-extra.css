@@ -97,3 +97,32 @@
 .dl-info strong{max-width:62%}
 .gd-h1{font-size:clamp(26px,2.7vw,38px)!important;letter-spacing:-1.2px!important}
 .dl-guide{text-align:center}
+
+/* Dải quảng cáo ngang còn trống: ẩn cho tới khi có banner thật (xoá khối này để hiện lại).
+   Khung 300×250 ở cột phải vẫn giữ để giữ bố cục 3 khung. */
+.adzone-leader:has(> .ad-empty),.adzone-infeed:has(> .ad-empty){display:none!important}
+/* Danh sách bài trên trang thư mục tĩnh */
+.sf-list{display:grid;gap:16px;margin:0 0 8px}
+.sf-card{display:grid;grid-template-columns:190px minmax(0,1fr);gap:16px;border:1px solid #e6e8f2;border-radius:14px;overflow:hidden;background:#fff}
+.sf-card.sf-noimg{grid-template-columns:1fr}
+.sf-card .sf-img{display:block;min-height:120px}
+.article-body .sf-card img{width:100%;height:100%;min-height:120px;max-height:190px;object-fit:cover;display:block;margin:0;border-radius:0}
+.sf-card .sf-body{padding:14px 18px 12px 0}.sf-card.sf-noimg .sf-body{padding:14px 18px}
+.sf-card h3{margin:0 0 6px;font-size:17px;line-height:1.35}.article-body .sf-card h3 a{color:#1b2540;text-decoration:none}.article-body .sf-card h3 a:hover{color:#6253d4}
+.sf-card p{margin:0 0 6px;font-size:13.5px;line-height:1.6;color:#55607a}.sf-card .sf-meta{font-size:12px;color:#8791a3;margin:0}
+@media(max-width:600px){.sf-card{grid-template-columns:1fr}.sf-card .sf-body{padding:0 16px 14px}}
+.article-body a.dl-btn{color:#fff;text-decoration:none}.article-body a.dl-win{color:#5145ae}.article-body a.dl-guide{color:#3a4358}
+
+/* Thẻ tải EasyPDF ở cột phải (thay ô quảng cáo còn trống) */
+.adzone-spare{display:none!important}
+.adzone.adzone-promo{border:0;padding:0;background:none;box-shadow:none}
+.dlpromo{background:#fff;border:1px solid #e6e8f2;border-radius:16px;padding:20px;text-align:left}
+.dlpromo .dlp-kick{font-size:10px;font-weight:850;letter-spacing:1.6px;color:#9ba5b7;margin:0 0 14px}
+.dlpromo .dlp-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.dlpromo .dlp-head img{width:52px;height:52px;border-radius:13px;display:block;margin:0}
+.dlpromo .dlp-name{font-size:21px;font-weight:900;letter-spacing:-.6px;line-height:1.1;color:#171b2e}
+.dlpromo .dlp-sub{font-size:12px;color:#8994a4;margin-top:3px}
+.dlpromo p.dlp-desc{font-size:12.5px;line-height:1.6;color:#55607a;margin:0 0 12px}
+.dlpromo a.dl-btn{margin-top:8px;padding:12px 14px;text-decoration:none;color:#fff}
+.dlpromo a.dl-win{color:#5145ae}
+.dlpromo a.dlp-more{display:block;text-align:center;margin-top:12px;font-size:12px;font-weight:700;color:#6253d4;text-decoration:none}
