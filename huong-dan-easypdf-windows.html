@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title data-en="EasyPDF for Windows — User Guide | AnLAB — Software Studio">EasyPDF cho Windows — Hướng dẫn sử dụng | AnLAB — Software Studio</title><meta name="description" content="Hướng dẫn sử dụng EasyPDF bản Windows: xem và tìm kiếm PDF, chú thích, thao tác trang, OCR, xoá nền bản scan, mở file Word/Excel/PowerPoint và phím tắt." data-en-content="EasyPDF for Windows user guide: view and search PDFs, annotate, page operations, OCR, clean scan backgrounds, open Word/Excel/PowerPoint files and keyboard shortcuts."/>
+<meta property="og:title" content="EasyPDF cho Windows — Hướng dẫn sử dụng | AnLAB — Software Studio"/><meta property="og:description" content="Hướng dẫn sử dụng EasyPDF bản Windows: xem và tìm kiếm PDF, chú thích, thao tác trang, OCR, xoá nền bản scan, mở file Word/Excel/PowerPoint và phím tắt."/><meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap"/>
+<link rel="stylesheet" href="anlab-base.css"/>
+<link rel="stylesheet" href="anlab-extra.css"/>
+<link rel="stylesheet" href="anlab-shell.css"/>
+<script defer src="anlab-extra.js"></script>
+<script defer src="content.js"></script>
+<script defer src="anlab-shell.js"></script>
+</head><body>
+<header class='topbar'><div class='wrap'>
+<a class='brand' href='index.html'><span class='brandmark'><img alt='AnLAB' height='44' src='data:image/webp;base64,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' width='44'/></span><span class='brandtype'>An<em>LAB</em><small>SOFTWARE STUDIO</small></span></a>
+<button aria-expanded='false' aria-label='Mở điều hướng' class='navtoggle' type='button'><svg height='24' viewBox='0 0 24 24' width='24'><path d='M4 7H20 M4 12H20 M4 17H20' stroke='#333' stroke-width='2'/></svg></button>
+<nav class='mainnav' id='mainnav'>
+<a href='index.html#/blog' data-en='Blog'>Blog</a>
+<a href='index.html#/kien-thuc' data-en='Knowledge'>Kiến thức</a>
+<a href='index.html#/cong-cu' data-en='Tools'>Công cụ</a>
+<a href='index.html#/hoc-tap' data-en='Learning'>Học tập</a>
+<a href='index.html#/tro-choi' data-en='Games'>Trò chơi</a>
+<a href='index.html#/huong-dan' data-en='Guides'>Hướng dẫn</a>
+<a href='gioi-thieu.html' data-en='About'>Giới thiệu</a>
+<button class='donate-trigger' data-donate type='button'><span class='dn-heart'>♥</span><span data-en='Donate'>Ủng hộ</span></button>
+</nav>
+<div class='langswitch' role='group' aria-label='Language / Ngôn ngữ'>
+<button aria-pressed='true' class='on' data-set-lang='vi' title='Tiếng Việt' type='button'><svg aria-hidden='true' viewBox='0 0 30 20'><rect fill='#DA251D' height='20' width='30'/><polygon fill='#FFFF00' points='15,4 16.76,9.18 22.2,9.24 17.85,12.52 19.47,17.76 15,14.6 10.53,17.76 12.15,12.52 7.8,9.24 13.24,9.18'/></svg><span>VI</span></button>
+<button aria-pressed='false' data-set-lang='en' title='English' type='button'><svg aria-hidden='true' viewBox='0 0 60 40'><rect fill='#fff' height='40' width='60'/><rect fill='#B22234' y='0.00' width='60' height='3.08'/><rect fill='#B22234' y='6.15' width='60' height='3.08'/><rect fill='#B22234' y='12.31' width='60' height='3.08'/><rect fill='#B22234' y='18.46' width='60' height='3.08'/><rect fill='#B22234' y='24.62' width='60' height='3.08'/><rect fill='#B22234' y='30.77' width='60' height='3.08'/><rect fill='#B22234' y='36.92' width='60' height='3.08'/><rect fill='#3C3B6E' width='24' height='21.54'/><circle cx='2' cy='2.0' r='.75' fill='#fff'/><circle cx='6' cy='2.0' r='.75' fill='#fff'/><circle cx='10' cy='2.0' r='.75' fill='#fff'/><circle cx='14' cy='2.0' r='.75' fill='#fff'/><circle cx='18' cy='2.0' r='.75' fill='#fff'/><circle cx='22' cy='2.0' r='.75' fill='#fff'/><circle cx='4' cy='4.2' r='.75' fill='#fff'/><circle cx='8' cy='4.2' r='.75' fill='#fff'/><circle cx='12' cy='4.2' r='.75' fill='#fff'/><circle cx='16' cy='4.2' r='.75' fill='#fff'/><circle cx='20' cy='4.2' r='.75' fill='#fff'/><circle cx='2' cy='6.4' r='.75' fill='#fff'/><circle cx='6' cy='6.4' r='.75' fill='#fff'/><circle cx='10' cy='6.4' r='.75' fill='#fff'/><circle cx='14' cy='6.4' r='.75' fill='#fff'/><circle cx='18' cy='6.4' r='.75' fill='#fff'/><circle cx='22' cy='6.4' r='.75' fill='#fff'/><circle cx='4' cy='8.6' r='.75' fill='#fff'/><circle cx='8' cy='8.6' r='.75' fill='#fff'/><circle cx='12' cy='8.6' r='.75' fill='#fff'/><circle cx='16' cy='8.6' r='.75' fill='#fff'/><circle cx='20' cy='8.6' r='.75' fill='#fff'/><circle cx='2' cy='10.8' r='.75' fill='#fff'/><circle cx='6' cy='10.8' r='.75' fill='#fff'/><circle cx='10' cy='10.8' r='.75' fill='#fff'/><circle cx='14' cy='10.8' r='.75' fill='#fff'/><circle cx='18' cy='10.8' r='.75' fill='#fff'/><circle cx='22' cy='10.8' r='.75' fill='#fff'/><circle cx='4' cy='13.0' r='.75' fill='#fff'/><circle cx='8' cy='13.0' r='.75' fill='#fff'/><circle cx='12' cy='13.0' r='.75' fill='#fff'/><circle cx='16' cy='13.0' r='.75' fill='#fff'/><circle cx='20' cy='13.0' r='.75' fill='#fff'/><circle cx='2' cy='15.2' r='.75' fill='#fff'/><circle cx='6' cy='15.2' r='.75' fill='#fff'/><circle cx='10' cy='15.2' r='.75' fill='#fff'/><circle cx='14' cy='15.2' r='.75' fill='#fff'/><circle cx='18' cy='15.2' r='.75' fill='#fff'/><circle cx='22' cy='15.2' r='.75' fill='#fff'/><circle cx='4' cy='17.4' r='.75' fill='#fff'/><circle cx='8' cy='17.4' r='.75' fill='#fff'/><circle cx='12' cy='17.4' r='.75' fill='#fff'/><circle cx='16' cy='17.4' r='.75' fill='#fff'/><circle cx='20' cy='17.4' r='.75' fill='#fff'/><circle cx='2' cy='19.6' r='.75' fill='#fff'/><circle cx='6' cy='19.6' r='.75' fill='#fff'/><circle cx='10' cy='19.6' r='.75' fill='#fff'/><circle cx='14' cy='19.6' r='.75' fill='#fff'/><circle cx='18' cy='19.6' r='.75' fill='#fff'/><circle cx='22' cy='19.6' r='.75' fill='#fff'/></svg><span>EN</span></button>
+</div>
+<a class='top-action' href='index.html#/apps'>Khám phá tất cả ↗</a>
+</div></header>
+
+<div class='adzone adzone-leader'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 728×90 / 320×100</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+<div class='wrap' id='main-content'><div class='article-shell'><nav class='breadcrumbs'><a href='index.html'>Trang chủ</a><span>/</span><a href='index.html#/huong-dan' data-en='Software guides'>Hướng dẫn phần mềm</a><span>/</span><a href='index.html#/huong-dan/easypdf'>EasyPDF</a><span>/</span><span data-en="Windows user guide">Hướng dẫn bản Windows</span></nav>
+<div class='blog-layout'><aside class='blog-left'><div class='bl-box' data-tree></div></aside><article class='article-card'><div class='article-in'>
+<div class='article-head'><div class='article-topline' data-en='SOFTWARE GUIDES · EASYPDF'>HƯỚNG DẪN PHẦN MỀM · EASYPDF</div><h1 class="gd-h1" data-en-html="Easy&lt;span class='pdf-red'&gt;PDF&lt;/span&gt; for Windows — User Guide">Easy<span class='pdf-red'>PDF</span> cho Windows — Hướng dẫn sử dụng</h1>
+<p class='post-sub' data-en="View, annotate and process PDFs right on your computer — fast, light, works offline.">Xem, chú thích và xử lý PDF ngay trên máy tính — nhanh, nhẹ, chạy ngoại tuyến.</p>
+<p class='post-meta'>AnLAB · <span data-en="Nov 13, 2026">13/11/2026</span></p></div>
+<hr class='article-divider'/>
+<div class='article-body post-body gd'>
+<p class='gd-actions'><a class='dl-btn dl-win' href='https://drive.google.com/file/d/1SlSeB2_E3astOzo_xpNvTarbLYKWhkWa/view?usp=sharing' target='_blank' rel='noopener noreferrer' data-en='⬇  DOWNLOAD FOR WINDOWS'>⬇  TẢI BẢN WINDOWS</a><a class='dl-btn dl-guide' href='easypdf.html' data-en='EasyPDF product page →'>Trang giới thiệu EasyPDF →</a></p>
+<div class="lang-block" data-lang="vi">
+<nav class="gd-toc" aria-label="Mục lục"><b>Mục lục</b><a href="#vi-start">1. Bắt đầu nhanh</a><a href="#vi-view">2. Xem và tìm kiếm</a><a href="#vi-side">3. Thanh bên: trang nhỏ và mục lục</a><a href="#vi-thumbmenu">4. Menu chuột phải trên trang nhỏ</a><a href="#vi-viewmenu">5. Menu chuột phải trên khung xem</a><a href="#vi-annot">6. Chú thích</a><a href="#vi-ops">7. Thao tác trang và công cụ khác</a><a href="#vi-lang">8. Ngôn ngữ và quảng cáo</a><a href="#vi-ocr">9. OCR — làm file ảnh tìm kiếm được</a><a href="#vi-clean">10. Xoá nền bản scan</a><a href="#vi-office">11. Mở file Word, Excel, PowerPoint</a><a href="#vi-keys">12. Phím tắt</a><a href="#vi-faq">13. Câu hỏi thường gặp</a></nav><section class="gd-sec" id="vi-start"><h2>1. Bắt đầu nhanh</h2>
+<ul><li><b>Mở file</b>: nút <b>Mở file</b> (<kbd>Ctrl</kbd>+<kbd>O</kbd>), kéo thả file PDF vào cửa sổ, hoặc bấm một file trong danh sách <i>Tệp mở gần đây</i> ở tab Trang chủ.</li>
+<li><b>Tab Trang chủ</b> luôn là tab đầu tiên (không đóng được): có nút Mở file, banner và danh sách file gần đây.</li>
+<li><b>Nhiều tab</b> như trình duyệt: <kbd>Ctrl</kbd>+<kbd>T</kbd> tab mới, <kbd>Ctrl</kbd>+<kbd>W</kbd> đóng, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> mở lại tab vừa đóng, kéo tab để đổi thứ tự, chuột giữa để đóng, chuột phải để đóng các tab khác.</li>
+<li>Easy PDF nhớ trang và mức phóng của từng file, và mở lại các file lần trước khi khởi động (tắt trong menu Trợ giúp).</li></ul></section><section class="gd-sec" id="vi-view"><h2>2. Xem và tìm kiếm</h2>
+<ul><li><b>Phóng to/thu nhỏ</b>: <kbd>Ctrl</kbd>+lăn chuột, hoặc ô mức phóng trên thanh công cụ. <kbd>Ctrl</kbd>+<kbd>0</kbd> vừa trang, <kbd>Ctrl</kbd>+<kbd>2</kbd> vừa ngang, <kbd>Ctrl</kbd>+<kbd>1</kbd> 100%. Phóng tới 6400% vẫn sắc nét (bản vẽ A0/A1).</li>
+<li><b>Cuộn</b>: lăn chuột, phím mũi tên, <kbd>PgUp</kbd>/<kbd>PgDn</kbd>, <kbd>Home</kbd>/<kbd>End</kbd>, hoặc kéo trang bằng công cụ Bàn tay (<kbd>H</kbd>). <kbd>Ctrl</kbd>+<kbd>G</kbd> tới trang bất kỳ; <kbd>Alt</kbd>+<kbd>←</kbd> quay lại vị trí trước.</li>
+<li><b>Xoay</b> khung nhìn: <kbd>Ctrl</kbd>+<kbd>R</kbd> (phải), <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> (trái). Việc xoay này chỉ là cách xem; muốn xoay vĩnh viễn hãy dùng menu chuột phải ở khung trang nhỏ.</li>
+<li><b>Tìm chữ</b>: <kbd>Ctrl</kbd>+<kbd>F</kbd>, gõ vào ô tìm kiếm (hỗ trợ tiếng Việt có dấu); <kbd>F3</kbd> / <kbd>Shift</kbd>+<kbd>F3</kbd> kết quả sau / trước. Kết quả được tô sáng.</li>
+<li><b>Chọn chữ theo vùng</b>: bấm công cụ Chọn chữ (<kbd>T</kbd>) rồi kéo chuột; chữ trong vùng được chép vào bộ nhớ tạm khi thả chuột.</li>
+<li><b>Từ điển</b>: nháy đúp một từ tiếng Anh để xem nghĩa tiếng Việt (ngoại tuyến). Dịch đoạn đã chọn cần Internet.</li>
+<li><b>Toàn màn hình / trình chiếu</b>: <kbd>F11</kbd> (ẩn thanh bên và banner). <kbd>F9</kbd> bật/tắt thanh bên.</li></ul></section><section class="gd-sec" id="vi-side"><h2>3. Thanh bên: trang nhỏ và mục lục</h2>
+<ul><li>Tab <b>Trang nhỏ</b>: ô đầu danh sách là banner (cuộn cùng danh sách). Bấm một trang để tới trang đó.</li>
+<li><b>Chọn nhiều trang</b>: <kbd>Ctrl</kbd>+bấm (thêm/bớt), <kbd>Shift</kbd>+bấm (một dãy), <kbd>Ctrl</kbd>+<kbd>A</kbd> (tất cả), <kbd>Esc</kbd> (bỏ chọn).</li>
+<li><b>Kéo thả để đổi thứ tự trang</b>: kéo trang (hoặc cả nhóm đã chọn) tới vị trí mới — vạch đỏ cho biết chỗ thả. Chương trình tạo một <b>file mới</b> theo thứ tự mới, file gốc không bị sửa.</li>
+<li><b>Dấu ★</b>: đánh dấu các trang quan trọng; sau đó chọn lại bằng "Chọn các trang đã đánh dấu ★" để trích, in, xuất ảnh…</li>
+<li>Tab <b>Mục lục</b>: bookmark của tài liệu; bấm để nhảy tới mục.</li></ul></section><section class="gd-sec" id="vi-thumbmenu"><h2>4. Menu chuột phải trên trang nhỏ</h2>
+<p>Bấm chuột phải vào một trang (hoặc nhóm trang đã chọn). Mọi thao tác ghi ra <b>file mới</b>, file gốc luôn giữ nguyên.</p>
+<table><tr><th>Mục</th><th>Công dụng</th></tr>
+<tr><td>Quay trái / phải 90°, 180°</td><td>Xoay vĩnh viễn các trang đã chọn.</td></tr>
+<tr><td>Trích ra file PDF mới</td><td>Tạo PDF chỉ gồm các trang đã chọn.</td></tr>
+<tr><td>Xoá khỏi file</td><td>Tạo PDF không có các trang đã chọn.</td></tr>
+<tr><td>Nhân đôi trang</td><td>Mỗi trang chọn xuất hiện hai lần liền nhau.</td></tr>
+<tr><td>Chèn trang trắng / trang từ file khác</td><td>Chèn sau trang này (hoặc sau trang cuối trong nhóm chọn).</td></tr>
+<tr><td>Tách PDF</td><td>Mỗi trang chọn thành một file riêng; hoặc tách file làm nhiều phần bắt đầu từ các trang đã chọn. Kết quả nằm trong thư mục cạnh file gốc.</td></tr>
+<tr><td>Xuất thành ảnh</td><td>PNG hoặc JPG, 150 hoặc 300 dpi. Một trang: chọn nơi lưu. Nhiều trang: ra thư mục <code>&lt;tên&gt;_anh</code>.</td></tr>
+<tr><td>Sao chép ảnh trang</td><td>Chép ảnh một trang vào clipboard để dán vào Word, Zalo…</td></tr>
+<tr><td>In các trang đã chọn</td><td>Chỉ in những trang này.</td></tr>
+<tr><td>Đánh dấu ★ / Chọn các trang đã đánh dấu</td><td>Đánh dấu và chọn lại nhanh (dấu chỉ nhớ trong phiên làm việc).</td></tr>
+<tr><td>Cắt lề</td><td>Cắt bớt lề (mm) theo hướng đang nhìn; nội dung chỉ bị ẩn ngoài khung cắt.</td></tr>
+<tr><td>Thuộc tính trang</td><td>Kích thước (pt, mm), khổ giấy A0–A5/Letter…, góc xoay, MediaBox, CropBox.</td></tr>
+<tr><td>OCR — nhận dạng chữ</td><td>Xem mục 9.</td></tr>
+<tr><td>Xoá nền bản scan</td><td>Xem mục 10.</td></tr>
+<tr><td>Sao chép văn bản / Xuất văn bản (.txt, .rtf)</td><td>Lấy chữ của các trang chọn. File .rtf mở được bằng Word.</td></tr>
+<tr><td>Ghép các trang thành 1 ảnh dài</td><td>Nối các trang chọn theo chiều dọc thành một ảnh PNG.</td></tr>
+<tr><td>Trích ảnh nhúng</td><td>Lưu các ảnh nằm trong trang (từ 24 px trở lên) ra PNG.</td></tr></table></section><section class="gd-sec" id="vi-viewmenu"><h2>5. Menu chuột phải trên khung xem</h2>
+<p>Khi đang dùng công cụ Bàn tay hoặc Chọn chữ, bấm chuột phải lên trang: tra từ điển từ dưới con trỏ, sao chép văn bản / ảnh của trang, lưu trang thành ảnh, xuất văn bản, trích ảnh nhúng, trích trang này ra PDF mới, in trang này, đánh dấu ★, xem thuộc tính, OCR, xoá nền scan.</p></section><section class="gd-sec" id="vi-annot"><h2>6. Chú thích</h2>
+<p>Bấm <b>Chú thích</b> để mở thanh công cụ: bút vẽ, đường thẳng, mũi tên, hình chữ nhật, elip, đám mây sửa đổi, highlight, ghi chú, viết chữ, con dấu / chữ ký, chèn ảnh, tẩy/che thông tin, đo, kính lúp…</p>
+<ul><li>Dùng <b>Con trỏ</b> để chọn, di chuyển, đổi cỡ, xoay chú thích. <kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd> hoàn tác / làm lại.</li>
+<li><b>Chuột phải vào chú thích</b>: xoá, sửa nội dung, đưa lên/xuống lớp, đổi màu.</li>
+<li><b>Ảnh chèn / chữ ký</b>: chuột phải → <i>Xoá nền ảnh</i> để chữ ký trong suốt; <i>Xoay 90°</i>; <i>Lưu ảnh (PNG nền trong suốt)</i> để dùng cho việc khác; <i>Sao chép ảnh</i> để dán sang ứng dụng khác.</li>
+<li><b>Lưu</b>: <kbd>Ctrl</kbd>+<kbd>S</kbd> ghi chú thích vào PDF (hỏi trước khi ghi đè); <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd> lưu thành file mới.</li>
+<li>Vùng <b>Che thông tin (redact)</b> biến trang thành ảnh để dữ liệu bị che không thể khôi phục.</li></ul></section><section class="gd-sec" id="vi-ops"><h2>7. Thao tác trang và công cụ khác</h2>
+<ul><li>Menu <b>Trang</b> / nút <b>Công cụ ▾</b>: xoay, xoá, trích, sắp xếp lại, chèn, trang trắng, tách (mỗi N trang / theo mục lục / theo khoảng), ghép nhiều file, đánh số trang, watermark, bookmark.</li>
+<li>Chế độ <b>Tách trang</b> và <b>Gộp file</b> (góc phải thanh tab): xem lưới các trang, chọn, xoay, xoá, rồi xuất một file hoặc tách từng trang.</li>
+<li><b>So sánh 2 bản vẽ</b> (revision), <b>Nén giảm dung lượng</b>, <b>In</b> (kèm chú thích, 1–2 trang/tờ), lưu / mở <b>phiên làm việc</b> (.json).</li>
+<li>Các thao tác ghi tệp luôn tạo <b>file mới</b> và chạy nền; thanh trạng thái báo tiến độ.</li></ul></section><section class="gd-sec" id="vi-lang"><h2>8. Ngôn ngữ và quảng cáo</h2>
+<ul><li>Giao diện 6 ngôn ngữ: Tiếng Việt, English, Bahasa Indonesia, 한국어, 日本語, Filipino — menu <b>Ngôn ngữ</b>.</li>
+<li>Banner quảng cáo hiện ở tab Trang chủ và đầu danh sách trang nhỏ; tự ẩn khi xem toàn màn hình, tắt thanh bên hoặc ở chế độ Tách trang / Gộp file.</li></ul></section><section class="gd-sec" id="vi-ocr"><h2>9. OCR — làm file ảnh tìm kiếm được</h2>
+<p>Dùng cho file PDF dạng <b>ảnh / bản scan</b> (không chọn hay tìm được chữ).</p>
+<ol><li>Bấm nút <b>OCR ▾</b> trên thanh công cụ rồi chọn trang: trang đang xem, các trang đang chọn ở cột trang nhỏ, toàn bộ hoặc khoảng trang (hoặc menu <b>Công cụ → OCR</b>, hoặc chuột phải vào trang nhỏ → OCR).</li>
+<li>Chọn ngôn ngữ (Việt + Anh / Anh / Việt), kết quả (<i>PDF có lớp chữ</i> hoặc chỉ <i>.txt</i>) và độ phân giải (300 dpi khuyên dùng).</li>
+<li>Chọn nơi lưu. Chương trình chạy nền, bạn vẫn xem tài liệu bình thường; xong sẽ tự mở file mới.</li></ol>
+<p>File kết quả giữ nguyên hình ảnh trang nhưng có <b>lớp chữ ẩn</b>: <kbd>Ctrl</kbd>+<kbd>F</kbd> tìm được chữ, bôi chọn / sao chép được. OCR nhận dạng tốt nhất với chữ in rõ nét; hãy chạy <b>Xoá nền bản scan</b> trước nếu bản scan ố vàng hoặc có bóng.</p>
+<div class="tip">Cần thành phần OCR (thư mục <code>ocr</code> cạnh EasyPDF.exe). Nếu thiếu, hãy chạy lại bộ cài và tích mục "OCR".</div></section><section class="gd-sec" id="vi-clean"><h2>10. Xoá nền bản scan</h2>
+<p>Làm trắng nền giấy ố vàng, bóng đổ, nền xám của bản scan và làm chữ rõ hơn.</p>
+<ol><li>Bấm nút <b>Xoá nền</b> trên thanh công cụ (hoặc chuột phải vào trang nhỏ → Xoá nền bản scan để chỉ làm trang đã chọn).</li>
+<li>Chọn <b>mức</b> (Nhẹ / Vừa / Mạnh), <b>màu</b> (Giữ màu / Thang xám / Đen trắng — nhỏ nhất) và độ phân giải.</li>
+<li>Kết quả là <b>file mới</b>; trang không chọn được giữ nguyên.</li></ol>
+<div class="tip">Các trang được xử lý trở thành ảnh nên chữ chọn được (nếu có) sẽ mất. Muốn tìm kiếm được: xoá nền xong, chạy <b>OCR</b> trên file mới.</div></section><section class="gd-sec" id="vi-office"><h2>11. Mở file Word, Excel, PowerPoint</h2>
+<p>Easy PDF đọc được tệp <b>.doc, .docx, .rtf, .odt, .xls, .xlsx, .csv, .ods, .ppt, .pptx, .odp</b>: mở như file PDF (nút Mở file, kéo thả, hoặc chuột phải tệp → Open with).</p>
+<ul><li>Tệp được <b>chuyển sang PDF để xem</b> bằng phần mềm đã cài trên máy: ưu tiên <b>Microsoft Office</b> (chạy ẩn, chỉ đọc, không chạy macro), nếu không có thì dùng <b>LibreOffice</b> (miễn phí).</li>
+<li>Lần đầu mất vài giây; bản PDF được lưu đệm nên mở lại gần như tức thì. <b>Tệp gốc không bị sửa.</b></li>
+<li>Sau khi mở, mọi công cụ đều dùng được: tìm kiếm, chú thích, trích trang, OCR… File mới được đặt cạnh tệp gốc.</li>
+<li><kbd>Ctrl</kbd>+<kbd>S</kbd> trên tab Office = <b>Lưu thành PDF</b> (kèm chú thích nếu có).</li></ul>
+<div class="tip">Nếu máy chưa có Microsoft Office hay LibreOffice, Easy PDF sẽ báo và mở trang tải LibreOffice. Bố cục có thể khác đôi chút khi chuyển bằng LibreOffice.</div></section><section class="gd-sec" id="vi-keys"><h2>12. Phím tắt</h2>
+<table><tr><th>Phím</th><th>Công dụng</th></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>O</kbd> · <kbd>Ctrl</kbd>+<kbd>T</kbd> · <kbd>Ctrl</kbd>+<kbd>W</kbd></td><td>Mở · tab mới · đóng tab</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Tab</kbd> · <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd></td><td>Tab sau · mở lại tab vừa đóng</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>F</kbd> · <kbd>F3</kbd> · <kbd>Shift</kbd>+<kbd>F3</kbd></td><td>Tìm · kết quả sau · kết quả trước</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>G</kbd> · <kbd>Home</kbd> · <kbd>End</kbd></td><td>Tới trang · đầu · cuối</td></tr>
+<tr><td><kbd>Ctrl</kbd>+lăn chuột · <kbd>Ctrl</kbd>+<kbd>0</kbd>/<kbd>1</kbd>/<kbd>2</kbd></td><td>Phóng · vừa trang / 100% / vừa ngang</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>R</kbd> · <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd></td><td>Xoay phải · xoay trái</td></tr>
+<tr><td><kbd>F9</kbd> · <kbd>F11</kbd> · <kbd>F1</kbd></td><td>Thanh bên · toàn màn hình · hướng dẫn</td></tr>
+<tr><td><kbd>H</kbd> · <kbd>T</kbd></td><td>Bàn tay · chọn chữ theo vùng</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>P</kbd> · <kbd>Ctrl</kbd>+<kbd>S</kbd> · <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></td><td>In · lưu · lưu thành file mới</td></tr>
+<tr><td><kbd>Alt</kbd>+<kbd>←</kbd></td><td>Quay lại vị trí trước</td></tr>
+<tr><td>Trang nhỏ: <kbd>Ctrl</kbd>/<kbd>Shift</kbd>+bấm · <kbd>Ctrl</kbd>+<kbd>A</kbd> · <kbd>Esc</kbd></td><td>Chọn nhiều · chọn tất cả · bỏ chọn</td></tr></table></section><section class="gd-sec" id="vi-faq"><h2>13. Câu hỏi thường gặp</h2>
+<h3>Vì sao thao tác không sửa thẳng file đang mở?</h3><p>Để an toàn: mọi thao tác trang đều tạo file mới. Bạn so sánh rồi mới thay file cũ.</p>
+<h3>File PDF có mật khẩu?</h3><p>Chương trình hỏi mật khẩu khi mở; các thao tác sau đó dùng lại mật khẩu này.</p>
+<h3>OCR báo thiếu thành phần?</h3><p>Chạy lại bộ cài Easy PDF và tích mục "OCR", hoặc chép thư mục <code>ocr</code> cạnh EasyPDF.exe (bản Portable đã kèm sẵn).</p>
+<h3>Cuộn trang bị giật?</h3><p>Trang rất nặng (bản vẽ khổ lớn) cần thời gian vẽ nét: chương trình hiện ngay bản mờ rồi thay bằng nét sắc. Tăng bộ nhớ đệm không cần thiết vì chương trình tự giới hạn theo RAM.</p>
+<h3>Hạn giới</h3><p>Tệp Office chỉ được chuyển để xem (chưa xuất PDF → Word) — dùng <i>Xuất văn bản (.rtf)</i> để mở bằng Word. OCR không nhận dạng tốt chữ viết tay.</p></section>
+</div>
+<div class="lang-block" data-lang="en" hidden>
+<nav class="gd-toc" aria-label="Contents"><b>Contents</b><a href="#en-start">1. Quick start</a><a href="#en-view">2. Viewing and searching</a><a href="#en-side">3. The sidebar: thumbnails and outline</a><a href="#en-thumbmenu">4. Right-click menu on thumbnails</a><a href="#en-viewmenu">5. Right-click menu in the viewer</a><a href="#en-annot">6. Annotating</a><a href="#en-ops">7. Page operations and other tools</a><a href="#en-lang">8. Language and ads</a><a href="#en-ocr">9. OCR — make image files searchable</a><a href="#en-clean">10. Clean scan background</a><a href="#en-office">11. Opening Word, Excel and PowerPoint files</a><a href="#en-keys">12. Keyboard shortcuts</a><a href="#en-faq">13. Frequently asked questions</a></nav><section class="gd-sec" id="en-start"><h2>1. Quick start</h2>
+<ul><li><b>Open a file</b>: the <b>Open file</b> button (<kbd>Ctrl</kbd>+<kbd>O</kbd>), drag and drop a PDF into the window, or click a file in the <i>Recent files</i> list on the Home tab.</li>
+<li>The <b>Home tab</b> is always the first tab (it cannot be closed): it holds the Open file button, a banner and the recent files list.</li>
+<li><b>Multiple tabs</b>, just like a browser: <kbd>Ctrl</kbd>+<kbd>T</kbd> new tab, <kbd>Ctrl</kbd>+<kbd>W</kbd> close, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> reopen the tab you just closed, drag a tab to reorder, middle-click to close, right-click to close the other tabs.</li>
+<li>EasyPDF remembers the page and zoom level of every file and reopens your previous files at startup (this can be turned off in the Help menu).</li></ul></section>
+<section class="gd-sec" id="en-view"><h2>2. Viewing and searching</h2>
+<ul><li><b>Zoom</b>: <kbd>Ctrl</kbd>+mouse wheel, or the zoom box on the toolbar. <kbd>Ctrl</kbd>+<kbd>0</kbd> fit page, <kbd>Ctrl</kbd>+<kbd>2</kbd> fit width, <kbd>Ctrl</kbd>+<kbd>1</kbd> 100%. Zoom up to 6400% stays sharp (A0/A1 drawings).</li>
+<li><b>Scroll</b>: mouse wheel, arrow keys, <kbd>PgUp</kbd>/<kbd>PgDn</kbd>, <kbd>Home</kbd>/<kbd>End</kbd>, or drag the page with the Hand tool (<kbd>H</kbd>). <kbd>Ctrl</kbd>+<kbd>G</kbd> goes to any page; <kbd>Alt</kbd>+<kbd>←</kbd> returns to the previous position.</li>
+<li><b>Rotate</b> the view: <kbd>Ctrl</kbd>+<kbd>R</kbd> (right), <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> (left). This only changes how you view the file; to rotate permanently use the right-click menu in the thumbnail panel.</li>
+<li><b>Find text</b>: <kbd>Ctrl</kbd>+<kbd>F</kbd>, then type in the search box (Vietnamese with diacritics is supported); <kbd>F3</kbd> / <kbd>Shift</kbd>+<kbd>F3</kbd> next / previous result. Results are highlighted.</li>
+<li><b>Select text by area</b>: click the Text select tool (<kbd>T</kbd>) and drag; the text inside the area is copied to the clipboard when you release the mouse.</li>
+<li><b>Dictionary</b>: double-click an English word to see its Vietnamese meaning (offline). Translating selected text needs the Internet.</li>
+<li><b>Full screen / presentation</b>: <kbd>F11</kbd> (hides the sidebar and banner). <kbd>F9</kbd> toggles the sidebar.</li></ul></section>
+<section class="gd-sec" id="en-side"><h2>3. The sidebar: thumbnails and outline</h2>
+<ul><li>The <b>Thumbnails</b> tab: the first cell of the list is the banner (it scrolls with the list). Click a page to go to it.</li>
+<li><b>Select several pages</b>: <kbd>Ctrl</kbd>+click (add/remove), <kbd>Shift</kbd>+click (a range), <kbd>Ctrl</kbd>+<kbd>A</kbd> (all), <kbd>Esc</kbd> (clear selection).</li>
+<li><b>Drag and drop to reorder pages</b>: drag a page (or the whole selected group) to a new position — the red line shows where it will land. The program creates a <b>new file</b> in the new order; the original file is not modified.</li>
+<li><b>★ mark</b>: flag important pages; later pick them again with "Select the ★ marked pages" to extract, print, export as images…</li>
+<li>The <b>Outline</b> tab: the document's bookmarks; click one to jump to that section.</li></ul></section>
+<section class="gd-sec" id="en-thumbmenu"><h2>4. Right-click menu on thumbnails</h2>
+<p>Right-click a page (or a group of selected pages). Every action writes a <b>new file</b>; the original is always left untouched.</p>
+<table><tr><th>Item</th><th>What it does</th></tr>
+<tr><td>Rotate left / right 90°, 180°</td><td>Permanently rotates the selected pages.</td></tr>
+<tr><td>Extract to a new PDF</td><td>Creates a PDF containing only the selected pages.</td></tr>
+<tr><td>Delete from file</td><td>Creates a PDF without the selected pages.</td></tr>
+<tr><td>Duplicate page</td><td>Each selected page appears twice in a row.</td></tr>
+<tr><td>Insert blank page / page from another file</td><td>Inserts after this page (or after the last page of the selected group).</td></tr>
+<tr><td>Split PDF</td><td>Each selected page becomes its own file; or split the file into several parts starting at the selected pages. The results are placed in a folder next to the original file.</td></tr>
+<tr><td>Export as images</td><td>PNG or JPG at 150 or 300 dpi. One page: choose where to save. Several pages: saved to the folder <code>&lt;name&gt;_images</code>.</td></tr>
+<tr><td>Copy page image</td><td>Copies one page as an image to the clipboard so you can paste it into Word, Zalo…</td></tr>
+<tr><td>Print selected pages</td><td>Prints only these pages.</td></tr>
+<tr><td>Mark ★ / Select ★ marked pages</td><td>Quickly mark and re-select pages (marks are remembered only during the session).</td></tr>
+<tr><td>Crop margins</td><td>Trims the margins (mm) in the current viewing direction; the content is only hidden outside the crop frame.</td></tr>
+<tr><td>Page properties</td><td>Size (pt, mm), paper size A0–A5/Letter…, rotation angle, MediaBox, CropBox.</td></tr>
+<tr><td>OCR — text recognition</td><td>See section 9.</td></tr>
+<tr><td>Clean scan background</td><td>See section 10.</td></tr>
+<tr><td>Copy text / Export text (.txt, .rtf)</td><td>Gets the text of the selected pages. The .rtf file opens in Word.</td></tr>
+<tr><td>Stitch pages into one long image</td><td>Joins the selected pages vertically into a single PNG image.</td></tr>
+<tr><td>Extract embedded images</td><td>Saves the images inside the pages (24 px and larger) as PNG.</td></tr></table></section>
+<section class="gd-sec" id="en-viewmenu"><h2>5. Right-click menu in the viewer</h2>
+<p>While the Hand or Text select tool is active, right-click on a page to: look up the word under the cursor, copy the page's text / image, save the page as an image, export text, extract embedded images, extract this page to a new PDF, print this page, mark ★, view properties, run OCR, or clean the scan background.</p></section>
+<section class="gd-sec" id="en-annot"><h2>6. Annotating</h2>
+<p>Click <b>Annotate</b> to open the toolbar: pen, line, arrow, rectangle, ellipse, revision cloud, highlight, note, text, stamp / signature, insert image, eraser / redact, measure, magnifier…</p>
+<ul><li>Use the <b>Pointer</b> to select, move, resize and rotate annotations. <kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd> undo / redo.</li>
+<li><b>Right-click an annotation</b>: delete, edit its content, bring forward / send backward, change colour.</li>
+<li><b>Inserted images / signatures</b>: right-click → <i>Remove image background</i> to make a signature transparent; <i>Rotate 90°</i>; <i>Save image (transparent PNG)</i> to reuse it elsewhere; <i>Copy image</i> to paste it into another application.</li>
+<li><b>Save</b>: <kbd>Ctrl</kbd>+<kbd>S</kbd> writes the annotations into the PDF (it asks before overwriting); <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd> saves as a new file.</li>
+<li>A <b>Redact</b> area turns the page into an image so the hidden data cannot be recovered.</li></ul></section>
+<section class="gd-sec" id="en-ops"><h2>7. Page operations and other tools</h2>
+<ul><li>The <b>Page</b> menu / <b>Tools ▾</b> button: rotate, delete, extract, reorder, insert, blank page, split (every N pages / by outline / by range), merge several files, page numbering, watermark, bookmarks.</li>
+<li>The <b>Split pages</b> and <b>Merge files</b> modes (top-right of the tab bar): see a grid of pages, select, rotate, delete, then export one file or split into single pages.</li>
+<li><b>Compare 2 drawings</b> (revisions), <b>Compress to reduce size</b>, <b>Print</b> (with annotations, 1–2 pages per sheet), save / open a <b>work session</b> (.json).</li>
+<li>Every operation that writes a file always creates a <b>new file</b> and runs in the background; the status bar shows progress.</li></ul></section>
+<section class="gd-sec" id="en-lang"><h2>8. Language and ads</h2>
+<ul><li>The interface comes in 6 languages: Tiếng Việt, English, Bahasa Indonesia, 한국어, 日本語, Filipino — use the <b>Language</b> menu.</li>
+<li>Ad banners appear on the Home tab and at the top of the thumbnail list; they hide automatically in full screen, when the sidebar is off, or in Split pages / Merge files mode.</li></ul></section>
+<section class="gd-sec" id="en-ocr"><h2>9. OCR — make image files searchable</h2>
+<p>For PDFs that are <b>images / scans</b> (text cannot be selected or searched).</p>
+<ol><li>Click the <b>OCR ▾</b> button on the toolbar and choose the pages: the current page, the pages selected in the thumbnail panel, all pages or a page range (or menu <b>Tools → OCR</b>, or right-click a thumbnail → OCR).</li>
+<li>Choose the language (Vietnamese + English / English / Vietnamese), the output (<i>PDF with a text layer</i> or just <i>.txt</i>) and the resolution (300 dpi recommended).</li>
+<li>Choose where to save. The program runs in the background and you can keep reading the document; when it finishes, the new file opens automatically.</li></ol>
+<p>The result keeps the page images but adds a <b>hidden text layer</b>: <kbd>Ctrl</kbd>+<kbd>F</kbd> finds text, and you can select / copy it. OCR works best on clear printed text; run <b>Clean scan background</b> first if the scan is yellowed or has shadows.</p>
+<div class="tip">The OCR component is required (the <code>ocr</code> folder next to EasyPDF.exe). If it is missing, run the installer again and tick the "OCR" item.</div></section>
+<section class="gd-sec" id="en-clean"><h2>10. Clean scan background</h2>
+<p>Whitens yellowed paper, shadows and grey backgrounds of scans and makes the text clearer.</p>
+<ol><li>Click the <b>Clean background</b> button on the toolbar (or right-click a thumbnail → Clean scan background to process only the selected pages).</li>
+<li>Choose the <b>level</b> (Light / Medium / Strong), the <b>colour</b> (Keep colour / Greyscale / Black &amp; white — smallest) and the resolution.</li>
+<li>The result is a <b>new file</b>; pages you did not select are kept as they are.</li></ol>
+<div class="tip">Processed pages become images, so any selectable text (if there was any) is lost. To keep it searchable: after cleaning, run <b>OCR</b> on the new file.</div></section>
+<section class="gd-sec" id="en-office"><h2>11. Opening Word, Excel and PowerPoint files</h2>
+<p>EasyPDF reads <b>.doc, .docx, .rtf, .odt, .xls, .xlsx, .csv, .ods, .ppt, .pptx, .odp</b> files: open them like a PDF (Open file button, drag and drop, or right-click the file → Open with).</p>
+<ul><li>The file is <b>converted to PDF for viewing</b> using software already installed on your computer: <b>Microsoft Office</b> is preferred (runs hidden, read-only, no macros); otherwise <b>LibreOffice</b> (free) is used.</li>
+<li>The first time takes a few seconds; the PDF is cached, so reopening is almost instant. <b>The original file is never modified.</b></li>
+<li>Once opened, every tool works: search, annotate, extract pages, OCR… New files are placed next to the original file.</li>
+<li><kbd>Ctrl</kbd>+<kbd>S</kbd> on an Office tab = <b>Save as PDF</b> (with annotations, if any).</li></ul>
+<div class="tip">If the computer has neither Microsoft Office nor LibreOffice, EasyPDF tells you and opens the LibreOffice download page. The layout may differ slightly when converting with LibreOffice.</div></section>
+<section class="gd-sec" id="en-keys"><h2>12. Keyboard shortcuts</h2>
+<table><tr><th>Keys</th><th>Action</th></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>O</kbd> · <kbd>Ctrl</kbd>+<kbd>T</kbd> · <kbd>Ctrl</kbd>+<kbd>W</kbd></td><td>Open · new tab · close tab</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Tab</kbd> · <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd></td><td>Next tab · reopen the closed tab</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>F</kbd> · <kbd>F3</kbd> · <kbd>Shift</kbd>+<kbd>F3</kbd></td><td>Find · next result · previous result</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>G</kbd> · <kbd>Home</kbd> · <kbd>End</kbd></td><td>Go to page · first · last</td></tr>
+<tr><td><kbd>Ctrl</kbd>+mouse wheel · <kbd>Ctrl</kbd>+<kbd>0</kbd>/<kbd>1</kbd>/<kbd>2</kbd></td><td>Zoom · fit page / 100% / fit width</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>R</kbd> · <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd></td><td>Rotate right · rotate left</td></tr>
+<tr><td><kbd>F9</kbd> · <kbd>F11</kbd> · <kbd>F1</kbd></td><td>Sidebar · full screen · help</td></tr>
+<tr><td><kbd>H</kbd> · <kbd>T</kbd></td><td>Hand · select text by area</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>P</kbd> · <kbd>Ctrl</kbd>+<kbd>S</kbd> · <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></td><td>Print · save · save as a new file</td></tr>
+<tr><td><kbd>Alt</kbd>+<kbd>←</kbd></td><td>Return to the previous position</td></tr>
+<tr><td>Thumbnails: <kbd>Ctrl</kbd>/<kbd>Shift</kbd>+click · <kbd>Ctrl</kbd>+<kbd>A</kbd> · <kbd>Esc</kbd></td><td>Select several · select all · clear selection</td></tr></table></section>
+<section class="gd-sec" id="en-faq"><h2>13. Frequently asked questions</h2>
+<h3>Why don't operations edit the open file directly?</h3><p>For safety: every page operation creates a new file. You compare, then replace the old file yourself.</p>
+<h3>What about password-protected PDFs?</h3><p>The program asks for the password when opening; later operations reuse it.</p>
+<h3>OCR says a component is missing?</h3><p>Run the EasyPDF installer again and tick "OCR", or copy the <code>ocr</code> folder next to EasyPDF.exe (the Portable edition already includes it).</p>
+<h3>Scrolling is choppy?</h3><p>Very heavy pages (large-format drawings) need time to render lines: the program shows a blurry preview at once and then replaces it with the sharp version. Increasing the cache is unnecessary because the program limits itself according to your RAM.</p>
+<h3>Limitations</h3><p>Office files are only converted for viewing (PDF → Word export is not available yet) — use <i>Export text (.rtf)</i> to open the text in Word. OCR does not recognise handwriting well.</p></section>
+
+</div>
+</div>
+</div></article><aside class='blog-right'><div class='adzone adzone-rect' data-ad-target='anlab-slot-sidebar'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 300×250 / 300×600</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div><div class='adzone adzone-rect' data-ad-target='anlab-slot-sidebar-2'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 300×250 / 300×600</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div></aside></div></div></div>
+<div class='adzone adzone-leader' style='margin-bottom:46px'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 970×250 / 728×90</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+
+<div class='adzone adzone-leader' style='margin-bottom:34px'><div class='adlabel'>ĐỐI TÁC &amp; NHÀ TÀI TRỢ</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 728×90 / logo đối tác</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+<footer class='site-footer'><div class='wrap'><div><div class='footbrand'><img alt='' class='footlogo' height='26' src='data:image/webp;base64,UklGRuwLAABXRUJQVlA4WAoAAAAQAAAAXwAAXwAAQUxQSNkBAAABkHPbtrE9+9772Tb+S2zbTmWzclLbqmzbtm07KZ+LHX7fl7yniyJiAlBFFQegsvWUNUfOX4jR84dXTWxRBiBOoSYNkNd/13vG/NttvbIBUz1lkDfpJcngnI9h5wLJpxMyYVQ1NND1MelcYMwH58i7bQBdJY2UpaQNFDJYck4CdBU0ik7QegrqHfdnQ/9Ao/AqIwob8XSW0t9RJvkULcWNuD/eqG8MVjCiwBFnwQAw6MiIIls2gYHS2S+8l8mH+6laxWESLYW2HIE45LwLQSofnqYq9KOj2I4dgL1BMBs2oOwTg1yBr3La0FPwwHpT6SRzHLVWusVH6CXz3HZeuoMXpDv033+/wZ2X7uAR2Ry3rqaTbeFk6Ua0ZJAssHbxBwa5Al9kYWdwctmwBuhJwRxbARmvgpfKh4fJKg7jaaWyHIA4pdMfBy+T580krWDQglakYFkbBoDBXEYSRZwBAwDKxB9gJE/Ercqob6BV1ilG0kQ8kKoUvq+RvZfOS+IdN6dC48ca8TNJ66XwlpyhoFFVBbS4SToXYi84R15uAKVQdWWQNuoByeCcj2HnSPL2oCQYVN8AaR3XPmfMP13ZJhkwqEkVByC/3siFWw8eitEDW+YPr5UDIE6higBWUDgg7AkAAJAsAJ0BKmAAYAA+VSSORaOhoRQKroQ4BUS2AFOjY4Az2DzO6i/Tfv7+T3DDUv5MfNf+W+4ztT/o/2CP1c/zP9d66v7Xepz9qv2Z93P0s/4X1Df51/petv9DD9cvTT/bH4Wv3c9GbBe+Rf6Lwv7AEzimz/ZZ0D/GY+T/P6SfyDUenoT/7vmb/NP8X/4P7z8BH8k/qn+2/tH7x/Fj1Lf7Ggnfp//PleBjPJs0a2ZoUqfen/azififVLgjpHuNc9L1OPEybCxdHbmiPNWHAX+XAQinR70lnGyWQCQ2zqG04CefT+yhN/k9vdBBDflzolRyc/oHTMIQ0nW8dLOvZCY1/Msjd6Pib57kWa5prXNpcJWj44rV7mZG3rvt38Jyax3tpOh4PlhynV9sqj8bdJ8QFshkYw87pd/q6e6P6aSaQ2GDSpscjDZJIKtdLMyWT2s0K4D6SfppQHv7nGmlfRLv533I1wWWuEO28JWQ8NjAAP7+YJfbMdKGiVWGGS6vzZ6bKaciGgS4cFMOpa5/wGlS2bw/WACVrJXeFkB32L53FXB3Tkrf8WOplOguGbkt5DuLF6+ARqXTOXee90Ew12gz84cbx4Ji+UHKGEA11CTLeC4e2tDGDq/cr1urU8PxB9RKJseMx1copgaxurpd3XjGqEqlF5Sjexm3LeTEt/5v4nwjbA1zY5h1cbNOes6zL61HATflK0JEM12WI1ZQ9iQGL6CGs9qF079wc3be5aI+UQ8CI2X9FuEy6xwEn+/78S1sM6xPhbLqLo4N+WvMmAl78rusD9yBqF8D6n6SAR4MCrFVa6Et3YPT/i7zfsPBzKrYY81KpJ+aZf4jfjWT6HdFmIpJ9wR2cHmcOIPhL/WN4sAjpD3WHIT9CdkemNss45oUHun6gPzcO+vgertqCksoiR2ZGTlGegY/nikIyjulJ2A5g+OGHRe6ll772As4ozd765PvrbtstaVyZO5/5JwciLDusaOzTASzQOHXQQ6EtxuRj2PT3aBmwwdj888UKUqM/o069M5Df+zsibkfaz8pkXrC8zP/r/UOfac7THOY93UesNXOkGBE06aUkIGokReKzUGrZI6cycrEsB8Bzaqog5lntfmvEBF1RYYo2VVe+STC4R+xOHLl1a1Ek7celQ7+e138PG29PkL1mjaqHW7l356X+38VZvy07MFRKWhOES2enx2mRSdgVTNp5zdxhN2ES5kcL6J70+C/8s4mWCtble1Se/0pAGVPs/50Xd1sHFW1dHZXuvLU5bvyD1yUsbbHhc931PNRdY7kUcrfYz9lq5z0JSFCvaZf8GF/IoJAVl5LWEXIfxToVwpN7Ic/xgUjYkncP/bd+jenrcqLqVA5fTCtyOK8Nkzuss9/n+ieUU37XdWEFzZRfRnG3fYbOP+DYOAjvtYfa71Ewo7KtrCOnWXMFaPsXoAHvv2WNXSc66fv+J/XVQSfvLut+w0Ibf3OlOoWQ1nVYmIan/tkLBSWGzd8y4I0Ds7pVMhJ0GgxiMe57gjjzxki78IqZWihiiy2DqVF9QMIDYJN7pKx0fzHatHtE4NXvR+i3fAdJF8v6JGInQ6sgE0NgnhaUSnH/hYGVYnA+Mex55/FOtBjJpLtdl+X6xCelSVlGca2/KjstlZnV+4tSQ2TLrJ5QX+aS01C7F263Wpm2gdGoNl6dU7Bf9shvBFB7skgDps5D0RG/GGiohnBalobULwRO5XDttAmsk99lXrc1olxRGSeCmN+pN3YSx+RoCO5d9IShFWlrUGBiEx16P1hYiBi71Aq+W/uWx4g/tyKPt3/eR48QxYOxj51WfLbev9t4EIWJS1giNUUgvKJX24/HqQQXgP0zSob8yuLxZF6mHf60sfTjOhX/l7EEKUwpBPqxMRhp6erPaRfZ5z1UYi0vR06a3+1tJqrW+Ke3Pub7l9Fka1u/4ESZ/ta5wxalh42DrQn08p77Ym+RonI0qwkyeTpXb+O+HRIPoE+1HVp3dt1Q/rR2caGq6LWQtDnLxKKlDq2KmFjNHCgD859DHg+916zb7l7rfn6z7waW1O/oSjFAHR5YJLKGyI8xBlbvxMcNmk5APeVIk5fG9x5GH7A2MqHrDiy2bRGXbkorhxQxvONk5sKneXl0u/P66zmDl1BMAKaFsjnQKwTJRomvlZAOnkcZyJAHPhbkEqjCTnbcp+kVi/1OwyzTcBvn8yJnSDuz1+l5h+EFqO++0oliZlu6JToHxQI3CpmHp3X5EJ363m1evNnqa3grzmBzbv/onxgOCg7Xcvw/p5Itbu/3oEMw3t/kZGvDqr+lM/lvzPqX0MXLzefuhkwyaGd5r9i07IWv12s/oR0p+BqvbdDgIUAEugpmJbkFVebv/4Y9tFaIj4RQ6ldY4VUEltmz0yXU3SFnCVaZV98j9jjG6fVQgSL/vxFb9GPGBmKiRtOFBNB+hOg6vqF+fy9lNhFyMl8J8msVz3Ab1AN//IW/Cb+WvXaQTi2SWShW+sIiOorIr+Cs8paXlWRYrcAuI5yPLxkDXtu7YErPaBBNwqnLUJ1A0vvqpKU1mobjAMJfIHqv0u22LJZCZaBv+uK9hogLrXXmAU+Ku9Jp/+RXz/1v/gzfisFfqIppmM+YWKppF5VDWV1eEvAp2h5MMUe1bD15TNB5PoUx+znDRNSu3sIEMQFVUW5bmcKTFdZqYpDodCVQsuuwBPWf+3fahPOApUqy4AjSfMKsHUdHvCAFuh3sidROz/bcDEqp5ccejo6GHrXY3LES08/XfB5imkXL1zpfMT9veS+eaQpY7d3lRHozehlsqCdqrJNoOnlfiofWcUwUeoU7p7mLOM8g6GbiwyB9AnoFO9wLI+eUuqMn04NZdqGGftfAD/yvzaDrpfGqk/00vm9LWv+/4u8A/mz6zLCnH6d5H/iV4NOWN0g0Z/UbByLUgvu2fXMFuR6HeOPaL1LyYtehWl6bpBplMLNrd3Mar2nc9ypM+5MAW2TN30dnD06BCxdHzwvktb1rjz7Cvm9syAoo4rTolvbjFtu95p2l33QVq7qkoqQeTIa23A9pLgRbrcbauDhKUZ8sn6/C609KKEJLZTg4Q9R7t9ro68/CByjaiYvqgUt+CbfgAjo5jW0R/69PeiYkjzWJpgL61blEWXHekFeRPrhfLdR7hZ9GO5qoz7m/Czhlang/n+6GS1V0R95+jBcyEEgPMsDOMf8V5O9ON+qClK4eZIewcP7lb7vrdqcoLhA3hIfcj2E/XhVlOFd1MZSiYHru7kzVMrkkd4Nw6yRYly7ssU+YvmK97WAtfNJ+pCsO9Oc5RvzlaLgKzS9pPJUeL/3Px9EUUEIi5bFSs5QPaa5P8Rhc/hg155zD4f+yjLT5G/x6ATp0xy8no07NlQJwAAA' width='26'/><span>An<em>LAB</em></span></div><div class='footnote'>© 2026 AnLAB Software Studio. <span data-en='Create with purpose.'>Sáng tạo có chủ đích.</span></div></div><div class='footlinks'>
+<a href='index.html#/blog' data-en='Blog'>Blog</a>
+<a href='huong-dan.html'>Hướng dẫn</a>
+<a href='gioi-thieu.html'>Giới thiệu</a>
+<a href='chinh-sach-bao-mat.html'>Chính sách bảo mật</a>
+<a href='quang-cao.html'>Quảng cáo</a>
+<a href='lien-he.html'>Liên hệ</a>
+</div></div></footer>
+<div class='ad-staging' id='ad-staging'>
+<div class='adzone adzone-infeed' data-ad-target='anlab-slot-infeed'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner toàn chiều ngang (responsive)</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+<div class='adzone adzone-leader' data-ad-target='anlab-slot-post-top'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 728×90 / 336×280</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+<div class='adzone adzone-rect' data-ad-target='anlab-slot-sidebar'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 300×250 / 300×600</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+<div class='adzone adzone-leader' data-ad-target='anlab-slot-post-bottom'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 728×90 / 336×280</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+</div>
+
+<script>
+/* AnLAB Blogger enhancement: no user data collection, no API keys. */
+(function(){
+  'use strict';
+  /* ===== CÀI ĐẶT QUẢNG CÁO =====
+     SHOW_EMPTY_AD_SLOTS: true  = khu vực chưa có banner hiện khung "Còn trống — liên hệ đặt quảng cáo"
+                          false = khu vực trống ẩn hoàn toàn (nên đặt false khi đã chạy AdSense) */
+  var SHOW_EMPTY_AD_SLOTS=true;
+  var INFEED_AFTER_CARD=3; /* banner xen giữa danh sách xuất hiện sau thẻ app thứ mấy */
+  var header=document.querySelector('.topbar');
+  var toggle=document.querySelector('.navtoggle');
+  if(toggle&&header){toggle.addEventListener('click',function(){
+    var isOpen=header.classList.toggle('nav-open');
+    toggle.setAttribute('aria-expanded',String(isOpen));
+  });}
+
+  function safeColor(v){return /^#[0-9a-fA-F]{6}$/.test(v||'')?v:null;}
+  function safeURL(raw){
+    if(!raw)return null;raw=String(raw).trim();
+    if(!/^https:\/\//i.test(raw))return null;
+    try{var u=new URL(raw);return u.protocol==='https:'?u.href:null;}catch(e){return null;}
+  }
+  function getInfo(holder){
+    if(!holder)return null;
+    var root=holder.content||holder; /* <template> keeps post HTML inert (no image loading) */
+    return root.querySelector('.anlab-app-data,[data-anlab-app]');
+  }
+  function firstLetter(text){
+    var t=(text||'').trim();
+    return t?t.charAt(0).toUpperCase():'A';
+  }
+  function setIcon(box,url){
+    var img=safeURL(url);if(!box||!img)return;
+    var el=document.createElement('img');el.src=img;el.alt='';el.loading='lazy';
+    el.onerror=function(){el.remove();};
+    box.textContent='';box.appendChild(el);
+  }
+
+  /* ---- Catalog cards ---- */
+  document.querySelectorAll('.app-card').forEach(function(card){
+    var title=card.querySelector('.card-title');
+    var icon=card.querySelector('.card-icon');
+    if(icon&&title)icon.textContent=firstLetter(title.textContent);
+    var info=getInfo(card.querySelector('.post-source'));
+    if(!info)return;
+    var v=info.dataset;
+    if(safeColor(v.accent))card.style.setProperty('--app-bg',v.accent);
+    if(safeColor(v.accent2))card.style.setProperty('--app-bg2',v.accent2);
+    var p=card.querySelector('.app-platform');if(p&&v.platform)p.textContent=v.platform;
+    var ver=card.querySelector('.app-version');if(ver&&v.version)ver.textContent='VERSION '+v.version;
+    setIcon(icon,v.icon);
+  });
+
+  /* ---- Count & search/label heading ---- */
+  var list=document.querySelector('.cards');
+  var count=document.querySelector('[data-app-count]');
+  if(count)count.textContent=(list?list.querySelectorAll('.app-card').length:0)+' sản phẩm trên trang';
+
+  var path=decodeURIComponent(location.pathname);
+  var labelMatch=path.match(/\/search\/label\/([^/]+)/);
+  var q=new URLSearchParams(location.search).get('q');
+  var heading=document.querySelector('[data-catalog-title]');
+  var note=document.querySelector('[data-search-note]');
+  if(heading&&(labelMatch||q)){
+    heading.textContent='';
+    heading.appendChild(document.createTextNode(labelMatch?'Danh mục ':'Kết quả '));
+    var s=document.createElement('span');
+    s.textContent=labelMatch?labelMatch[1]+'.':'“'+q+'”';
+    heading.appendChild(s);
+    if(note)note.classList.remove('hide');
+  }
+  var input=document.querySelector('.searchwrap input[name="q"]');
+  if(input&&q)input.value=q;
+
+  /* ---- Active chip ---- */
+  document.querySelectorAll('.chip').forEach(function(chip){
+    var href=chip.getAttribute('href')||'';
+    var cp='';try{cp=decodeURIComponent(new URL(href,location.href).pathname);}catch(e){}
+    var isAll=chip.dataset.all==='yes';
+    if((labelMatch&&cp===path)||(!labelMatch&&!q&&isAll))chip.classList.add('active');
+  });
+
+  /* ---- Ad zones: Blogger forbids b:section inside a widget, so zones are moved after render ---- */
+  if(!SHOW_EMPTY_AD_SLOTS)document.documentElement.classList.add('ads-hide-empty');
+  if(list){
+    var cardsEls=list.querySelectorAll('.app-card');
+    if(cardsEls.length){
+      var slot=document.createElement('div');slot.className='ad-target';slot.id='anlab-slot-infeed';
+      var after=cardsEls[Math.min(INFEED_AFTER_CARD,cardsEls.length)-1];
+      after.parentNode.insertBefore(slot,after.nextSibling);
+    }
+  }
+  document.querySelectorAll('#ad-staging .adzone[data-ad-target]').forEach(function(zone){
+    var target=document.getElementById(zone.getAttribute('data-ad-target'));
+    if(target)target.appendChild(zone);else zone.remove();
+  });
+
+  /* ---- Post detail: download box ---- */
+  var doc=document.querySelector('.article-shell');
+  if(doc){
+    var info=getInfo(doc.querySelector('.article-body'));
+    var dlIcon=doc.querySelector('.dl-icon');
+    var h=doc.querySelector('.article-head h1');
+    if(dlIcon&&h)dlIcon.textContent=firstLetter(h.textContent);
+    if(info){
+      var v=info.dataset;
+      ['version','platform','size','license','format','sha256'].forEach(function(key){
+        var row=doc.querySelector('[data-app-row="'+key+'"]');
+        var span=doc.querySelector('[data-app-field="'+key+'"]');
+        if(span&&v[key]){span.textContent=v[key];if(row)row.classList.remove('hide');}
+      });
+      setIcon(dlIcon,v.icon);
+      if(dlIcon&&safeColor(v.accent)&&safeColor(v.accent2))
+        dlIcon.style.background='linear-gradient(135deg,'+v.accent+','+v.accent2+')';
+      var dl=doc.querySelector('.dl-btn');
+      var href=safeURL(v.download);
+      /* Only an https link activates the button — never show a working-looking fake download */
+      if(dl&&href){
+        dl.href=href;dl.target='_blank';dl.rel='noopener noreferrer';
+        dl.classList.remove('disabled');dl.removeAttribute('aria-disabled');
+        dl.textContent='↓  TẢI PHẦN MỀM';
+      }
+    }
+  }
+})();
+
+
+
+/* AnLAB language switch (Tiếng Việt / English). Theme text is translated from the dictionary below;
+   posts can add <div class="lang-block" data-lang="vi"> ... </div> and <div class="lang-block" data-lang="en" hidden> ... </div>. */
+(function(){
+  'use strict';
+  var EN={
+    'Ứng dụng':'Apps','Công cụ':'Tools','Học tập':'Learning','Trò chơi':'Games','Mô phỏng':'Simulation','Giới thiệu':'About','Hướng dẫn':'Guides',
+    'Khám phá tất cả ↗':'Explore all ↗','Khám phá ứng dụng ↗':'Explore apps ↗','Về AnLAB →':'About AnLAB →',
+    'Ý tưởng nhỏ.':'Small ideas.','Giá trị lớn.':'Big value.',
+    'Một không gian để giới thiệu, chia sẻ những ứng dụng thực tế — từ công cụ công việc, học tập đến trò chơi. Mọi ý tưởng đều có thể trở thành sản phẩm hữu ích.':'A space to introduce and share practical apps — from work tools and learning to games. Every idea can become a useful product.',
+    'QUẢNG CÁO':'ADVERTISEMENT','ĐỐI TÁC & NHÀ TÀI TRỢ':'PARTNERS & SPONSORS',
+    'Còn trống — liên hệ đặt quảng cáo →':'Available — contact us to advertise →',
+    'Vị trí banner toàn chiều ngang (responsive)':'Banner slot — full width (responsive)',
+    'Vị trí banner 728×90 / logo đối tác':'Banner slot 728×90 / partner logos',
+    'Khám phá':'Explore','sản phẩm.':'products.','Danh mục':'Category','Kết quả':'Results',
+    'Phần mềm do AnLAB giới thiệu, với hướng dẫn cài đặt, ghi chú phiên bản và liên kết tải rõ ràng.':'Software presented by AnLAB, with clear installation guides, release notes and download links.',
+    'Tất cả':'All','KHO ỨNG DỤNG':'APP LIBRARY','Đang lọc kết quả.':'Filtering results.','← Xem tất cả ứng dụng':'← View all apps',
+    'Tìm tên phần mềm...':'Search software name...','Tìm ứng dụng':'Search apps','Tìm':'Search','Mở điều hướng':'Open navigation',
+    'Xem chi tiết ↗':'View details ↗','← Mới hơn':'← Newer','Xem thêm ứng dụng →':'More apps →',
+    'Chưa có ứng dụng nào':'No apps yet','Hãy đăng bài đầu tiên trong Blogger → Bài đăng (mỗi bài = một phần mềm).':'Publish your first post in Blogger → Posts (one post = one app).',
+    'Không tìm thấy trang bạn yêu cầu.':'The page you requested could not be found.','← Về kho ứng dụng':'← Back to the app library',
+    'Trang chủ':'Home','Tải xuống':'Download','Bản phát hành chính thức từ AnLAB.':'Official release from AnLAB.',
+    'CHƯA CÓ LIÊN KẾT TẢI':'NO DOWNLOAD LINK YET','↓ TẢI PHẦN MỀM':'↓ DOWNLOAD',
+    'Phiên bản':'Version','Nền tảng':'Platform','Định dạng':'Format','Dung lượng':'Size','Giấy phép':'License','Miễn phí':'Free',
+    'File được lưu tại kho ngoài (GitHub/Drive). Chỉ tải từ nút này; quảng cáo trên trang không phải nút tải.':'The file is hosted externally (GitHub/Drive). Only download via this button; ads on this page are not download buttons.',
+    'Không chỉ là':'More than','phần mềm.':'software.',
+    'Đó là cách biến ý tưởng thành những công cụ hữu ích. Tập trung vào trải nghiệm đơn giản, chất lượng rõ ràng và các bản cập nhật có ý nghĩa.':'It is a way to turn ideas into useful tools — focused on simple experiences, clear quality and meaningful updates.',
+    'Chính sách bảo mật':'Privacy Policy','Quảng cáo':'Advertise','Liên hệ':'Contact'
+  };
+  var RX=[[/^Cập nhật: (.*)$/,'Updated: $1'],[/^(\d+) sản phẩm trên trang$/,'$1 apps on this page'],[/^Vị trí banner (.*)$/,'Banner slot $1']];
+  var SKIP='.article-body,.post-source,.card-title,.card-description,.article-head h1,.side-title,.breadcrumbs span,.langswitch,[data-en],[data-en-html]';
+  var orig=new WeakMap(), lang='vi';
+
+  function tr(raw){
+    var k=raw.replace(/\s+/g,' ').trim();
+    if(!k)return null;
+    if(Object.prototype.hasOwnProperty.call(EN,k))return EN[k];
+    for(var i=0;i<RX.length;i++){if(RX[i][0].test(k))return k.replace(RX[i][0],RX[i][1]);}
+    return null;
+  }
+  function textNodes(){
+    var out=[],w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n;
+    while((n=w.nextNode())){
+      var p=n.parentNode;if(!p)continue;
+      var t=p.nodeName;if(t==='SCRIPT'||t==='STYLE'||t==='TEMPLATE'||t==='NOSCRIPT')continue;
+      if(p.closest&&p.closest(SKIP))continue;
+      out.push(n);
+    }
+    return out;
+  }
+  function applyText(){
+    textNodes().forEach(function(n){
+      var o=orig.get(n);
+      if(o===undefined){if(tr(n.nodeValue)===null)return;o=n.nodeValue;orig.set(n,o);}
+      var next=o;
+      if(lang==='en'){
+        var lead=o.match(/^\s*/)[0],trail=o.match(/\s*$/)[0];
+        next=lead+tr(o)+trail;
+      }
+      if(n.nodeValue!==next)n.nodeValue=next;
+    });
+  }
+  function applyAttrs(){
+    document.querySelectorAll('[placeholder],[aria-label]').forEach(function(el){
+      if(el.closest('.langswitch'))return;
+      ['placeholder','aria-label'].forEach(function(a){
+        var cur=el.getAttribute(a);if(cur===null)return;
+        var key='data-vi-'+a,o=el.getAttribute(key);
+        if(o===null){if(tr(cur)===null)return;o=cur;el.setAttribute(key,o);}
+        var next=lang==='en'?tr(o):o;
+        if(cur!==next)el.setAttribute(a,next);
+      });
+    });
+  }
+  function setLang(l){
+    lang=(l==='en')?'en':'vi';
+    document.querySelectorAll('.lang-block').forEach(function(b){b.hidden=b.getAttribute('data-lang')!==lang;});
+    document.querySelectorAll('[data-set-lang]').forEach(function(b){
+      var on=b.getAttribute('data-set-lang')===lang;
+      b.classList.toggle('on',on);b.setAttribute('aria-pressed',String(on));
+    });
+    try{document.documentElement.lang=lang;}catch(e){}
+    applyText();applyAttrs();
+    try{localStorage.setItem('anlab_lang',lang);}catch(e){}
+  }
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){
+    b.addEventListener('click',function(){setLang(b.getAttribute('data-set-lang'));});
+  });
+  var saved='vi';
+  try{saved=localStorage.getItem('anlab_lang')||'vi';}catch(e){}
+  setLang(saved);
+  window.addEventListener('load',function(){setLang(lang);});
+})();
+</script>
+<script>(function(){
+  document.querySelectorAll('.app-card').forEach(function(card){var ps=card.querySelector('.post-source .anlab-app-data');var c=ps&&ps.getAttribute('data-cover');var cv=card.querySelector('.card-cover');if(c&&/^https:\/\//.test(c)&&cv){cv.style.backgroundImage="url('"+c+"'),linear-gradient(135deg,var(--app-bg,#302862),var(--app-bg2,#1b173e))";cv.style.backgroundSize='cover';cv.style.backgroundPosition='center';var ic=cv.querySelector('.card-icon');if(ic)ic.style.display='none';var sg=cv.querySelector('.cover-sign');if(sg)sg.style.display='none';}});
+  document.querySelectorAll('[data-play] .play-poster').forEach(function(b){b.addEventListener('click',function(){var f=document.createElement('iframe');f.src='on-ly-thuyet-lai-xe.html';f.title='Ôn lý thuyết lái xe';f.setAttribute('allowfullscreen','');f.style.cssText='width:100%;height:640px;border:1px solid #e3e6f1;border-radius:14px;background:#fff;display:block';b.replaceWith(f);});});
+  function actionLabel(){
+    var info=document.querySelector('.article-body .anlab-app-data');var b=document.querySelector('.article-shell .dl-btn');
+    if(!info||!b||!info.dataset.actionVi||b.classList.contains('disabled'))return;
+    var en=(document.documentElement.lang==='en');
+    b.textContent=en?info.dataset.actionEn:info.dataset.actionVi;
+  }
+  actionLabel();setTimeout(actionLabel,50);setTimeout(actionLabel,500);
+  window.addEventListener('load',function(){setTimeout(actionLabel,100);});
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){b.addEventListener('click',function(){setTimeout(actionLabel,30);setTimeout(actionLabel,300);});});
+  var q=new URLSearchParams(location.search);
+  var cat=q.get('cat'), term=(q.get('q')||'').trim().toLowerCase();
+  var cards=[].slice.call(document.querySelectorAll('.app-card'));
+  if(cards.length&&(cat||term)){
+    cards.forEach(function(c){
+      var t=(c.querySelector('.card-title')||{}).textContent||'';
+      var d=(c.querySelector('.card-description')||{}).textContent||'';
+      var okCat=!cat||c.getAttribute('data-cat')===cat;
+      var okQ=!term||(t+' '+d).toLowerCase().indexOf(term)>-1;
+      if(!(okCat&&okQ))c.style.display='none';
+    });
+    var n=cards.filter(function(c){return c.style.display!=='none';}).length;
+    var cnt=document.querySelector('[data-app-count]');if(cnt)cnt.textContent=n+' sản phẩm trên trang';
+    var h=document.querySelector('[data-catalog-title]');
+    if(h&&cat){h.textContent='';h.appendChild(document.createTextNode('Danh mục '));var s=document.createElement('span');s.textContent=cat+'.';h.appendChild(s);}
+    var note=document.querySelector('[data-search-note]');if(note)note.classList.remove('hide');
+    if(!n){var box=document.querySelector('.cards');if(box){var p=document.createElement('div');p.className='noapps';p.innerHTML='<strong>Không có kết quả</strong><p>Thử từ khoá hoặc danh mục khác.</p>';box.parentNode.insertBefore(p,box);}}
+  }
+  document.querySelectorAll('.chip').forEach(function(ch){
+    var u=new URL(ch.getAttribute('href'),location.href);
+    var c=u.searchParams.get('cat');
+    ch.classList.toggle('active',(c||null)===(cat||null)&&!term);
+  });
+})();
+</script>
+</body></html>
