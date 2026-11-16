@@ -187,10 +187,10 @@
     var h = el('div', 'dlp-head'), img = document.createElement('img');
     img.src = 'images/easypdf-logo.webp'; img.alt = 'EasyPDF'; img.width = 52; img.height = 52; img.loading = 'lazy';
     var t = el('div'), nm = el('div', 'dlp-name', 'Easy'); nm.appendChild(el('span', 'pdf-red', 'PDF'));
-    t.appendChild(nm); t.appendChild(el('div', 'dlp-sub', 'Đọc & chỉnh sửa PDF', 'Read & edit PDF'));
+    t.appendChild(nm); t.appendChild(el('div', 'dlp-sub', 'Đọc & chỉnh sửa PDF và xem  CAD: DWG,DXF, 3D IFC', 'Read & edit PDF & view CAD: DWG,DXF, 3D IFC'));
     h.appendChild(img); h.appendChild(t); c.appendChild(h);
-    c.appendChild(el('p', 'dlp-desc', 'Xem, chú thích, tách, ghép, OCR và mở Word / Excel / PowerPoint. Miễn phí.',
-      'View, annotate, split, merge, OCR and open Word / Excel / PowerPoint. Free.'));
+    c.appendChild(el('p', 'dlp-desc', 'Xem, chú thích, tách, ghép, OCR và mở Word / Excel / PowerPoint. Mở file cad đuôi DWG, DXF, 3D IFC Miễn phí.',
+      'View, annotate, split, merge, OCR and open Word / Excel / PowerPoint./ View DWG, DXF, 3D IFC Free.'));
     c.appendChild(link('dl-btn', PLAY, '📱  Tải cho Android', '📱  Download for Android'));
     c.appendChild(link('dl-btn dl-win', WIN, '💻  Tải cho máy tính (Windows)', '💻  Download for computer (Windows)'));
     c.appendChild(link('dlp-more', 'easypdf.html', 'Xem chi tiết →', 'Details →'));
