@@ -1,0 +1,2 @@
+
+LƯU Ý ẢNH TIẾNG ANH: bản EN dùng các file *-en.webp (kể cả -p1-en, -p11-en, -p12-en). Phải chép ĐỦ các file này lên repo, nếu thiếu trang sẽ hiện ảnh tiếng Việt.

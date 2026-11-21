@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title data-en="Heat control to prevent cold cracking in 80–120 mm steel: consumables, groove prep, preheat, insulation, postheat and UT | AnLAB — Software Studio">Kiểm soát nhiệt chống nứt nguội cho thép dày 80–120 mm: vật liệu hàn, vát mép, gia nhiệt, bảo ôn, postheat và UT | AnLAB — Software Studio</title><meta name="description" content="Thuốc hàn mới và cũ, sấy thuốc hàn, chuẩn bị vát mép, chọn phương pháp hàn theo lớp, gia nhiệt và đo nhiệt, liên lớp, dừng hàn giữa chừng, bọc bảo ôn hộp và dầm I, postheat và UT trên Cap mối hàn." data-en-content="New and used flux, flux drying, groove preparation, choosing the process per layer, preheat and temperature measurement, interpass, stopping mid-weld, insulating boxes and I-beams, postheat and UT on the weld cap."/>
+<meta property="og:title" content="Kiểm soát nhiệt chống nứt nguội cho thép dày 80–120 mm: vật liệu hàn, vát mép, gia nhiệt, bảo ôn, postheat và UT | AnLAB — Software Studio" data-en-content="Heat control to prevent cold cracking in 80–120 mm steel: consumables, groove prep, preheat, insulation, postheat and UT | AnLAB — Software Studio"/><meta property="og:description" content="Thuốc hàn mới và cũ, sấy thuốc hàn, chuẩn bị vát mép, chọn phương pháp hàn theo lớp, gia nhiệt và đo nhiệt, liên lớp, dừng hàn giữa chừng, bọc bảo ôn hộp và dầm I, postheat và UT trên Cap mối hàn." data-en-content="New and used flux, flux drying, groove preparation, choosing the process per layer, preheat and temperature measurement, interpass, stopping mid-weld, insulating boxes and I-beams, postheat and UT on the weld cap."/><meta property="og:image" content="https://anlabstudio.org/kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm.webp"/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap"/>
+<link rel="stylesheet" href="anlab-base.css"/>
+<link rel="stylesheet" href="anlab-extra.css"/>
+<link rel="stylesheet" href="anlab-shell.css"/>
+<script defer src="anlab-extra.js"></script>
+<script defer src="content.js"></script>
+<script defer src="anlab-shell.js"></script>
+</head><body>
+<header class='topbar'><div class='wrap'>
+<a class='brand' href='index.html'><span class='brandmark'><img alt='AnLAB' height='44' src='data:image/webp;base64,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' width='44'/></span><span class='brandtype'>An<em>LAB</em><small>SOFTWARE STUDIO</small></span></a>
+<button aria-expanded='false' aria-label='Mở điều hướng' class='navtoggle' type='button'><svg height='24' viewBox='0 0 24 24' width='24'><path d='M4 7H20 M4 12H20 M4 17H20' stroke='#333' stroke-width='2'/></svg></button>
+<nav class='mainnav' id='mainnav'>
+<a href='blog.html' data-en='Blog'>Blog</a>
+<a href='kien-thuc.html' data-en='Knowledge'>Kiến thức</a>
+<a href='cong-cu.html' data-en='Tools'>Công cụ</a>
+<a href='hoc-tap.html' data-en='Learning'>Học tập</a>
+<a href='tro-choi.html' data-en='Games'>Trò chơi</a>
+<a href='huong-dan.html' data-en='Guides'>Hướng dẫn</a>
+<a href='gioi-thieu.html' data-en='About'>Giới thiệu</a>
+<button class='donate-trigger' data-donate type='button'><span class='dn-heart'>♥</span><span data-en='Donate'>Ủng hộ</span></button>
+</nav>
+<div class='langswitch' role='group' aria-label='Language / Ngôn ngữ'>
+<button aria-pressed='true' class='on' data-set-lang='vi' title='Tiếng Việt' type='button'><svg aria-hidden='true' viewBox='0 0 30 20'><rect fill='#DA251D' height='20' width='30'/><polygon fill='#FFFF00' points='15,4 16.76,9.18 22.2,9.24 17.85,12.52 19.47,17.76 15,14.6 10.53,17.76 12.15,12.52 7.8,9.24 13.24,9.18'/></svg><span>VI</span></button>
+<button aria-pressed='false' data-set-lang='en' title='English' type='button'><svg aria-hidden='true' viewBox='0 0 60 40'><rect fill='#fff' height='40' width='60'/><rect fill='#B22234' y='0.00' width='60' height='3.08'/><rect fill='#B22234' y='6.15' width='60' height='3.08'/><rect fill='#B22234' y='12.31' width='60' height='3.08'/><rect fill='#B22234' y='18.46' width='60' height='3.08'/><rect fill='#B22234' y='24.62' width='60' height='3.08'/><rect fill='#B22234' y='30.77' width='60' height='3.08'/><rect fill='#B22234' y='36.92' width='60' height='3.08'/><rect fill='#3C3B6E' width='24' height='21.54'/><circle cx='2' cy='2.0' r='.75' fill='#fff'/><circle cx='6' cy='2.0' r='.75' fill='#fff'/><circle cx='10' cy='2.0' r='.75' fill='#fff'/><circle cx='14' cy='2.0' r='.75' fill='#fff'/><circle cx='18' cy='2.0' r='.75' fill='#fff'/><circle cx='22' cy='2.0' r='.75' fill='#fff'/><circle cx='4' cy='4.2' r='.75' fill='#fff'/><circle cx='8' cy='4.2' r='.75' fill='#fff'/><circle cx='12' cy='4.2' r='.75' fill='#fff'/><circle cx='16' cy='4.2' r='.75' fill='#fff'/><circle cx='20' cy='4.2' r='.75' fill='#fff'/><circle cx='2' cy='6.4' r='.75' fill='#fff'/><circle cx='6' cy='6.4' r='.75' fill='#fff'/><circle cx='10' cy='6.4' r='.75' fill='#fff'/><circle cx='14' cy='6.4' r='.75' fill='#fff'/><circle cx='18' cy='6.4' r='.75' fill='#fff'/><circle cx='22' cy='6.4' r='.75' fill='#fff'/><circle cx='4' cy='8.6' r='.75' fill='#fff'/><circle cx='8' cy='8.6' r='.75' fill='#fff'/><circle cx='12' cy='8.6' r='.75' fill='#fff'/><circle cx='16' cy='8.6' r='.75' fill='#fff'/><circle cx='20' cy='8.6' r='.75' fill='#fff'/><circle cx='2' cy='10.8' r='.75' fill='#fff'/><circle cx='6' cy='10.8' r='.75' fill='#fff'/><circle cx='10' cy='10.8' r='.75' fill='#fff'/><circle cx='14' cy='10.8' r='.75' fill='#fff'/><circle cx='18' cy='10.8' r='.75' fill='#fff'/><circle cx='22' cy='10.8' r='.75' fill='#fff'/><circle cx='4' cy='13.0' r='.75' fill='#fff'/><circle cx='8' cy='13.0' r='.75' fill='#fff'/><circle cx='12' cy='13.0' r='.75' fill='#fff'/><circle cx='16' cy='13.0' r='.75' fill='#fff'/><circle cx='20' cy='13.0' r='.75' fill='#fff'/><circle cx='2' cy='15.2' r='.75' fill='#fff'/><circle cx='6' cy='15.2' r='.75' fill='#fff'/><circle cx='10' cy='15.2' r='.75' fill='#fff'/><circle cx='14' cy='15.2' r='.75' fill='#fff'/><circle cx='18' cy='15.2' r='.75' fill='#fff'/><circle cx='22' cy='15.2' r='.75' fill='#fff'/><circle cx='4' cy='17.4' r='.75' fill='#fff'/><circle cx='8' cy='17.4' r='.75' fill='#fff'/><circle cx='12' cy='17.4' r='.75' fill='#fff'/><circle cx='16' cy='17.4' r='.75' fill='#fff'/><circle cx='20' cy='17.4' r='.75' fill='#fff'/><circle cx='2' cy='19.6' r='.75' fill='#fff'/><circle cx='6' cy='19.6' r='.75' fill='#fff'/><circle cx='10' cy='19.6' r='.75' fill='#fff'/><circle cx='14' cy='19.6' r='.75' fill='#fff'/><circle cx='18' cy='19.6' r='.75' fill='#fff'/><circle cx='22' cy='19.6' r='.75' fill='#fff'/></svg><span>EN</span></button>
+</div>
+<a class='top-action' href='index.html#/apps'>Khám phá tất cả ↗</a>
+</div></header>
+
+<div class='adzone adzone-leader'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 728×90 / 320×100</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+<div class='wrap' id='main-content'><div class='article-shell'><nav class='breadcrumbs'><a href='index.html'>Trang chủ</a><span>/</span><a href="kien-thuc.html" data-en="Knowledge">Kiến thức</a><span>/</span><a href="kien-thuc.html/tho-han" data-en="Welding procedures">Thợ hàn – Quy trình hàn</a><span>/</span><span data-en="Heat control to prevent cold cracking in 80–120 mm steel: consumables, groove prep, preheat, insulation, postheat and UT">Kiểm soát nhiệt chống nứt nguội cho thép dày 80–120 mm: vật liệu hàn, vát mép, gia nhiệt, bảo ôn, postheat và UT</span></nav>
+<div class='blog-layout'><aside class='blog-left'><div class='bl-box' data-tree></div></aside><article class='article-card'><div class='article-in'>
+<div class='article-head'><div class='article-topline' data-en="KNOWLEDGE">KIẾN THỨC</div><h1 data-en="Heat control to prevent cold cracking in 80–120 mm steel: consumables, groove prep, preheat, insulation, postheat and UT">Kiểm soát nhiệt chống nứt nguội cho thép dày 80–120 mm: vật liệu hàn, vát mép, gia nhiệt, bảo ôn, postheat và UT</h1>
+
+<p class="post-meta">AnLAB · <span data-en="Nov 21, 2026">21/11/2026</span></p></div>
+<hr class='article-divider'/>
+<div class='article-body post-body'>
+<figure class="post-hero"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm.webp" data-en-src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-en.webp" alt="Đường nhiệt độ – thời gian của mối hàn thép dày" data-en-alt="Temperature–time profile of a thick-plate weld" width="1067" height="600"/></figure>
+
+<div class="lang-block" data-lang="vi"><p>Bài này tổng hợp cách kiểm soát nhiệt độ và ủ bảo ôn để chống nứt nguội khi hàn thép dày 80–120 mm, lấy ví dụ <b>thép S355J2+N hàn SAW và FCAW</b> (dầm super truss, hộp, dầm I). Các con số dưới đây là ví dụ điển hình; khi thi công luôn dùng <b>WPS đã được phê duyệt</b> và tài liệu kỹ thuật của vật liệu hàn. Nếu chưa rõ vì sao cần các biện pháp này, hãy đọc bài <a href="kien-thuc-co-che-nut-nguoi-hydro-ung-suat-va-to-chuc-giron.html">cơ chế nứt nguội</a> trước.</p>
+<p>Biểu đồ ở đầu bài tóm tắt toàn bộ quy trình: gia nhiệt, hàn nhiều lớp trong khoảng liên lớp 110–250°C, bảo ôn, tháo bảo ôn rồi kiểm tra UT.</p>
+<h2>1. Kiểm soát vật liệu hàn và môi trường</h2>
+<ul>
+<li>Thuốc hàn SAW phải khô hoàn toàn và không nhiễm bẩn. Thuốc hàn từ bao bì rách hoặc tái sử dụng bắt buộc phải sấy trước khi dùng (xem mục 2).</li>
+<li><b>Thuốc hàn đã bị ướt: tuyệt đối không dùng.</b></li>
+<li><b>Mối hàn CJP (Complete Joint Penetration) chỉ dùng thuốc hàn mới.</b> Khi hàn CJP trên thép dày 80–120 mm phải dùng thuốc hàn chưa qua sử dụng (nguyên bao nguyên kiện, chưa mở hoặc mới mở trong ca). Lý do: mối hàn CJP chịu tải thiết kế toàn phần và đòi hỏi kiểm soát hydro khuếch tán chặt nhất; thuốc hàn mới có độ ẩm thấp nhất nên giảm tối đa nguy cơ nứt nguội ở HAZ và chân mối hàn.</li>
+<li><b>Thuốc hàn đã qua sử dụng chỉ dùng cho mối hàn fillet.</b> Thuốc thu hồi từ ca trước hoặc từ bao đã mở lâu chỉ được dùng cho mối hàn góc không yêu cầu kiểm tra CJP. Tuyệt đối không dùng cho mối hàn CJP, mối hàn sửa chữa sâu hoặc bất kỳ mối hàn nào yêu cầu postheat.</li>
+<li><b>Chạy rùa SAW (SAW tractor) ngoài hiện trường:</b> thuốc hàn đang dùng phải để trong tủ sấy cá nhân (loại nhỏ dùng giữ ấm que hàn SMAW), cắm điện và duy trì ≥ 80°C liên tục. Không để túi thuốc hở miệng hoặc đặt trực tiếp trên sàn hay bề mặt lạnh, nhất là khi trời ẩm hoặc ban đêm.</li>
+<li>Hàn FCAW-G (có khí bảo vệ): không hàn ở nơi gió lùa vượt quá 8 km/h (5 mph) trừ khi có lều che. Gió thổi bay khí bảo vệ làm hỏng mối hàn.</li>
+</ul>
+<figure style="margin:16px auto;max-width:240px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p8.webp" alt="Tủ sấy cá nhân dạng xách tay để giữ ấm vật liệu hàn" width="324" height="273" loading="lazy" style="width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Tủ sấy cá nhân dạng xách tay để giữ ấm vật liệu hàn</figcaption></figure>
+<h2>2. Sấy ủ thuốc hàn</h2>
+<p>Ví dụ theo khuyến cáo của một nhà sản xuất vật liệu hàn: sấy ở 300–350°C, tối thiểu 60 phút. Luôn theo tài liệu kỹ thuật của đúng loại thuốc hàn đang dùng.</p>
+<ul>
+<li>Lò điện có kiểm soát nhiệt độ. Sau sấy giữ trong lò giữ nhiệt ≥ 100°C cho đến khi dùng.</li>
+<li>Dùng trong vòng 4 giờ sau khi lấy khỏi lò (môi trường thường).</li>
+<li>Bao bì rách, ẩm hoặc đã mở quá 24 giờ thì bắt buộc phải sấy.</li>
+<li>Không sấy lại quá 2 lần; lần thứ 3 phải loại bỏ. Mỗi lần sấy phải ghi vào nhật ký vật liệu.</li>
+<li>Nhiệt độ sấy 300–350°C cao hơn mức tối thiểu chung (260°C); luôn tuân theo khuyến cáo nhà sản xuất vì đó là thông số đã được kiểm chứng cho đúng sản phẩm.</li>
+</ul>
+<ol>
+<li>Kiểm tra bao bì trước khi sấy.</li>
+<li>Xếp thuốc hàn thành lớp mỏng, không dày hơn 50 mm trong khay.</li>
+<li>Tăng nhiệt độ lò từ từ, không tăng đột ngột để tránh vón cục.</li>
+<li>Giữ nhiệt độ sấy tối thiểu 60 phút liên tục.</li>
+<li>Chuyển ngay vào lò giữ nhiệt ≥ 100°C. Nếu không có lò giữ nhiệt, dùng trong vòng 4 giờ.</li>
+<li>Ghi nhật ký: thời điểm sấy, nhiệt độ đạt được, thời gian giữ nhiệt, người thực hiện.</li>
+</ol>
+<h2>3. Chuẩn bị vát mép (groove)</h2>
+<p>Hình học mối vát (góc vát, khe hở chân, chiều sâu rãnh) ảnh hưởng trực tiếp đến nứt nguội và nứt nóng khi hàn thép dày. Kiểm soát chuẩn bị vát là bước phòng nứt từ trước khi hàn.</p>
+<figure class="post-hero"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-img3.webp" alt="Góc vát quá hẹp, đúng và quá rộng ảnh hưởng thế nào đến nguy cơ nứt" width="1067" height="600" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Góc vát quá hẹp, đúng và quá rộng ảnh hưởng thế nào đến nguy cơ nứt</figcaption></figure>
+<ul>
+<li><b>Góc vát quá hẹp</b> (dưới 45° tổng cho rãnh chữ V): điện cực khó tiếp cận đáy rãnh, hồ quang phải nghiêng nhiều, tạo vùng nóng chảy hẹp và sâu. Hình dạng này cản hydro thoát ra, hydro tích lũy ở chân mối hàn và HAZ, làm tăng mạnh nguy cơ nứt nguội.</li>
+<li><b>Góc vát quá rộng</b> (trên 70° tổng): cần đắp nhiều kim loại hàn hơn nên lực co ngót ngang khi nguội lớn hơn. Trên thép dày 80–120 mm bị ngàm cứng, ứng suất co ngót tích lũy là nguồn gốc chính của nứt trễ.</li>
+<li><b>Khe hở chân sai:</b> quá nhỏ (dưới giá trị WPS) làm điện cực không ngấu hết đáy rãnh, gây thiếu ngấu chân, một điểm tập trung ứng suất rất cao là mầm nứt. Quá lớn thì dễ cháy thủng khi hàn lớp root.</li>
+<li><b>Bề mặt vát không sạch:</b> dầu mỡ, gỉ, sơn lót, ẩm đọng sương và bụi là nguồn hydro trực tiếp. Chúng bị hồ quang phân hủy thành nguyên tử H, hòa tan vào kim loại lỏng rồi khuếch tán vào HAZ khi nguội, gây nứt nguội ngay cả khi đã tuân thủ preheat và interpass.</li>
+</ul>
+<p><b>Yêu cầu kiểm soát trước khi hàn:</b></p>
+<ul>
+<li>Đo góc vát và khe hở chân bằng dưỡng hàn hoặc thước đo rãnh; phải nằm trong dung sai WPS. Nếu vượt dung sai phải sửa trước khi hàn, không được bù bằng cách chỉnh thông số hàn.</li>
+<li>Mài sạch bề mặt vát và vùng xung quanh ≥ 25 mm mỗi phía bằng đá mài góc để loại gỉ, vảy cán, sơn lót, dầu mỡ; bề mặt phải sáng kim loại. Nếu có dầu mỡ thì lau bằng acetone hoặc dung môi sạch trước khi mài.</li>
+<li>Nếu thép có ẩm (sương, mưa): gia nhiệt bề mặt vát và vùng xung quanh lên tối thiểu 40–50°C trước khi preheat chính thức để đuổi ẩm. Không hàn lên bề mặt còn hơi ẩm nhìn thấy được.</li>
+<li>Kiểm tra mặt vát bằng mắt (VT) và MT nếu WPS yêu cầu. Vết cắt cháy, vết đứt do cắt plasma không đều hoặc vết nứt bề mặt phải được mài bỏ hoàn toàn trước khi hàn.</li>
+</ul>
+<h2>4. Hàn đa lớp: chọn phương pháp theo từng lớp</h2>
+<p>Với mối hàn CJP trên thép 80–120 mm, phương pháp hàn và thông số dây phải phù hợp với vị trí chức năng của từng lớp, không dùng một phương pháp cho mọi lớp.</p>
+<figure class="post-hero"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-img4.webp" alt="Chọn phương pháp hàn cho root, hot pass, fill và cap của mối hàn CJP" width="1067" height="600" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Chọn phương pháp hàn cho root, hot pass, fill và cap của mối hàn CJP</figcaption></figure>
+<ul>
+<li><b>Root và hot pass: khuyến cáo hàn CO₂ (GMAW/FCAW, khí CO₂ hoặc Ar/CO₂).</b> Lớp root khó và dễ nứt nhất; GMAW có nhiệt lượng thấp, kiểm soát được, vũng hàn nhỏ nên điều chỉnh được độ ngấu chân mà không bị chảy xệ hay cháy thủng. SAW không làm được lớp root vì lớp thuốc hàn dày che khuất rãnh hẹp, dễ kẹt xỉ đáy rãnh. Hot pass nung lại root còn nóng để đuổi hydro tích lũy và hoàn thiện ngấu chân.</li>
+<li><b>Các lớp fill đầu (lớp 1–2 sau hot pass): SAW 1 dây, đường kính nhỏ ≤ 4.0 mm.</b> Rãnh còn hẹp và sâu nên phải kiểm soát nhiệt lượng từng đường; dây nhỏ cho bead mỏng, dễ kiểm soát tỉ lệ sâu/rộng và tránh bead dạng "chai rượu" dễ nứt giữa tim mối hàn.</li>
+<li><b>Từ khi rãnh được lấp đầy 2/3 chiều sâu trở lên: chuyển SAW 2 dây (tandem)</b> để tăng năng suất. Rãnh đã rộng và nông hơn nên nguy cơ bead "chai rượu" giảm. Vẫn phải bảo đảm nhiệt độ liên lớp không vượt WPS trước mỗi đường 2 dây.</li>
+</ul>
+<p><b>Vì sao SAW 1 dây đường kính nhỏ giảm nứt hơn SAW 2–3 dây:</b></p>
+<ul>
+<li><b>Nhiệt lượng mỗi đường thấp hơn:</b> dây 3.2–4.0 mm chạy dòng thấp hơn (thường 450–650 A so với 700–900 A của 2 dây), nên HAZ hẹp hơn và ứng suất dư tích lũy sau mỗi đường thấp hơn.</li>
+<li><b>Tỉ lệ sâu/rộng của bead thấp hơn:</b> bead sâu và hẹp đông đặc từ hai phía vào giữa, dồn tạp chất lưu huỳnh (S) và phospho (P) về tim mối hàn nên dễ nứt nóng. Bead rộng hơn đẩy mặt đông đặc cuối lên gần bề mặt, giảm rõ nguy cơ này.</li>
+<li><b>Kiểm soát nhiệt độ liên lớp dễ hơn:</b> SAW 2–3 dây đắp nhanh, sinh nhiệt nhanh nên dễ đẩy nhiệt độ liên lớp vượt 250°C trước khi thợ hàn kịp nhận ra. Liên lớp quá cao làm thô hạt trong HAZ, giảm độ dai va đập.</li>
+<li><b>Hydro thoát tốt hơn:</b> khi nhiệt độ liên lớp được giữ ổn định trong vùng kiểm soát, hydro có điều kiện khuếch tán ra khỏi mối hàn.</li>
+</ul>
+<h2>5. Gia nhiệt (preheat)</h2>
+<ul>
+<li>Ví dụ: thép S355J2+N hàn SAW và FCAW thuộc Category B; với thép dày trên 65 mm (áp dụng cho 80–120 mm), nhiệt độ gia nhiệt tối thiểu bắt buộc là <b>110°C (225°F)</b> trước khi hàn.</li>
+<li>Vùng gia nhiệt: đều quanh điểm hàn, rộng ít nhất bằng chiều dày phôi t (80–120 mm), không nhỏ hơn 75 mm.</li>
+<li>Trong suốt quá trình hàn, nhiệt độ ở đầu mối hàn và cuối mối hàn không được xuống dưới 110°C.</li>
+</ul>
+<p>Có hai cách gia nhiệt thường dùng: đèn oxy-gas và gia nhiệt điện (dây điện trở). Với gia nhiệt điện phải bọc bông để giữ nhiệt.</p>
+<div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:14px 0"><figure style="margin:0;flex:1 1 150px;max-width:220px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p4.webp" alt="Vị trí gia nhiệt tham khảo cho dầm I" width="244" height="333" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Vị trí gia nhiệt tham khảo cho dầm I</figcaption></figure><figure style="margin:0;flex:1 1 150px;max-width:220px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p5.webp" alt="Vị trí gia nhiệt tham khảo cho hộp" width="244" height="319" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Vị trí gia nhiệt tham khảo cho hộp</figcaption></figure></div>
+<figure style="margin:16px auto;max-width:440px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p2.webp" alt="Gia nhiệt bằng đèn oxy-gas dọc rãnh hàn" width="864" height="607" loading="lazy" style="width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Gia nhiệt bằng đèn oxy-gas dọc rãnh hàn</figcaption></figure>
+<figure style="margin:16px auto;max-width:440px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p10.webp" alt="Gia nhiệt điện bằng dây điện trở, bọc bông giữ nhiệt trên dầm I" width="900" height="613" loading="lazy" style="width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Gia nhiệt điện bằng dây điện trở, bọc bông giữ nhiệt trên dầm I</figcaption></figure>
+<h2>6. Đo nhiệt độ ở đâu cho đúng</h2>
+<figure class="post-hero"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-img1.webp" alt="Vị trí đo nhiệt độ đúng và sai bằng súng hồng ngoại" width="1067" height="600" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Vị trí đo nhiệt độ đúng và sai bằng súng hồng ngoại</figcaption></figure>
+<figure style="margin:16px auto;max-width:440px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p1.webp" alt="Đo bằng súng hồng ngoại: vị trí đo cách mép mối hàn ≥ t, không nhỏ hơn 75 mm" width="769" height="624" loading="lazy" style="width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Đo bằng súng hồng ngoại: vị trí đo cách mép mối hàn ≥ t, không nhỏ hơn 75 mm</figcaption></figure>
+<ul>
+<li>Đo trên bề mặt kim loại cơ bản sạch ở vùng quanh điểm sắp hàn, theo mọi hướng. Không đo vào vũng hàn, mối hàn đã đắp hoặc lớp xỉ vì kết quả sai lệch lớn.</li>
+<li>Thép mỏng dưới 38 mm: đo cách mép mối hàn ≥ 2 lần chiều dày (ví dụ t = 25 mm thì đo cách mép ≥ 50 mm).</li>
+<li>Thép từ 38 mm trở lên (gồm thép 80–120 mm): đo cách mép mối hàn ≥ t, và tuyệt đối không nhỏ hơn 75 mm.</li>
+<li>Hàn hai tấm khác chiều dày: tính khoảng cách và nhiệt độ yêu cầu riêng cho từng tấm, hai điểm đo độc lập.</li>
+</ul>
+<figure style="margin:16px auto;max-width:280px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p3.webp" alt="Súng hồng ngoại đọc nhiệt độ trên thép khi đang gia nhiệt bằng đèn gas" width="513" height="643" loading="lazy" style="width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Súng hồng ngoại đọc nhiệt độ trên thép khi đang gia nhiệt bằng đèn gas</figcaption></figure>
+<p>Dụng cụ đo:</p>
+<ul>
+<li><b>Bút sáp thử nhiệt (Tempilstik):</b> nhanh, đơn giản; vạch sáp chảy nghĩa là đạt nhiệt độ yêu cầu. Phù hợp kiểm tra nhanh preheat.</li>
+<li><b>Súng hồng ngoại (pyrometer):</b> tiện, không tiếp xúc; chỉ đo trên thép sạch, không đo lên xỉ hay vảy hàn bắn (độ phát xạ sai lệch).</li>
+<li><b>Cặp nhiệt điện tiếp xúc (thermocouple):</b> chính xác nhất; nên dùng khi nghiệm thu hoặc khi nghi ngờ kết quả súng hồng ngoại.</li>
+</ul>
+<div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:14px 0"><figure style="margin:0;flex:1 1 150px;max-width:220px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p6.webp" alt="Bút sáp thử nhiệt Tempilstik" width="273" height="253" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Bút sáp thử nhiệt Tempilstik</figcaption></figure><figure style="margin:0;flex:1 1 150px;max-width:190px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p7.webp" alt="Súng đo hồng ngoại" width="190" height="325" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Súng đo hồng ngoại</figcaption></figure></div>
+<h2>7. Nhiệt độ liên lớp và nhiệt lượng hàn</h2>
+<p>SAW có dòng hàn cao và sinh nhiệt lớn, nên khống chế nhiệt độ liên lớp là yếu tố sống còn.</p>
+<ul>
+<li><b>Tối thiểu ≥ 110°C:</b> thấp hơn có nguy cơ nứt nguội.</li>
+<li><b>Tối đa theo WPS</b> (thông thường với thép yêu cầu CVN là 250°C): cao hơn làm hạt kim loại to, giòn, mất độ dai va đập CVN ở −20°C.</li>
+</ul>
+<p>Đo nhiệt độ liên lớp ngay trước khi mồi hồ quang cho mỗi đường hàn, và ngay trước lớp thứ 2 cùng các lớp tiếp theo của mối hàn nhiều lớp. Ghi vào nhật ký hàn mỗi lần đo. Dưới 110°C thì dừng và sấy lại. Trên 250°C thì dừng và chờ nguội: để chi tiết nguội tự nhiên trong không khí, không dùng quạt hay nước, và chỉ hàn tiếp khi nhiệt độ đã xuống dưới 250°C.</p>
+<h2>8. Xử lý khi dừng hàn giữa chừng</h2>
+<p>Để tránh nứt nguội phải duy trì nhiệt độ gia nhiệt trong suốt quá trình hàn. Khi buộc phải dừng, tuân thủ đúng quy trình dưới đây.</p>
+<p><b>Dừng có kế hoạch (hết ca, nghỉ giải lao):</b></p>
+<ol>
+<li>Chọn điểm dừng hợp lý: không dừng ở giao điểm, góc kết cấu hay vùng tập trung ứng suất; ưu tiên giữa đoạn hàn thẳng. Chỉ dừng khi đã hàn được ít nhất 2 lớp.</li>
+<li>Điền đầy crater trước khi ngắt hồ quang để tránh nứt crater.</li>
+<li>Cạo sạch xỉ tại điểm dừng khi kim loại còn nóng.</li>
+<li>Bọc bảo ôn ngay khi nhiệt độ còn trên 110°C bằng bông gốm hoặc bông thủy tinh, không để chi tiết nguội trần ngoài không khí.</li>
+<li>Ghi bàn giao ca: nhiệt độ lúc dừng, vị trí điểm dừng, thời gian và tình trạng bảo ôn.</li>
+</ol>
+<p>Ca mới bắt buộc đo lại nhiệt độ thực tế. Nếu đã xuống dưới 110°C thì sấy lại đến ≥ 110°C rồi mới hàn tiếp.</p>
+<p><b>Dừng đột xuất (mất điện, sự cố thiết bị):</b> bọc ngay bông bảo ôn để giữ nhiệt. Khi có điện lại:</p>
+<ul>
+<li>Nhiệt độ vẫn ≥ 110°C: làm sạch xỉ, kiểm tra crater, sấy lại về 110°C nếu cần rồi hàn tiếp.</li>
+<li>Nhiệt độ &lt; 110°C: bắt buộc sấy lại toàn bộ vùng hàn về ≥ 110°C trước khi hàn tiếp.</li>
+<li>Nguội hoàn toàn về nhiệt độ môi trường và dừng quá 4 giờ: kiểm tra UT/MT tại điểm dừng để phát hiện nứt trễ có thể đã hình thành, rồi sấy lại toàn bộ và hàn tiếp.</li>
+</ul>
+<h2>9. Bọc bảo ôn ngay sau khi hàn</h2>
+<ul>
+<li>Cạo sạch xỉ trước khi bọc.</li>
+<li>Bọc ngay khi nhiệt độ còn trên 110°C bằng bông gốm hoặc bông thủy tinh.</li>
+<li>Phạm vi bọc: phủ kín đường hàn và mở rộng mỗi phía ≥ t (80–120 mm) tính từ mép mối hàn, và không nhỏ hơn 75 mm trong mọi trường hợp. Bó chặt mép bằng đai thép hoặc nam châm chịu nhiệt.</li>
+<li><b>Cấm</b> dùng quạt gió hoặc nước làm nguội khi thép còn nóng, đặc biệt trên 315°C (600°F), vì gây sốc nhiệt và nứt.</li>
+</ul>
+<figure class="post-hero"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-img2.webp" alt="Cách bọc bảo ôn hộp và dầm I" width="1067" height="600" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Cách bọc bảo ôn hộp và dầm I</figcaption></figure>
+<p><b>Hộp 750×1500 mm (4 đường hàn dọc ở 4 góc):</b></p>
+<ol>
+<li>Hàn xong mỗi đường góc thì làm sạch xỉ và bọc tạm ngay, phạm vi ≥ t mỗi phía.</li>
+<li>Hàn và bọc tạm lần lượt các góc còn lại, đo nhiệt độ liên lớp trước mỗi đường mới.</li>
+<li>Sau khi đủ 4 góc, quấn bông liên tục quanh 4 mặt, mép bông chồng nhau ≥ 100 mm ở góc hộp.</li>
+<li>Đặt đai thép cách nhau ≤ 500 mm, siết cho bông ôm sát, không xệ, không để gió lọt.</li>
+<li>Bịt kín 2 đầu hộp để gió đối lưu không luồn qua lòng hộp làm nguội từ bên trong.</li>
+</ol>
+<p>Hộp dài trên 3 m: bố trí ít nhất 2 thợ bọc từ 2 đầu tiến vào giữa để bọc kín trong thời gian ngắn nhất.</p>
+<figure style="margin:16px auto;max-width:280px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p9.webp" alt="Hộp dài đã bọc bông bảo ôn kín dọc chiều dài" width="490" height="679" loading="lazy" style="width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Hộp dài đã bọc bông bảo ôn kín dọc chiều dài</figcaption></figure>
+<p><b>Dầm I (4 mối hàn cánh–bụng):</b></p>
+<ol>
+<li>Khi hàn xong 2 mối ở cánh hạ thì bọc bảo ôn ngay cho 2 mối này.</li>
+<li>Lật dầm để hàn cánh thượng đúng quy trình; hàn xong thì bọc bảo ôn cho 2 mối cánh thượng.</li>
+<li>Nhét bông phụ vào 4 góc âm giữa cánh và bụng, nơi dễ hở nhiệt nhất. Không để lộ kim loại tại góc.</li>
+<li>Đặt đai thép vắt qua toàn bộ mặt cắt I, cách nhau ≤ 500 mm, giữ bông ôm chặt vào từng mặt phẳng của cánh và bụng.</li>
+</ol>
+<p>Lưu ý: bụng dầm lớn nên nhiệt truyền đi nhanh, và nhiệt ở mối hàn bên dưới không truyền lên mối hàn bên trên đủ. Vì vậy mối hàn nào hàn xong thì phải bọc bảo ôn ngay để bảo đảm nhiệt độ đúng yêu cầu.</p>
+<figure style="margin:16px auto;max-width:280px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p11.webp" alt="Bông bảo ôn lấp đầy lòng dầm" width="507" height="637" loading="lazy" style="width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Bông bảo ôn lấp đầy lòng dầm</figcaption></figure>
+<h2>10. Đo bằng súng hồng ngoại khi đang ủ và lộ trình tháo bảo ôn</h2>
+<p>Chỉ mở hé thật nhanh và nhỏ một góc tấm bông cho tia laser chạm bề mặt kim loại (cách mép hàn ≥ 75 mm), đọc trong vài giây rồi đậy kín, chèn chặt ngay.</p>
+<figure style="margin:16px auto;max-width:280px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p12.webp" alt="Hé tấm bông thật nhanh để đo nhiệt độ bằng súng hồng ngoại" width="507" height="558" loading="lazy" style="width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Hé tấm bông thật nhanh để đo nhiệt độ bằng súng hồng ngoại</figcaption></figure>
+<ul>
+<li><b>0–12 giờ đầu:</b> tuyệt đối không mở hé để đo.</li>
+<li><b>Sau 12–24 giờ:</b> hé đo lần đầu, nhanh và nhỏ.</li>
+<li><b>Nếu còn trên 100°C:</b> đợi thêm 4–6 giờ mới đo lại.</li>
+<li><b>Khi ≤ 50°C:</b> được tháo hoàn toàn lớp bảo ôn.</li>
+</ul>
+<h2>11. Postheat: khử hydro khuếch tán</h2>
+<p><b>Postheat bắt buộc khi:</b> (1) mối hàn CJP trên thép dày từ 80 mm trở lên; (2) được chỉ định cụ thể trong tiêu chuẩn, hợp đồng hoặc yêu cầu của kỹ sư thiết kế; (3) mối hàn sửa chữa có rãnh đào sâu hơn 12 mm (1/2 inch).</p>
+<ul>
+<li>Postheat phải được thực hiện <b>ngay lập tức</b> sau khi hàn xong lớp cuối: không để mối hàn nguội xuống dưới nhiệt độ preheat tối thiểu (110°C) trước khi bắt đầu nâng nhiệt postheat.</li>
+<li>Không được gián đoạn: chuyển từ hàn sang postheat phải liên tục. Đây là điểm khác cốt lõi so với ủ bảo ôn thông thường.</li>
+</ul>
+<p><b>Thông số nhiệt độ và thời gian giữ nhiệt:</b></p>
+<ul>
+<li>Nhiệt độ postheat (cả mối hàn thông thường và mối hàn sửa chữa): tối thiểu <b>230°C (450°F)</b>, tối đa <b>290°C (550°F)</b>.</li>
+<li>Mối hàn thông thường: giữ nhiệt tối thiểu 1 giờ cho mỗi 25 mm chiều dày mối hàn, tối đa 2 giờ (chọn giá trị nhỏ hơn). Ví dụ thép 100 mm: 100/25 = 4 giờ, chọn nhỏ hơn giữa 4 giờ và 2 giờ là 2 giờ.</li>
+<li>Mối hàn sửa chữa: 1 giờ cho mỗi 25 mm chiều sâu rãnh đào, và không ít hơn 1 giờ trong mọi trường hợp. Ví dụ rãnh sâu 75 mm: 75/25 = 3 giờ.</li>
+</ul>
+<figure class="post-hero"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-img5.webp" alt="Biểu đồ nhiệt độ – thời gian của quy trình postheat" width="1067" height="600" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Biểu đồ nhiệt độ – thời gian của quy trình postheat</figcaption></figure>
+<ol>
+<li>Hoàn tất lớp hàn cuối: điền đầy crater, ngắt hồ quang. Không để chi tiết nguội và giữ thiết bị gia nhiệt sẵn sàng.</li>
+<li>Đo nhiệt độ ngay tại mối hàn (cách mép ≥ 75 mm); bảo đảm vẫn ≥ 110°C trước khi nâng nhiệt postheat.</li>
+<li>Nâng nhiệt từ từ lên 230–290°C, không quá nhanh để tránh sốc nhiệt, bằng đèn gas hoặc điện trở bọc quanh mối hàn.</li>
+<li>Giữ nhiệt 230–290°C trong suốt thời gian đã tính. Đo nhiều điểm dọc mối hàn để đạt nhiệt đều và ghi nhiệt độ vào nhật ký mỗi 15–20 phút.</li>
+<li>Tắt nguồn gia nhiệt, bọc kín toàn bộ mối hàn bằng bông gốm và làm nguội chậm theo mục 9. Không làm nguội nhanh.</li>
+<li>Sau khi nguội hoàn toàn, chờ tối thiểu 48 giờ rồi kiểm tra UT và MT, đặc biệt chú ý HAZ và chân mối hàn CJP.</li>
+</ol>
+<p><b>Phân biệt postheat và PWHT:</b> postheat không thay thế được PWHT (Post Weld Heat Treatment). Postheat chỉ loại hydro khuếch tán để ngăn nứt nguội. Nếu thiết kế yêu cầu PWHT (thường 580–650°C trong lò) thì phải thực hiện PWHT riêng theo tiêu chuẩn áp dụng.</p>
+<h2>12. Kiểm tra UT nứt nguội: đặt đầu dò trực tiếp trên Cap mối hàn</h2>
+<p>Kiểm tra siêu âm (UT) phải thực hiện <b>sau khi mối hàn hoàn tất và nguội hẳn ít nhất 48 giờ</b> (và sau postheat nếu có) để phát hiện nứt trễ.</p>
+<p>Nứt nguội trên thép dày thường là vết nứt ngang vuông góc với trục mối hàn, hoặc nứt dưới lớp hàn ở HAZ. Nếu chỉ quét từ hai bên mối hàn bằng đầu dò đặt trên kim loại cơ bản, chùm siêu âm chạy song song với mặt phẳng vết nứt ngang nên phản xạ yếu và dễ bỏ sót. Để phát hiện được loại khuyết tật này, phải quét thêm bằng <b>đầu dò đặt trực tiếp trên Cap mối hàn</b>, cho chùm đi dọc trục mối hàn để đập vuông góc vào mặt vết nứt.</p>
+<figure class="post-hero"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-img6.webp" alt="UT nứt ngang: so sánh quét từ kim loại cơ bản và quét trên Cap mối hàn" width="1067" height="600" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">UT nứt ngang: so sánh quét từ kim loại cơ bản và quét trên Cap mối hàn</figcaption></figure>
+<ol>
+<li><b>Thời điểm:</b> chỉ kiểm tra sau khi nguội hẳn ít nhất 48 giờ (hoặc theo thời gian chờ WPS, tiêu chuẩn, hợp đồng quy định).</li>
+<li><b>Chuẩn bị bề mặt Cap:</b> cạo sạch xỉ, vảy hàn bắn, gờ nhọn; mài Cap đủ phẳng, mịn để đầu dò tiếp xúc tốt, mức độ mài theo quy trình UT hoặc tiêu chuẩn áp dụng. Lau sạch và bôi chất tiếp âm đều.</li>
+<li><b>Đầu dò và hiệu chuẩn:</b> dùng loại đầu dò góc, tần số và góc chùm theo quy trình UT đã duyệt; hiệu chuẩn trên khối chuẩn và hiệu chỉnh độ suy hao do bề mặt Cap khác bề mặt thép cơ bản nếu quy trình yêu cầu. Thép 80–120 mm cần chùm đi xa nên phải kiểm tra độ nhạy ở cự ly lớn.</li>
+<li><b>Quét trên Cap:</b> đặt đầu dò trên Cap, hướng chùm dọc theo trục mối hàn; quét cả hai chiều dọc trục và dịch đầu dò ngang qua hết bề rộng Cap. Kết hợp quét ngang mối hàn từ hai bên trên kim loại cơ bản để phát hiện các khuyết tật theo phương dọc.</li>
+<li><b>Vùng cần chú ý:</b> HAZ và chân mối hàn CJP, điểm bắt đầu và kết thúc đường hàn, vị trí đã dừng hàn giữa chừng, vùng bị ngàm lớn.</li>
+<li><b>Đánh giá và ghi nhận:</b> khi có tín hiệu nghi ngờ, xác định lại bằng nhiều góc chùm, đo vị trí và chiều dài, đối chiếu tiêu chuẩn chấp nhận của dự án (vết nứt không được chấp nhận) và bổ sung MT bề mặt nếu cần. Ghi đầy đủ vào biên bản.</li>
+</ol>
+<p>UT phải do người có chứng chỉ phù hợp thực hiện theo quy trình đã được phê duyệt. Các thông số trong mục này là hướng dẫn chung, thông số cụ thể theo quy trình UT của dự án.</p>
+<p>Tài liệu này đọc cùng WPS đã được phê duyệt. Mọi thay đổi thông số phải được kỹ sư hàn có chứng chỉ (IWE/CWEng) phê duyệt.</p>
+</div>
+
+<div class="lang-block" data-lang="en" hidden><p>This article summarises temperature control and insulation against cold cracking in welding steel 80–120 mm thick, using <b>S355J2+N steel welded by SAW and FCAW</b> as the example (super-truss beams, boxes, I-beams). The figures below are typical examples; on the job always use the <b>approved WPS</b> and the consumable manufacturer's data. If you are not sure why these measures are needed, read <a href="kien-thuc-co-che-nut-nguoi-hydro-ung-suat-va-to-chuc-giron.html">how cold cracking happens</a> first.</p>
+<p>The chart at the top of the page summarises the whole process: preheat, multipass welding within the 110–250°C interpass window, insulation, removal of the insulation and then UT.</p>
+<h2>1. Controlling consumables and environment</h2>
+<ul>
+<li>SAW flux must be completely dry and uncontaminated. Flux from torn packaging or flux being reused must be dried before use (see section 2).</li>
+<li><b>Wet flux must never be used.</b></li>
+<li><b>CJP (Complete Joint Penetration) welds use new flux only.</b> When welding CJP on 80–120 mm steel, use unused flux (sealed bags, unopened or opened only during the current shift). Reason: a CJP weld carries the full design load and needs the tightest control of diffusible hydrogen; new flux has the lowest moisture, so it minimises the risk of cold cracking in the HAZ and at the weld root.</li>
+<li><b>Used flux is for fillet welds only.</b> Flux recovered from the previous shift, or from bags opened long ago, may only be used on fillet welds that do not require CJP inspection. Never use it for CJP welds, deep repair welds or any weld that requires postheat.</li>
+<li><b>When running a SAW tractor on site:</b> the flux in use must be kept in a personal oven (the small type used to keep SMAW electrodes warm), plugged in and held at ≥ 80°C continuously. Never leave the flux bag open or put it directly on the floor or a cold surface, especially in damp weather or at night.</li>
+<li>FCAW-G (gas shielded): do not weld in draughts above 8 km/h (5 mph) unless there is a windshield. Wind blows the shielding gas away and ruins the weld.</li>
+</ul>
+<figure style="margin:16px auto;max-width:240px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p8.webp" alt="A portable personal oven used to keep consumables warm" width="324" height="273" loading="lazy" style="width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">A portable personal oven used to keep consumables warm</figcaption></figure>
+<h2>2. Drying flux</h2>
+<p>Example following one consumable manufacturer's recommendation: dry at 300–350°C for at least 60 minutes. Always follow the data sheet for the exact flux in use.</p>
+<ul>
+<li>Use a temperature-controlled electric oven. After drying, hold the flux in a holding oven at ≥ 100°C until use.</li>
+<li>Use it within 4 hours of leaving the oven (ordinary conditions).</li>
+<li>Torn or damp packaging, or packaging open for more than 24 hours, must be dried.</li>
+<li>Never dry the same flux more than twice; scrap it instead of drying it a third time. Record every drying in the material log.</li>
+<li>A drying temperature of 300–350°C is above the general minimum (260°C); always follow the manufacturer's recommendation because it has been proven for that specific product.</li>
+</ul>
+<ol>
+<li>Check the packaging before drying.</li>
+<li>Spread the flux in a thin layer, no deeper than 50 mm in the tray.</li>
+<li>Raise the oven temperature gradually; a sudden rise causes caking.</li>
+<li>Hold the drying temperature for at least 60 minutes continuously.</li>
+<li>Move it straight into a holding oven at ≥ 100°C. If there is none, use it within 4 hours.</li>
+<li>Keep a log: drying time, temperature reached, hold time, operator.</li>
+</ol>
+<h2>3. Groove (bevel) preparation</h2>
+<p>Groove geometry (bevel angle, root gap, groove depth) directly affects cold cracking and hot cracking in thick-plate welding. Controlling the groove preparation is crack prevention before welding even starts.</p>
+<figure class="post-hero"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-img3-en.webp" alt="How a groove angle that is too narrow, correct or too wide affects cracking risk" width="1067" height="600" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">How a groove angle that is too narrow, correct or too wide affects cracking risk</figcaption></figure>
+<ul>
+<li><b>Groove angle too narrow</b> (an included angle below 45° for a V-groove): the electrode can hardly reach the root and the arc has to be steeply inclined, producing a narrow, deep fusion zone. This shape hinders hydrogen escape, so hydrogen builds up at the root and in the HAZ and sharply raises the cold-cracking risk.</li>
+<li><b>Groove angle too wide</b> (an included angle above 70°): much more weld metal is needed, so the transverse shrinkage force on cooling is larger. On 80–120 mm steel held rigidly by the structure, the accumulated shrinkage stress is the main cause of delayed cracking.</li>
+<li><b>Wrong root gap:</b> too small (below the WPS value) and the electrode cannot fuse the whole root, causing lack of root fusion, a very high stress concentration that is a crack nucleus. Too large and the root pass burns through.</li>
+<li><b>Dirty bevel faces:</b> oil, grease, rust, primer, dew and dust are direct sources of hydrogen. The arc breaks them down into H atoms that dissolve into the liquid metal and diffuse into the HAZ on cooling, causing cold cracks even when preheat and interpass are fully respected.</li>
+</ul>
+<p><b>Controls required before welding:</b></p>
+<ul>
+<li>Measure bevel angle and root gap with a weld gauge or groove gauge; they must be within WPS tolerance. If out of tolerance, correct them before welding; never compensate by changing welding parameters.</li>
+<li>Grind the bevel face and the surrounding area ≥ 25 mm each side with an angle grinder to remove rust, mill scale, primer and grease; the surface must be bright metal. If there is oil, wipe with acetone or a clean solvent before grinding.</li>
+<li>If the steel is damp (dew, rain): heat the bevel face and surrounding area to at least 40–50°C before the main preheat to drive off the moisture. Never weld on a surface with visible moisture.</li>
+<li>Inspect the bevel face visually (VT) and by MT if the WPS requires it. Burnt cuts, uneven plasma-cut gouges or surface cracks must be ground out completely before welding.</li>
+</ul>
+<h2>4. Multipass welding: choose the process for each layer</h2>
+<p>For a CJP weld on 80–120 mm steel, the welding process and wire parameters must suit the function of each layer; one process must not be used for all layers.</p>
+<figure class="post-hero"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-img4-en.webp" alt="Choosing the process for the root, hot pass, fill and cap layers of a CJP weld" width="1067" height="600" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Choosing the process for the root, hot pass, fill and cap layers of a CJP weld</figcaption></figure>
+<ul>
+<li><b>Root and hot pass: CO₂ welding recommended (GMAW/FCAW, CO₂ or Ar/CO₂ gas).</b> The root is the hardest and most crack-prone layer; GMAW has low, controllable heat input and a small weld pool, so root penetration can be controlled without sagging or burn-through. SAW cannot do the root because the thick flux layer hides the narrow groove and slag is easily trapped at the bottom. The hot pass reheats the still-hot root to drive out accumulated hydrogen and complete root fusion.</li>
+<li><b>First fill layers (layers 1–2 after the hot pass): SAW single wire, small diameter ≤ 4.0 mm.</b> The groove is still narrow and deep, so heat input must be controlled run by run; a small wire gives a thinner bead that is easier to keep at a safe depth-to-width ratio and avoids wineglass-shaped beads that crack at the centreline.</li>
+<li><b>Once the groove is filled to 2/3 of its depth or more: switch to SAW two wires (tandem)</b> to raise productivity. The groove is wider and shallower, so the risk of wineglass-shaped beads is lower. You must still make sure interpass temperature does not exceed the WPS before every two-wire run.</li>
+</ul>
+<p><b>Why single small-diameter SAW wire cracks less than 2–3 wire SAW:</b></p>
+<ul>
+<li><b>Lower heat input per run:</b> a 3.2–4.0 mm wire runs at lower current (typically 450–650 A against 700–900 A for two wires), so the HAZ is narrower and the residual stress accumulated after each run is lower.</li>
+<li><b>Lower depth-to-width ratio:</b> a deep, narrow bead solidifies from both sides towards the middle, pushing sulphur (S) and phosphorus (P) to the centreline where hot cracking starts. A wider bead moves the last solidification plane up near the surface, which clearly reduces this risk.</li>
+<li><b>Easier interpass control:</b> 2–3 wire SAW deposits fast and builds heat fast, so interpass temperature can exceed 250°C before the welder notices. Too high an interpass coarsens the grain in the HAZ and lowers impact toughness.</li>
+<li><b>Better hydrogen escape:</b> when interpass temperature is held steady within the controlled range, hydrogen has the conditions to diffuse out of the weld.</li>
+</ul>
+<h2>5. Preheat</h2>
+<ul>
+<li>Example: S355J2+N welded by SAW and FCAW falls in Category B; for steel thicker than 65 mm (including 80–120 mm) the mandatory minimum preheat before welding is <b>110°C (225°F)</b>.</li>
+<li>Heated zone: uniform around the weld, at least as wide as the plate thickness t (80–120 mm) and never less than 75 mm.</li>
+<li>Throughout welding, the temperature at the start and at the end of the weld must not fall below 110°C.</li>
+</ul>
+<p>Two heating methods are commonly used: oxy-gas torches and electric heating (resistance cables). With electric heating the area must be covered with blanket to hold the heat.</p>
+<div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:14px 0"><figure style="margin:0;flex:1 1 150px;max-width:220px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p4.webp" alt="Reference heating positions for an I-beam" width="244" height="333" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Reference heating positions for an I-beam</figcaption></figure><figure style="margin:0;flex:1 1 150px;max-width:220px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p5.webp" alt="Reference heating positions for a box" width="244" height="319" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Reference heating positions for a box</figcaption></figure></div>
+<figure style="margin:16px auto;max-width:440px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p2.webp" alt="Preheating with oxy-gas torches along the weld groove" width="864" height="607" loading="lazy" style="width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Preheating with oxy-gas torches along the weld groove</figcaption></figure>
+<figure style="margin:16px auto;max-width:440px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p10.webp" alt="Electric preheating with resistance cables, covered with blanket to hold the heat on an I-beam" width="900" height="613" loading="lazy" style="width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Electric preheating with resistance cables, covered with blanket to hold the heat on an I-beam</figcaption></figure>
+<h2>6. Where to measure the temperature</h2>
+<figure class="post-hero"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-img1-en.webp" alt="Right and wrong places to measure with an infrared gun" width="1067" height="600" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Right and wrong places to measure with an infrared gun</figcaption></figure>
+<figure style="margin:16px auto;max-width:440px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p1-en.webp" alt="Measuring with an infrared gun: at least t from the weld edge, never closer than 75 mm" width="769" height="624" loading="lazy" style="width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Measuring with an infrared gun: at least t from the weld edge, never closer than 75 mm</figcaption></figure>
+<ul>
+<li>Measure on clean base-metal surface around the point about to be welded, in every direction. Never measure on the weld pool, deposited weld or slag, because the readings are badly off.</li>
+<li>Thin steel under 38 mm: measure at least 2 × the thickness from the weld edge (for example t = 25 mm means at least 50 mm from the edge).</li>
+<li>Steel of 38 mm and over (including 80–120 mm): measure at least t from the weld edge and never closer than 75 mm.</li>
+<li>Joining plates of different thickness: work out the distance and required temperature separately for each plate, with two independent measuring points.</li>
+</ul>
+<figure style="margin:16px auto;max-width:280px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p3.webp" alt="An infrared gun reading the steel temperature while it is being heated with gas torches" width="513" height="643" loading="lazy" style="width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">An infrared gun reading the steel temperature while it is being heated with gas torches</figcaption></figure>
+<p>Measuring tools:</p>
+<ul>
+<li><b>Temperature-indicating crayon (Tempilstik):</b> quick and simple; a streak that melts means the required temperature has been reached. Good for quick preheat checks.</li>
+<li><b>Infrared gun (pyrometer):</b> convenient and non-contact; use it only on clean steel, never on slag or weld spatter (wrong emissivity).</li>
+<li><b>Contact thermocouple:</b> the most accurate; use it for acceptance or when an infrared reading is in doubt.</li>
+</ul>
+<div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:14px 0"><figure style="margin:0;flex:1 1 150px;max-width:220px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p6.webp" alt="Tempilstik temperature-indicating crayon" width="273" height="253" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Tempilstik temperature-indicating crayon</figcaption></figure><figure style="margin:0;flex:1 1 150px;max-width:190px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p7.webp" alt="Infrared thermometer" width="190" height="325" loading="lazy" style="max-width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Infrared thermometer</figcaption></figure></div>
+<h2>7. Interpass temperature and heat input</h2>
+<p>SAW uses high current and generates a lot of heat, so limiting the interpass temperature is vital.</p>
+<ul>
+<li><b>Minimum ≥ 110°C:</b> below it there is a risk of cold cracking.</li>
+<li><b>Maximum per WPS</b> (typically 250°C for steel with CVN requirements): above it the grain coarsens, the metal becomes brittle and CVN toughness at −20°C is lost.</li>
+</ul>
+<p>Measure the interpass temperature just before striking the arc for each run, and just before the second and later layers of a multipass weld. Record every reading in the welding log. Below 110°C: stop and reheat. Above 250°C: stop and wait. Let the part cool naturally in air, with no fans or water, and weld on only when it is below 250°C.</p>
+<h2>8. Handling a stop in the middle of welding</h2>
+<p>To avoid cold cracking the preheat temperature must be maintained throughout welding. When a stop cannot be avoided, follow the procedure below.</p>
+<p><b>Planned stop (end of shift, long break):</b></p>
+<ol>
+<li>Choose a sensible stop point: not at an intersection, a structural corner or a stress concentration; prefer the middle of a straight weld. Stop only after at least 2 layers have been welded.</li>
+<li>Fill the crater before breaking the arc to avoid crater cracks.</li>
+<li>Chip the slag at the stop point while the metal is still hot.</li>
+<li>Insulate immediately with ceramic or glass wool while the temperature is still above 110°C; never leave the part to cool bare in the air.</li>
+<li>Record in the shift handover log: temperature at the stop, location of the stop, time and condition of the insulation.</li>
+</ol>
+<p>At the start of the next shift, re-measure the actual temperature. If it has dropped below 110°C, reheat to ≥ 110°C before welding on.</p>
+<p><b>Unplanned stop (power cut, equipment failure):</b> wrap insulation on immediately to hold the heat. When power returns:</p>
+<ul>
+<li>Temperature still ≥ 110°C: clean the slag, check the crater, reheat to 110°C if needed and weld on.</li>
+<li>Temperature &lt; 110°C: you must reheat the whole weld zone to ≥ 110°C before welding on.</li>
+<li>Cooled completely to ambient and stopped for more than 4 hours: carry out UT/MT at the stop point to find any delayed crack that may have formed, then reheat the whole zone and weld on.</li>
+</ul>
+<h2>9. Insulating right after welding</h2>
+<ul>
+<li>Chip off the slag before wrapping.</li>
+<li>Wrap with ceramic or glass wool while the temperature is still above 110°C.</li>
+<li>Extent: cover the weld completely and extend at least t (80–120 mm) on each side from the weld edge, and never less than 75 mm in any case. Secure the edges with steel straps or heat-resistant magnets.</li>
+<li><b>Never</b> use fans or water to cool hot steel, especially above 315°C (600°F), because it causes thermal shock and cracking.</li>
+</ul>
+<figure class="post-hero"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-img2-en.webp" alt="How to insulate a box and an I-beam" width="1067" height="600" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">How to insulate a box and an I-beam</figcaption></figure>
+<p><b>750×1500 mm box (4 longitudinal welds at the 4 corners):</b></p>
+<ol>
+<li>As soon as each corner weld is done, clean the slag and wrap it temporarily, covering ≥ t on each side.</li>
+<li>Weld and temporarily wrap the remaining corners in turn, checking interpass temperature before each new run.</li>
+<li>After all 4 corners, wrap the blanket continuously round the 4 faces, overlapping ≥ 100 mm at the box corners.</li>
+<li>Fit steel straps at ≤ 500 mm spacing, tight enough that the blanket hugs the steel with no sag or draught.</li>
+<li>Close both box ends so convection draughts do not run through the box and cool it from inside.</li>
+</ol>
+<p>Box longer than 3 m: use at least 2 workers wrapping from both ends towards the middle so the whole length is covered in the shortest time.</p>
+<figure style="margin:16px auto;max-width:280px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p9.webp" alt="A long box fully wrapped in insulation blanket along its length" width="490" height="679" loading="lazy" style="width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">A long box fully wrapped in insulation blanket along its length</figcaption></figure>
+<p><b>I-beam (4 flange–web welds):</b></p>
+<ol>
+<li>When the 2 welds on the lower flange are done, wrap those 2 welds immediately.</li>
+<li>Flip the beam to weld the upper flange according to the procedure; when done, wrap the 2 upper-flange welds.</li>
+<li>Stuff extra blanket into the 4 inner corners between flange and web, where heat leaks most easily. Leave no bare metal at the corners.</li>
+<li>Fit steel straps across the whole I section at ≤ 500 mm spacing, holding the blanket tight against every face of the flanges and web.</li>
+</ol>
+<p>Note: the web of a large beam conducts heat away fast, and the heat from the lower welds does not reach the upper welds sufficiently. So as soon as a weld is finished it must be insulated at once to keep the temperature as required.</p>
+<figure style="margin:16px auto;max-width:280px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p11-en.webp" alt="Insulation blanket filling the beam" width="507" height="637" loading="lazy" style="width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Insulation blanket filling the beam</figcaption></figure>
+<h2>10. Infrared readings under the insulation and removal schedule</h2>
+<p>Open only a small corner of the blanket, very briefly, so the laser reaches the metal surface (at least 75 mm from the weld edge); read it within seconds, then close it and pack it tight at once.</p>
+<figure style="margin:16px auto;max-width:280px;text-align:center"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-p12-en.webp" alt="Opening the blanket briefly to take an infrared reading" width="507" height="558" loading="lazy" style="width:100%;height:auto;border-radius:8px"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Opening the blanket briefly to take an infrared reading</figcaption></figure>
+<ul>
+<li><b>First 0–12 hours:</b> never open the blanket to measure.</li>
+<li><b>After 12–24 hours:</b> first quick, small peek.</li>
+<li><b>If still above 100°C:</b> wait another 4–6 hours before measuring again.</li>
+<li><b>At ≤ 50°C:</b> the insulation may be removed completely.</li>
+</ul>
+<h2>11. Postheat: removing diffusible hydrogen</h2>
+<p><b>Postheat is mandatory when:</b> (1) a CJP weld on steel 80 mm thick or more; (2) it is specifically required by the standard, the contract or the design engineer; (3) a repair weld with an excavated groove deeper than 12 mm (1/2 inch).</p>
+<ul>
+<li>Postheat must start <b>immediately</b> after the last pass: the weld must not cool below the minimum preheat temperature (110°C) before postheat heating begins.</li>
+<li>No interruption: the transition from welding to postheat must be continuous. This is the key difference from ordinary slow cooling under insulation.</li>
+</ul>
+<p><b>Temperature and hold-time parameters:</b></p>
+<ul>
+<li>Postheat temperature (both ordinary and repair welds): minimum <b>230°C (450°F)</b>, maximum <b>290°C (550°F)</b>.</li>
+<li>Ordinary welds: hold for at least 1 hour per 25 mm of weld thickness, up to a maximum of 2 hours (take the smaller value). Example 100 mm steel: 100/25 = 4 hours, and the smaller of 4 hours and 2 hours is 2 hours.</li>
+<li>Repair welds: 1 hour per 25 mm of excavation depth, and never less than 1 hour. Example a 75 mm deep groove: 75/25 = 3 hours.</li>
+</ul>
+<figure class="post-hero"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-img5-en.webp" alt="Temperature–time chart of the postheat procedure" width="1067" height="600" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Temperature–time chart of the postheat procedure</figcaption></figure>
+<ol>
+<li>Finish the last pass: fill the crater and break the arc. Do not let the part cool, and keep the heating equipment ready.</li>
+<li>Measure the temperature at the weld at once (at least 75 mm from the edge); make sure it is still ≥ 110°C before heating up for postheat.</li>
+<li>Heat up gradually to 230–290°C, not too fast to avoid thermal shock, using gas torches or resistance heaters wrapped round the weld.</li>
+<li>Hold 230–290°C for the whole calculated time. Measure at several points along the weld to reach uniform temperature, and log the temperature every 15–20 minutes.</li>
+<li>Switch off the heating, wrap the whole weld tightly in ceramic blanket and cool slowly as in section 9. Never cool it quickly.</li>
+<li>After it has cooled completely, wait at least 48 hours and then test by UT and MT, paying particular attention to the HAZ and the CJP root.</li>
+</ol>
+<p><b>Postheat versus PWHT:</b> postheat cannot replace PWHT (Post Weld Heat Treatment). Postheat only removes diffusible hydrogen to prevent cold cracking. If the design requires PWHT (typically 580–650°C in a furnace), PWHT must be carried out separately to the applicable standard.</p>
+<h2>12. UT for cold cracks: put the probe directly on the weld cap</h2>
+<p>Ultrasonic testing (UT) must be done <b>after the weld is complete and has cooled completely for at least 48 hours</b> (and after postheat, if any) to find delayed cracks.</p>
+<p>Cold cracks in thick steel are often transverse cracks square to the weld axis, or underbead cracks in the HAZ. If you only scan from both sides of the weld with the probe on the base metal, the beam runs parallel to the plane of a transverse crack, so the echo is weak and the crack is easily missed. To find this kind of defect you must also scan with the <b>probe placed directly on the weld cap</b>, sending the beam along the weld axis so that it strikes the crack face square-on.</p>
+<figure class="post-hero"><img src="kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-80-120mm-img6-en.webp" alt="UT for transverse cracks: scanning from the base metal compared with scanning on the weld cap" width="1067" height="600" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">UT for transverse cracks: scanning from the base metal compared with scanning on the weld cap</figcaption></figure>
+<ol>
+<li><b>Timing:</b> test only after the weld has cooled completely for at least 48 hours (or the waiting time set by the WPS, standard or contract).</li>
+<li><b>Cap surface preparation:</b> chip off slag, spatter and sharp ridges; dress the cap flat and smooth enough for good probe contact, to the degree set by the UT procedure or the applicable standard. Wipe it clean and apply couplant evenly.</li>
+<li><b>Probe and calibration:</b> use an angle-beam probe whose frequency and beam angle follow the approved UT procedure; calibrate on the reference block, and correct for the surface-coupling loss of the cap compared with the base metal if the procedure requires it. Steel 80–120 mm thick needs a long sound path, so check sensitivity at long range.</li>
+<li><b>Scanning on the cap:</b> place the probe on the cap with the beam directed along the weld axis; scan in both directions along the axis and shift the probe across the full width of the cap. Combine this with scanning across the weld from both sides on the base metal to find defects running lengthways.</li>
+<li><b>Areas needing attention:</b> the HAZ and CJP root, the start and end of each run, positions where welding was stopped midway, and highly restrained areas.</li>
+<li><b>Evaluation and recording:</b> when a suspect signal appears, re-check it with several beam angles, measure its position and length, compare it with the project acceptance standard (cracks are not acceptable) and add surface MT if needed. Record everything in the report.</li>
+</ol>
+<p>UT must be carried out by suitably certified personnel following an approved procedure. The parameters in this section are general guidance; specific values follow the project's UT procedure.</p>
+<p>Read this document together with the approved WPS. Any change of parameters must be approved by a certified welding engineer (IWE/CWEng).</p>
+</div>
+
+<p class="post-end"><a href="https://anlabstudio.org/">AnLABstudio.org</a></p>
+</div>
+</div></article><aside class='blog-right'><div class='adzone adzone-rect' data-ad-target='anlab-slot-sidebar'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 300×250 / 300×600</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div><div class='adzone adzone-rect' data-ad-target='anlab-slot-sidebar-2'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 300×250 / 300×600</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div></aside></div></div></div>
+<div class='adzone adzone-leader' style='margin-bottom:46px'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 970×250 / 728×90</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+
+<div class='adzone adzone-leader' style='margin-bottom:34px'><div class='adlabel'>ĐỐI TÁC &amp; NHÀ TÀI TRỢ</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 728×90 / logo đối tác</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+<footer class='site-footer'><div class='wrap'><div><div class='footbrand'><img alt='' class='footlogo' height='26' src='data:image/webp;base64,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' width='26'/><span>An<em>LAB</em></span></div><div class='footnote'>© 2026 AnLAB Software Studio. <span data-en='Create with purpose.'>Sáng tạo có chủ đích.</span></div></div><div class='footlinks'>
+<a href='blog.html'>Blog</a>
+<a href='huong-dan.html'>Hướng dẫn</a>
+<a href='gioi-thieu.html'>Giới thiệu</a>
+<a href='chinh-sach-bao-mat.html'>Chính sách bảo mật</a>
+<a href='quang-cao.html'>Quảng cáo</a>
+<a href='lien-he.html'>Liên hệ</a>
+</div></div></footer>
+<div class='ad-staging' id='ad-staging'>
+<div class='adzone adzone-infeed' data-ad-target='anlab-slot-infeed'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner toàn chiều ngang (responsive)</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+<div class='adzone adzone-leader' data-ad-target='anlab-slot-post-top'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 728×90 / 336×280</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+<div class='adzone adzone-rect' data-ad-target='anlab-slot-sidebar'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 300×250 / 300×600</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+<div class='adzone adzone-leader' data-ad-target='anlab-slot-post-bottom'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 728×90 / 336×280</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+</div>
+
+<script>
+/* AnLAB Blogger enhancement: no user data collection, no API keys. */
+(function(){
+  'use strict';
+  /* ===== CÀI ĐẶT QUẢNG CÁO =====
+     SHOW_EMPTY_AD_SLOTS: true  = khu vực chưa có banner hiện khung "Còn trống — liên hệ đặt quảng cáo"
+                          false = khu vực trống ẩn hoàn toàn (nên đặt false khi đã chạy AdSense) */
+  var SHOW_EMPTY_AD_SLOTS=true;
+  var INFEED_AFTER_CARD=3; /* banner xen giữa danh sách xuất hiện sau thẻ app thứ mấy */
+  var header=document.querySelector('.topbar');
+  var toggle=document.querySelector('.navtoggle');
+  if(toggle&&header){toggle.addEventListener('click',function(){
+    var isOpen=header.classList.toggle('nav-open');
+    toggle.setAttribute('aria-expanded',String(isOpen));
+  });}
+
+  function safeColor(v){return /^#[0-9a-fA-F]{6}$/.test(v||'')?v:null;}
+  function safeURL(raw){
+    if(!raw)return null;raw=String(raw).trim();
+    if(!/^https:\/\//i.test(raw))return null;
+    try{var u=new URL(raw);return u.protocol==='https:'?u.href:null;}catch(e){return null;}
+  }
+  function getInfo(holder){
+    if(!holder)return null;
+    var root=holder.content||holder; /* <template> keeps post HTML inert (no image loading) */
+    return root.querySelector('.anlab-app-data,[data-anlab-app]');
+  }
+  function firstLetter(text){
+    var t=(text||'').trim();
+    return t?t.charAt(0).toUpperCase():'A';
+  }
+  function setIcon(box,url){
+    var img=safeURL(url);if(!box||!img)return;
+    var el=document.createElement('img');el.src=img;el.alt='';el.loading='lazy';
+    el.onerror=function(){el.remove();};
+    box.textContent='';box.appendChild(el);
+  }
+
+  /* ---- Catalog cards ---- */
+  document.querySelectorAll('.app-card').forEach(function(card){
+    var title=card.querySelector('.card-title');
+    var icon=card.querySelector('.card-icon');
+    if(icon&&title)icon.textContent=firstLetter(title.textContent);
+    var info=getInfo(card.querySelector('.post-source'));
+    if(!info)return;
+    var v=info.dataset;
+    if(safeColor(v.accent))card.style.setProperty('--app-bg',v.accent);
+    if(safeColor(v.accent2))card.style.setProperty('--app-bg2',v.accent2);
+    var p=card.querySelector('.app-platform');if(p&&v.platform)p.textContent=v.platform;
+    var ver=card.querySelector('.app-version');if(ver&&v.version)ver.textContent='VERSION '+v.version;
+    setIcon(icon,v.icon);
+  });
+
+  /* ---- Count & search/label heading ---- */
+  var list=document.querySelector('.cards');
+  var count=document.querySelector('[data-app-count]');
+  if(count)count.textContent=(list?list.querySelectorAll('.app-card').length:0)+' sản phẩm trên trang';
+
+  var path=decodeURIComponent(location.pathname);
+  var labelMatch=path.match(/\/search\/label\/([^/]+)/);
+  var q=new URLSearchParams(location.search).get('q');
+  var heading=document.querySelector('[data-catalog-title]');
+  var note=document.querySelector('[data-search-note]');
+  if(heading&&(labelMatch||q)){
+    heading.textContent='';
+    heading.appendChild(document.createTextNode(labelMatch?'Danh mục ':'Kết quả '));
+    var s=document.createElement('span');
+    s.textContent=labelMatch?labelMatch[1]+'.':'“'+q+'”';
+    heading.appendChild(s);
+    if(note)note.classList.remove('hide');
+  }
+  var input=document.querySelector('.searchwrap input[name="q"]');
+  if(input&&q)input.value=q;
+
+  /* ---- Active chip ---- */
+  document.querySelectorAll('.chip').forEach(function(chip){
+    var href=chip.getAttribute('href')||'';
+    var cp='';try{cp=decodeURIComponent(new URL(href,location.href).pathname);}catch(e){}
+    var isAll=chip.dataset.all==='yes';
+    if((labelMatch&&cp===path)||(!labelMatch&&!q&&isAll))chip.classList.add('active');
+  });
+
+  /* ---- Ad zones: Blogger forbids b:section inside a widget, so zones are moved after render ---- */
+  if(!SHOW_EMPTY_AD_SLOTS)document.documentElement.classList.add('ads-hide-empty');
+  if(list){
+    var cardsEls=list.querySelectorAll('.app-card');
+    if(cardsEls.length){
+      var slot=document.createElement('div');slot.className='ad-target';slot.id='anlab-slot-infeed';
+      var after=cardsEls[Math.min(INFEED_AFTER_CARD,cardsEls.length)-1];
+      after.parentNode.insertBefore(slot,after.nextSibling);
+    }
+  }
+  document.querySelectorAll('#ad-staging .adzone[data-ad-target]').forEach(function(zone){
+    var target=document.getElementById(zone.getAttribute('data-ad-target'));
+    if(target)target.appendChild(zone);else zone.remove();
+  });
+
+  /* ---- Post detail: download box ---- */
+  var doc=document.querySelector('.article-shell');
+  if(doc){
+    var info=getInfo(doc.querySelector('.article-body'));
+    var dlIcon=doc.querySelector('.dl-icon');
+    var h=doc.querySelector('.article-head h1');
+    if(dlIcon&&h)dlIcon.textContent=firstLetter(h.textContent);
+    if(info){
+      var v=info.dataset;
+      ['version','platform','size','license','format','sha256'].forEach(function(key){
+        var row=doc.querySelector('[data-app-row="'+key+'"]');
+        var span=doc.querySelector('[data-app-field="'+key+'"]');
+        if(span&&v[key]){span.textContent=v[key];if(row)row.classList.remove('hide');}
+      });
+      setIcon(dlIcon,v.icon);
+      if(dlIcon&&safeColor(v.accent)&&safeColor(v.accent2))
+        dlIcon.style.background='linear-gradient(135deg,'+v.accent+','+v.accent2+')';
+      var dl=doc.querySelector('.dl-btn');
+      var href=safeURL(v.download);
+      /* Only an https link activates the button — never show a working-looking fake download */
+      if(dl&&href){
+        dl.href=href;dl.target='_blank';dl.rel='noopener noreferrer';
+        dl.classList.remove('disabled');dl.removeAttribute('aria-disabled');
+        dl.textContent='↓  TẢI PHẦN MỀM';
+      }
+    }
+  }
+})();
+
+
+
+/* AnLAB language switch (Tiếng Việt / English). Theme text is translated from the dictionary below;
+   posts can add <div class="lang-block" data-lang="vi"> ... </div> and <div class="lang-block" data-lang="en" hidden> ... </div>. */
+(function(){
+  'use strict';
+  var EN={
+    'Ứng dụng':'Apps','Công cụ':'Tools','Học tập':'Learning','Trò chơi':'Games','Mô phỏng':'Simulation','Giới thiệu':'About','Hướng dẫn':'Guides',
+    'Khám phá tất cả ↗':'Explore all ↗','Khám phá ứng dụng ↗':'Explore apps ↗','Về AnLAB →':'About AnLAB →',
+    'Ý tưởng nhỏ.':'Small ideas.','Giá trị lớn.':'Big value.',
+    'Một không gian để giới thiệu, chia sẻ những ứng dụng thực tế — từ công cụ công việc, học tập đến trò chơi. Mọi ý tưởng đều có thể trở thành sản phẩm hữu ích.':'A space to introduce and share practical apps — from work tools and learning to games. Every idea can become a useful product.',
+    'QUẢNG CÁO':'ADVERTISEMENT','ĐỐI TÁC & NHÀ TÀI TRỢ':'PARTNERS & SPONSORS',
+    'Còn trống — liên hệ đặt quảng cáo →':'Available — contact us to advertise →',
+    'Vị trí banner toàn chiều ngang (responsive)':'Banner slot — full width (responsive)',
+    'Vị trí banner 728×90 / logo đối tác':'Banner slot 728×90 / partner logos',
+    'Khám phá':'Explore','sản phẩm.':'products.','Danh mục':'Category','Kết quả':'Results',
+    'Phần mềm do AnLAB giới thiệu, với hướng dẫn cài đặt, ghi chú phiên bản và liên kết tải rõ ràng.':'Software presented by AnLAB, with clear installation guides, release notes and download links.',
+    'Tất cả':'All','KHO ỨNG DỤNG':'APP LIBRARY','Đang lọc kết quả.':'Filtering results.','← Xem tất cả ứng dụng':'← View all apps',
+    'Tìm tên phần mềm...':'Search software name...','Tìm ứng dụng':'Search apps','Tìm':'Search','Mở điều hướng':'Open navigation',
+    'Xem chi tiết ↗':'View details ↗','← Mới hơn':'← Newer','Xem thêm ứng dụng →':'More apps →',
+    'Chưa có ứng dụng nào':'No apps yet','Hãy đăng bài đầu tiên trong Blogger → Bài đăng (mỗi bài = một phần mềm).':'Publish your first post in Blogger → Posts (one post = one app).',
+    'Không tìm thấy trang bạn yêu cầu.':'The page you requested could not be found.','← Về kho ứng dụng':'← Back to the app library',
+    'Trang chủ':'Home','Tải xuống':'Download','Bản phát hành chính thức từ AnLAB.':'Official release from AnLAB.',
+    'CHƯA CÓ LIÊN KẾT TẢI':'NO DOWNLOAD LINK YET','↓ TẢI PHẦN MỀM':'↓ DOWNLOAD',
+    'Phiên bản':'Version','Nền tảng':'Platform','Định dạng':'Format','Dung lượng':'Size','Giấy phép':'License','Miễn phí':'Free',
+    'File được lưu tại kho ngoài (GitHub/Drive). Chỉ tải từ nút này; quảng cáo trên trang không phải nút tải.':'The file is hosted externally (GitHub/Drive). Only download via this button; ads on this page are not download buttons.',
+    'Không chỉ là':'More than','phần mềm.':'software.',
+    'Đó là cách biến ý tưởng thành những công cụ hữu ích. Tập trung vào trải nghiệm đơn giản, chất lượng rõ ràng và các bản cập nhật có ý nghĩa.':'It is a way to turn ideas into useful tools — focused on simple experiences, clear quality and meaningful updates.',
+    'Chính sách bảo mật':'Privacy Policy','Quảng cáo':'Advertise','Liên hệ':'Contact'
+  };
+  var RX=[[/^Cập nhật: (.*)$/,'Updated: $1'],[/^(\d+) sản phẩm trên trang$/,'$1 apps on this page'],[/^Vị trí banner (.*)$/,'Banner slot $1']];
+  var SKIP='.article-body,.post-source,.card-title,.card-description,.article-head h1,.side-title,.breadcrumbs span,.langswitch,[data-en],[data-en-html]';
+  var orig=new WeakMap(), lang='vi';
+
+  function tr(raw){
+    var k=raw.replace(/\s+/g,' ').trim();
+    if(!k)return null;
+    if(Object.prototype.hasOwnProperty.call(EN,k))return EN[k];
+    for(var i=0;i<RX.length;i++){if(RX[i][0].test(k))return k.replace(RX[i][0],RX[i][1]);}
+    return null;
+  }
+  function textNodes(){
+    var out=[],w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n;
+    while((n=w.nextNode())){
+      var p=n.parentNode;if(!p)continue;
+      var t=p.nodeName;if(t==='SCRIPT'||t==='STYLE'||t==='TEMPLATE'||t==='NOSCRIPT')continue;
+      if(p.closest&&p.closest(SKIP))continue;
+      out.push(n);
+    }
+    return out;
+  }
+  function applyText(){
+    textNodes().forEach(function(n){
+      var o=orig.get(n);
+      if(o===undefined){if(tr(n.nodeValue)===null)return;o=n.nodeValue;orig.set(n,o);}
+      var next=o;
+      if(lang==='en'){
+        var lead=o.match(/^\s*/)[0],trail=o.match(/\s*$/)[0];
+        next=lead+tr(o)+trail;
+      }
+      if(n.nodeValue!==next)n.nodeValue=next;
+    });
+  }
+  function applyAttrs(){
+    document.querySelectorAll('[placeholder],[aria-label]').forEach(function(el){
+      if(el.closest('.langswitch'))return;
+      ['placeholder','aria-label'].forEach(function(a){
+        var cur=el.getAttribute(a);if(cur===null)return;
+        var key='data-vi-'+a,o=el.getAttribute(key);
+        if(o===null){if(tr(cur)===null)return;o=cur;el.setAttribute(key,o);}
+        var next=lang==='en'?tr(o):o;
+        if(cur!==next)el.setAttribute(a,next);
+      });
+    });
+  }
+  function setLang(l){
+    lang=(l==='en')?'en':'vi';
+    document.querySelectorAll('.lang-block').forEach(function(b){b.hidden=b.getAttribute('data-lang')!==lang;});
+    document.querySelectorAll('[data-set-lang]').forEach(function(b){
+      var on=b.getAttribute('data-set-lang')===lang;
+      b.classList.toggle('on',on);b.setAttribute('aria-pressed',String(on));
+    });
+    try{document.documentElement.lang=lang;}catch(e){}
+    applyText();applyAttrs();
+    try{localStorage.setItem('anlab_lang',lang);}catch(e){}
+  }
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){
+    b.addEventListener('click',function(){setLang(b.getAttribute('data-set-lang'));});
+  });
+  var saved='vi';
+  try{saved=localStorage.getItem('anlab_lang')||'vi';}catch(e){}
+  setLang(saved);
+  window.addEventListener('load',function(){setLang(lang);});
+})();
+</script>
+<script>(function(){
+  document.querySelectorAll('.app-card').forEach(function(card){var ps=card.querySelector('.post-source .anlab-app-data');var c=ps&&ps.getAttribute('data-cover');var cv=card.querySelector('.card-cover');if(c&&/^https:\/\//.test(c)&&cv){cv.style.backgroundImage="url('"+c+"'),linear-gradient(135deg,var(--app-bg,#302862),var(--app-bg2,#1b173e))";cv.style.backgroundSize='cover';cv.style.backgroundPosition='center';var ic=cv.querySelector('.card-icon');if(ic)ic.style.display='none';var sg=cv.querySelector('.cover-sign');if(sg)sg.style.display='none';}});
+  document.querySelectorAll('[data-play] .play-poster').forEach(function(b){b.addEventListener('click',function(){var f=document.createElement('iframe');f.src='on-ly-thuyet-lai-xe.html';f.title='Ôn lý thuyết lái xe';f.setAttribute('allowfullscreen','');f.style.cssText='width:100%;height:640px;border:1px solid #e3e6f1;border-radius:14px;background:#fff;display:block';b.replaceWith(f);});});
+  function actionLabel(){
+    var info=document.querySelector('.article-body .anlab-app-data');var b=document.querySelector('.article-shell .dl-btn');
+    if(!info||!b||!info.dataset.actionVi||b.classList.contains('disabled'))return;
+    var en=(document.documentElement.lang==='en');
+    b.textContent=en?info.dataset.actionEn:info.dataset.actionVi;
+  }
+  actionLabel();setTimeout(actionLabel,50);setTimeout(actionLabel,500);
+  window.addEventListener('load',function(){setTimeout(actionLabel,100);});
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){b.addEventListener('click',function(){setTimeout(actionLabel,30);setTimeout(actionLabel,300);});});
+  var q=new URLSearchParams(location.search);
+  var cat=q.get('cat'), term=(q.get('q')||'').trim().toLowerCase();
+  var cards=[].slice.call(document.querySelectorAll('.app-card'));
+  if(cards.length&&(cat||term)){
+    cards.forEach(function(c){
+      var t=(c.querySelector('.card-title')||{}).textContent||'';
+      var d=(c.querySelector('.card-description')||{}).textContent||'';
+      var okCat=!cat||c.getAttribute('data-cat')===cat;
+      var okQ=!term||(t+' '+d).toLowerCase().indexOf(term)>-1;
+      if(!(okCat&&okQ))c.style.display='none';
+    });
+    var n=cards.filter(function(c){return c.style.display!=='none';}).length;
+    var cnt=document.querySelector('[data-app-count]');if(cnt)cnt.textContent=n+' sản phẩm trên trang';
+    var h=document.querySelector('[data-catalog-title]');
+    if(h&&cat){h.textContent='';h.appendChild(document.createTextNode('Danh mục '));var s=document.createElement('span');s.textContent=cat+'.';h.appendChild(s);}
+    var note=document.querySelector('[data-search-note]');if(note)note.classList.remove('hide');
+    if(!n){var box=document.querySelector('.cards');if(box){var p=document.createElement('div');p.className='noapps';p.innerHTML='<strong>Không có kết quả</strong><p>Thử từ khoá hoặc danh mục khác.</p>';box.parentNode.insertBefore(p,box);}}
+  }
+  document.querySelectorAll('.chip').forEach(function(ch){
+    var u=new URL(ch.getAttribute('href'),location.href);
+    var c=u.searchParams.get('cat');
+    ch.classList.toggle('active',(c||null)===(cat||null)&&!term);
+  });
+})();
+</script>
+<script>(function(){
+  /* EN/VI switch for <meta> tags (description, og:*): the site script only handles visible text */
+  function apply(){
+    var en=false;try{en=(localStorage.getItem('anlab_lang')==='en');}catch(e){}
+    if(document.documentElement.lang==='en')en=true;
+    document.querySelectorAll('meta[data-en-content]').forEach(function(m){
+      if(!m.hasAttribute('data-vi-content'))m.setAttribute('data-vi-content',m.getAttribute('content')||'');
+      m.setAttribute('content',en?m.getAttribute('data-en-content'):m.getAttribute('data-vi-content'));
+    });
+  }
+  apply();window.addEventListener('load',apply);
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){
+    b.addEventListener('click',function(){setTimeout(apply,30);setTimeout(apply,300);});
+  });
+})();</script>
+</body></html>
