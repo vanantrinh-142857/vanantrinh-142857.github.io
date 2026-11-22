@@ -1,0 +1,1 @@
+# File/thư mục KHÔNG BAO GIỜ bị tự động xóa (mỗi dòng một mẫu, ví dụ: ban-nhap-*.html, tai-lieu/*)

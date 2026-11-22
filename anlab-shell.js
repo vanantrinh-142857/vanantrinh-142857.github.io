@@ -26,6 +26,7 @@
     results: ['Kết quả cho', 'Results for'], none: ['Không tìm thấy kết quả.', 'No results found.'],
     about: ['Giới thiệu', 'About'], contact: ['Liên hệ', 'Contact'], privacy: ['Chính sách bảo mật', 'Privacy policy'],
     fold: ['Thu nhỏ khung thư mục', 'Collapse folder panel'], unfold: ['Ghim mở cây thư mục', 'Pin folder panel open'],
+    prev: ['‹ Trước', '‹ Prev'], next: ['Sau ›', 'Next ›'], pg: ['Trang', 'Page'],
     kdesc: ['Hướng dẫn, kinh nghiệm QC – hàn – kết cấu thép', 'Guides and know-how: QC, welding, structural steel']
   };
   function en() { return root.lang === 'en'; }
@@ -48,15 +49,43 @@
   function norm(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase(); }
   function folder(id) { return D.folders.filter(function (f) { return f.id === id; })[0]; }
   function sub(f, id) { return (f.subs || []).filter(function (s) { return s.id === id; })[0]; }
+  function newest(arr) { return arr.sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); }); } /* mới nhất lên trên */
   function items(fid, sid) {
-    return D.items.filter(function (i) { return i.folder === fid && (!sid || i.sub === sid); })
-      .sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); });
+    return newest(D.items.filter(function (i) { return i.folder === fid && (!sid || i.sub === sid); }));
   }
   function route() {
     var p = location.hash.replace(/^#\/?/, '').split('/').map(function (x) { try { return decodeURIComponent(x); } catch (e) { return x; } });
     return p[0] === '' ? [] : p;
   }
   function link(path) { return HOME + '#/' + path; }
+
+  /* ---------- phân trang: 15 bài mỗi trang ---------- */
+  var PER = 15, pageNum = 1;
+  function paginate(arr, pageable) {
+    if (!pageable || arr.length <= PER) return { rows: arr, nav: null };
+    var pages = Math.ceil(arr.length / PER);
+    if (pageNum > pages) pageNum = pages;
+    var nav = h('nav', { 'class': 'nx-pager', 'aria-label': t('pg') });
+    function btn(label, n, on, off) {
+      var b = h('button', { type: 'button', 'class': on ? 'on' : '', 'aria-label': t('pg') + ' ' + n }, [label]);
+      if (on) b.setAttribute('aria-current', 'page');
+      if (off) b.disabled = true;
+      b.addEventListener('click', function () {
+        pageNum = n; renderMain();
+        var top = (document.querySelector('.blog-layout') || main).getBoundingClientRect().top + window.pageYOffset - 90;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      });
+      return b;
+    }
+    nav.appendChild(btn(t('prev'), pageNum - 1, false, pageNum === 1));
+    for (var n = 1, last = 0; n <= pages; n++) {
+      if (n !== 1 && n !== pages && Math.abs(n - pageNum) > 1) continue;
+      if (last && n - last > 1) nav.appendChild(h('span', null, ['…']));
+      nav.appendChild(btn(String(n), n, n === pageNum, false)); last = n;
+    }
+    nav.appendChild(btn(t('next'), pageNum + 1, false, pageNum === pages));
+    return { rows: arr.slice((pageNum - 1) * PER, pageNum * PER), nav: nav };
+  }
 
   /* ---------- cây thư mục ---------- */
   function currentItem() { return D.items.filter(function (i) { return i.href === page; })[0]; }
@@ -144,15 +173,20 @@
       h('div', null, [h('b', null, [tx(it)]), h('span', null, [(folder(it.folder) ? tx(folder(it.folder)) : '') + (it.meta ? ' · ' + it.meta : '')])])
     ]);
   }
-  function listOf(arr, emptyKey) {
+  function listOf(arr, emptyKey, pageable) {
     var w = h('div');
     if (!arr.length) { w.appendChild(h('div', { 'class': 'nx-box nx-empty' }, [t(emptyKey)])); return w; }
-    arr.forEach(function (it) { w.appendChild(it.type === 'app' ? appCard(it) : postCard(it)); });
+    var pg = paginate(arr, pageable);
+    pg.rows.forEach(function (it) { w.appendChild(it.type === 'app' ? appCard(it) : postCard(it)); });
+    if (pg.nav) w.appendChild(pg.nav);
     return w;
   }
-  function appsGrid(arr) {
+  function appsGrid(arr, pageable) {
     if (!arr.length) return h('div', { 'class': 'nx-box nx-empty' }, [t('emptyApps')]);
-    var g = h('div', { 'class': 'nx-apps' }); arr.forEach(function (it) { g.appendChild(appCard(it)); }); return g;
+    var pg = paginate(arr, pageable), g = h('div', { 'class': 'nx-apps' });
+    pg.rows.forEach(function (it) { g.appendChild(appCard(it)); });
+    if (!pg.nav) return g;
+    var w = h('div'); w.appendChild(g); w.appendChild(pg.nav); return w;
   }
   function sec(title, more, node) {
     var head = h('div', { 'class': 'nx-sec' }, [h('h3', null, [title])]);
@@ -176,26 +210,26 @@
     if (!main) return;
     var r = route(), out = document.createDocumentFragment(), f = r[0] && folder(r[0]);
     if (r[0] === 'q') {
-      var q = norm(r.slice(1).join('/')), res = D.items.filter(function (i) { return norm(tx(i) + ' ' + sm(i) + ' ' + i.vi + ' ' + (i.sumVi || '')).indexOf(q) > -1; });
+      var q = norm(r.slice(1).join('/')), res = newest(D.items.filter(function (i) { return norm(tx(i) + ' ' + sm(i) + ' ' + i.vi + ' ' + (i.sumVi || '')).indexOf(q) > -1; }));
       out.appendChild(crumb([{ text: t('results') + ' “' + r.slice(1).join('/') + '”' }]));
       out.appendChild(h('h2', { 'class': 'nx-title' }, [t('results') + ' “' + r.slice(1).join('/') + '”']));
-      out.appendChild(listOf(res, 'none'));
+      out.appendChild(listOf(res, 'none', true));
     } else if (r[0] === 'apps') {
       out.appendChild(crumb([{ text: t('appsT') }])); out.appendChild(h('h2', { 'class': 'nx-title' }, ['🧩 ' + t('appsT')]));
-      out.appendChild(h('div', { style: 'margin-top:12px' }, [appsGrid(D.items.filter(function (i) { return i.type === 'app'; }))]));
+      out.appendChild(h('div', { style: 'margin-top:12px' }, [appsGrid(newest(D.items.filter(function (i) { return i.type === 'app'; })), true)]));
     } else if (f) {
       var sb = r[1] && sub(f, r[1]);
       var parts = [{ text: tx(f), href: sb ? link(f.id) : null }]; if (sb) parts.push({ text: tx(sb) });
       out.appendChild(crumb(parts));
       out.appendChild(h('h2', { 'class': 'nx-title' }, [f.icon + ' ' + (sb ? tx(sb) : tx(f))]));
-      if (f.kind === 'posts') { if ((f.subs || []).length) out.appendChild(chips(f, sb ? sb.id : '')); out.appendChild(h('div', { style: 'margin-top:12px' }, [listOf(items(f.id, sb && sb.id), 'empty')])); }
-      else out.appendChild(h('div', { style: 'margin-top:12px' }, [appsGrid(items(f.id))]));
+      if (f.kind === 'posts') { if ((f.subs || []).length) out.appendChild(chips(f, sb ? sb.id : '')); out.appendChild(h('div', { style: 'margin-top:12px' }, [listOf(items(f.id, sb && sb.id), 'empty', true)])); }
+      else out.appendChild(h('div', { style: 'margin-top:12px' }, [appsGrid(items(f.id), true)]));
     } else {
       /* trang chủ: Blog hiện đầu tiên và mặc định */
       var blog = folder('blog');
       out.appendChild(h('h2', { 'class': 'nx-title' }, [blog.icon + ' ' + tx(blog)]));
       out.appendChild(chips(blog, ''));
-      out.appendChild(listOf(items('blog'), 'empty'));
+      out.appendChild(listOf(items('blog'), 'empty', true));
       var k = folder('kien-thuc');
       if (k) {
         var kl = items('kien-thuc').slice(0, 3), node;
@@ -208,8 +242,8 @@
         }
         out.appendChild(sec(k.icon + ' ' + t('latestK'), link('kien-thuc'), node));
       }
-      var apps = D.items.filter(function (i) { return i.type === 'app'; });
-      if (apps.length) out.appendChild(sec('🧩 ' + t('appsT'), link('apps'), appsGrid(apps)));
+      var apps = newest(D.items.filter(function (i) { return i.type === 'app'; }));
+      if (apps.length) out.appendChild(sec('🧩 ' + t('appsT'), link('apps'), appsGrid(apps.slice(0, PER))));
     }
     main.textContent = ''; main.appendChild(out);
   }
@@ -217,6 +251,7 @@
   function renderAll() { renderTree(); renderMain(); }
   var first = true;
   window.addEventListener('hashchange', function () {
+    pageNum = 1;
     renderAll();
     if (main) { var top = (document.querySelector('.blog-layout') || main).getBoundingClientRect().top + window.pageYOffset - 90; window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' }); }
   });

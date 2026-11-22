@@ -126,3 +126,11 @@
 .dlpromo a.dl-btn{margin-top:8px;padding:12px 14px;text-decoration:none;color:#fff}
 .dlpromo a.dl-win{color:#5145ae}
 .dlpromo a.dlp-more{display:block;text-align:center;margin-top:12px;font-size:12px;font-weight:700;color:#6253d4;text-decoration:none}
+/* phân trang (15 bài / trang) */
+.nx-pager{display:flex;gap:6px;justify-content:center;align-items:center;flex-wrap:wrap;margin:18px 0 6px}
+.nx-pager button{min-width:36px;height:36px;padding:0 12px;border:1px solid #e8ebf3;background:#fff;border-radius:10px;font:600 13px/1 inherit;color:#3b445c;cursor:pointer}
+.nx-pager button:hover:not(:disabled){border-color:#6253d4;color:#6253d4}
+.nx-pager button.on{background:#6253d4;color:#fff;border-color:#6253d4}
+.nx-pager button:disabled{opacity:.4;cursor:default}
+.nx-pager span{color:#8791a3}
+.sf-card[hidden]{display:none}

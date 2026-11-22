@@ -209,3 +209,39 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount); else mount();
 })();
+
+/* Phân trang 15 bài / trang cho các trang mục tĩnh (blog.html, kien-thuc.html, hoc-tap.html…): chỉ tác động khi một danh sách có hơn 15 bài. */
+(function () {
+  'use strict';
+  var PER = 15;
+  function en() { return document.documentElement.lang === 'en'; }
+  function mount() {
+    document.querySelectorAll('.sf-list').forEach(function (list) {
+      var cards = [].slice.call(list.children).filter(function (c) { return c.classList.contains('sf-card'); });
+      if (cards.length <= PER) return;
+      var pages = Math.ceil(cards.length / PER), cur = 1, nav = document.createElement('nav');
+      nav.className = 'nx-pager'; list.parentNode.insertBefore(nav, list.nextSibling);
+      function btn(label, n, on, off) {
+        var b = document.createElement('button'); b.type = 'button'; b.textContent = label;
+        if (on) { b.className = 'on'; b.setAttribute('aria-current', 'page'); }
+        b.disabled = !!off;
+        b.addEventListener('click', function () { cur = n; draw(); list.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+        return b;
+      }
+      function draw() {
+        cards.forEach(function (c, i) { c.hidden = Math.floor(i / PER) + 1 !== cur; });
+        nav.textContent = '';
+        nav.appendChild(btn(en() ? '‹ Prev' : '‹ Trước', cur - 1, false, cur === 1));
+        for (var n = 1, last = 0; n <= pages; n++) {
+          if (n !== 1 && n !== pages && Math.abs(n - cur) > 1) continue;
+          if (last && n - last > 1) { var s = document.createElement('span'); s.textContent = '…'; nav.appendChild(s); }
+          nav.appendChild(btn(String(n), n, n === cur, false)); last = n;
+        }
+        nav.appendChild(btn(en() ? 'Next ›' : 'Sau ›', cur + 1, false, cur === pages));
+      }
+      draw();
+      new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount); else mount();
+})();

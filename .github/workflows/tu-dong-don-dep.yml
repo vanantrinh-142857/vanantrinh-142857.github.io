@@ -1,0 +1,56 @@
+name: Tự động sắp xếp bài và xóa file không dùng
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Chạy thử (chỉ liệt kê, không xóa)'
+        type: boolean
+        default: true
+      force:
+        description: 'Bỏ giới hạn an toàn (80 file)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: tu-dong-don-dep
+  cancel-in-progress: false
+
+jobs:
+  don-dep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # cần lịch sử git để biết file nào mới upload
+
+      - name: Sắp xếp bài trong các trang mục (mới trên, cũ dưới)
+        run: python3 -I .github/scripts/site_tools.py sync
+
+      - name: Xóa file không dùng
+        run: |
+          ARGS=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            [ "${{ inputs.dry_run }}" = "true" ] && ARGS="$ARGS --dry-run"
+            [ "${{ inputs.force }}" = "true" ] && ARGS="$ARGS --force"
+          fi
+          python3 -I .github/scripts/site_tools.py clean $ARGS
+
+      - name: Commit thay đổi
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore: tự động sắp xếp bài và xóa file không dùng [skip ci]"
+            git push || (git pull --rebase && git push)
+            gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
+          fi
