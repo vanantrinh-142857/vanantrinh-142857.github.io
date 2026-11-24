@@ -1,8 +1,0 @@
-XÓA các file sau khỏi repo (bài cũ đã được thay bằng bản cập nhật theo file v2, đổi tên 65-120mm → 80-120mm):
-kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-65-120mm.html
-kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-65-120mm.webp
-kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-65-120mm-en.webp
-kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-65-120mm-img1.webp
-kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-65-120mm-img1-en.webp
-kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-65-120mm-img2.webp
-kien-thuc-kiem-soat-nhiet-chong-nut-nguoi-thep-day-65-120mm-img2-en.webp
