@@ -1312,6 +1312,8 @@ body.lab-dragging,body.lab-dragging *{cursor:grabbing!important;user-select:none
 @media (min-width:1001px) and (max-width:1399px){.gd-top{top:146px}.gd-sec{scroll-margin-top:146px}}
 @media (max-width:1699px){.tmore .tmore-cur{display:none}}
 .tabs .tmore-p button{font-size:15px;padding:10px 12px}
+/* v3.9b: <header> trong nội dung (Hướng dẫn, thẻ…) từng nhận luôn quy tắc dính của header trang (z-index 40/30), nên đè lên menu "Thực hành & tra cứu". Chỉ header của trang (ngoài <main>) được dính. */
+main header{position:static;z-index:auto;backdrop-filter:none;-webkit-backdrop-filter:none}
 /* ===== CSS: Phòng nhân vật (ROOMUI) — chuyển từ ui/room của game Phòng nhân vật v1.6.0, đặt trong khung .pnv; giữ màu tối của game ở cả giao diện Sáng (data-keep-color) ===== */
 .pnv,.pnv-lb,.pnv-tbhop,#pnvChip,.hm-pnv{
   --nen:#100b09;--nen-2:#1c1411;--vien:#4a3424;--chu:#f6ead8;--chu-phu:#c7b39a;--nhan:#ff8a2a;--nhan-2:#ffd27a;--vang:#e9c579;
