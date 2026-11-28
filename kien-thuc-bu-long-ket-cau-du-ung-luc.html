@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title data-en="Preloaded bolts: reading the strength grade and k-class, choosing the tightening method and accepting correctly | AnLAB — Software Studio">Bu lông dự ứng lực: đọc cấp bền, cấp k, chọn cách siết và nghiệm thu cho đúng | AnLAB — Software Studio</title><meta name="description" content="Hai kiểu liên kết bu lông, EN 14399, EN 15048 và ASTM F3125, cấp bền 8.8 và 10.9, lực dự ứng lực Fp,C, hệ HR và HV, cấp k, bốn phương pháp siết, ví dụ tính mô-men và QC nhận hàng."/>
+<meta property="og:title" content="Bu lông dự ứng lực: đọc cấp bền, cấp k, chọn cách siết và nghiệm thu cho đúng | AnLAB — Software Studio"/><meta property="og:description" content="Hai kiểu liên kết bu lông, EN 14399, EN 15048 và ASTM F3125, cấp bền 8.8 và 10.9, lực dự ứng lực Fp,C, hệ HR và HV, cấp k, bốn phương pháp siết, ví dụ tính mô-men và QC nhận hàng."/><meta property="og:image" content="https://anlabstudio.org/kien-thuc-bu-long-ket-cau-du-ung-luc.webp"/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap"/>
+<link rel="stylesheet" href="anlab-base.css"/>
+<link rel="stylesheet" href="anlab-extra.css"/>
+<link rel="stylesheet" href="anlab-shell.css"/>
+<script defer src="anlab-extra.js"></script>
+<script defer src="content.js"></script>
+<script defer src="anlab-shell.js"></script>
+</head><body>
+<header class='topbar'><div class='wrap'>
+<a class='brand' href='index.html'><span class='brandmark'><img alt='AnLAB' height='44' src='data:image/webp;base64,UklGRuwLAABXRUJQVlA4WAoAAAAQAAAAXwAAXwAAQUxQSNkBAAABkHPbtrE9+9772Tb+S2zbTmWzclLbqmzbtm07KZ+LHX7fl7yniyJiAlBFFQegsvWUNUfOX4jR84dXTWxRBiBOoSYNkNd/13vG/NttvbIBUz1lkDfpJcngnI9h5wLJpxMyYVQ1NND1MelcYMwH58i7bQBdJY2UpaQNFDJYck4CdBU0ik7QegrqHfdnQ/9Ao/AqIwob8XSW0t9RJvkULcWNuD/eqG8MVjCiwBFnwQAw6MiIIls2gYHS2S+8l8mH+6laxWESLYW2HIE45LwLQSofnqYq9KOj2I4dgL1BMBs2oOwTg1yBr3La0FPwwHpT6SRzHLVWusVH6CXz3HZeuoMXpDv033+/wZ2X7uAR2Ry3rqaTbeFk6Ua0ZJAssHbxBwa5Al9kYWdwctmwBuhJwRxbARmvgpfKh4fJKg7jaaWyHIA4pdMfBy+T580krWDQglakYFkbBoDBXEYSRZwBAwDKxB9gJE/Ercqob6BV1ilG0kQ8kKoUvq+RvZfOS+IdN6dC48ca8TNJ66XwlpyhoFFVBbS4SToXYi84R15uAKVQdWWQNuoByeCcj2HnSPL2oCQYVN8AaR3XPmfMP13ZJhkwqEkVByC/3siFWw8eitEDW+YPr5UDIE6higBWUDgg7AkAAJAsAJ0BKmAAYAA+VSSORaOhoRQKroQ4BUS2AFOjY4Az2DzO6i/Tfv7+T3DDUv5MfNf+W+4ztT/o/2CP1c/zP9d66v7Xepz9qv2Z93P0s/4X1Df51/petv9DD9cvTT/bH4Wv3c9GbBe+Rf6Lwv7AEzimz/ZZ0D/GY+T/P6SfyDUenoT/7vmb/NP8X/4P7z8BH8k/qn+2/tH7x/Fj1Lf7Ggnfp//PleBjPJs0a2ZoUqfen/azififVLgjpHuNc9L1OPEybCxdHbmiPNWHAX+XAQinR70lnGyWQCQ2zqG04CefT+yhN/k9vdBBDflzolRyc/oHTMIQ0nW8dLOvZCY1/Msjd6Pib57kWa5prXNpcJWj44rV7mZG3rvt38Jyax3tpOh4PlhynV9sqj8bdJ8QFshkYw87pd/q6e6P6aSaQ2GDSpscjDZJIKtdLMyWT2s0K4D6SfppQHv7nGmlfRLv533I1wWWuEO28JWQ8NjAAP7+YJfbMdKGiVWGGS6vzZ6bKaciGgS4cFMOpa5/wGlS2bw/WACVrJXeFkB32L53FXB3Tkrf8WOplOguGbkt5DuLF6+ARqXTOXee90Ew12gz84cbx4Ji+UHKGEA11CTLeC4e2tDGDq/cr1urU8PxB9RKJseMx1copgaxurpd3XjGqEqlF5Sjexm3LeTEt/5v4nwjbA1zY5h1cbNOes6zL61HATflK0JEM12WI1ZQ9iQGL6CGs9qF079wc3be5aI+UQ8CI2X9FuEy6xwEn+/78S1sM6xPhbLqLo4N+WvMmAl78rusD9yBqF8D6n6SAR4MCrFVa6Et3YPT/i7zfsPBzKrYY81KpJ+aZf4jfjWT6HdFmIpJ9wR2cHmcOIPhL/WN4sAjpD3WHIT9CdkemNss45oUHun6gPzcO+vgertqCksoiR2ZGTlGegY/nikIyjulJ2A5g+OGHRe6ll772As4ozd765PvrbtstaVyZO5/5JwciLDusaOzTASzQOHXQQ6EtxuRj2PT3aBmwwdj888UKUqM/o069M5Df+zsibkfaz8pkXrC8zP/r/UOfac7THOY93UesNXOkGBE06aUkIGokReKzUGrZI6cycrEsB8Bzaqog5lntfmvEBF1RYYo2VVe+STC4R+xOHLl1a1Ek7celQ7+e138PG29PkL1mjaqHW7l356X+38VZvy07MFRKWhOES2enx2mRSdgVTNp5zdxhN2ES5kcL6J70+C/8s4mWCtble1Se/0pAGVPs/50Xd1sHFW1dHZXuvLU5bvyD1yUsbbHhc931PNRdY7kUcrfYz9lq5z0JSFCvaZf8GF/IoJAVl5LWEXIfxToVwpN7Ic/xgUjYkncP/bd+jenrcqLqVA5fTCtyOK8Nkzuss9/n+ieUU37XdWEFzZRfRnG3fYbOP+DYOAjvtYfa71Ewo7KtrCOnWXMFaPsXoAHvv2WNXSc66fv+J/XVQSfvLut+w0Ibf3OlOoWQ1nVYmIan/tkLBSWGzd8y4I0Ds7pVMhJ0GgxiMe57gjjzxki78IqZWihiiy2DqVF9QMIDYJN7pKx0fzHatHtE4NXvR+i3fAdJF8v6JGInQ6sgE0NgnhaUSnH/hYGVYnA+Mex55/FOtBjJpLtdl+X6xCelSVlGca2/KjstlZnV+4tSQ2TLrJ5QX+aS01C7F263Wpm2gdGoNl6dU7Bf9shvBFB7skgDps5D0RG/GGiohnBalobULwRO5XDttAmsk99lXrc1olxRGSeCmN+pN3YSx+RoCO5d9IShFWlrUGBiEx16P1hYiBi71Aq+W/uWx4g/tyKPt3/eR48QxYOxj51WfLbev9t4EIWJS1giNUUgvKJX24/HqQQXgP0zSob8yuLxZF6mHf60sfTjOhX/l7EEKUwpBPqxMRhp6erPaRfZ5z1UYi0vR06a3+1tJqrW+Ke3Pub7l9Fka1u/4ESZ/ta5wxalh42DrQn08p77Ym+RonI0qwkyeTpXb+O+HRIPoE+1HVp3dt1Q/rR2caGq6LWQtDnLxKKlDq2KmFjNHCgD859DHg+916zb7l7rfn6z7waW1O/oSjFAHR5YJLKGyI8xBlbvxMcNmk5APeVIk5fG9x5GH7A2MqHrDiy2bRGXbkorhxQxvONk5sKneXl0u/P66zmDl1BMAKaFsjnQKwTJRomvlZAOnkcZyJAHPhbkEqjCTnbcp+kVi/1OwyzTcBvn8yJnSDuz1+l5h+EFqO++0oliZlu6JToHxQI3CpmHp3X5EJ363m1evNnqa3grzmBzbv/onxgOCg7Xcvw/p5Itbu/3oEMw3t/kZGvDqr+lM/lvzPqX0MXLzefuhkwyaGd5r9i07IWv12s/oR0p+BqvbdDgIUAEugpmJbkFVebv/4Y9tFaIj4RQ6ldY4VUEltmz0yXU3SFnCVaZV98j9jjG6fVQgSL/vxFb9GPGBmKiRtOFBNB+hOg6vqF+fy9lNhFyMl8J8msVz3Ab1AN//IW/Cb+WvXaQTi2SWShW+sIiOorIr+Cs8paXlWRYrcAuI5yPLxkDXtu7YErPaBBNwqnLUJ1A0vvqpKU1mobjAMJfIHqv0u22LJZCZaBv+uK9hogLrXXmAU+Ku9Jp/+RXz/1v/gzfisFfqIppmM+YWKppF5VDWV1eEvAp2h5MMUe1bD15TNB5PoUx+znDRNSu3sIEMQFVUW5bmcKTFdZqYpDodCVQsuuwBPWf+3fahPOApUqy4AjSfMKsHUdHvCAFuh3sidROz/bcDEqp5ccejo6GHrXY3LES08/XfB5imkXL1zpfMT9veS+eaQpY7d3lRHozehlsqCdqrJNoOnlfiofWcUwUeoU7p7mLOM8g6GbiwyB9AnoFO9wLI+eUuqMn04NZdqGGftfAD/yvzaDrpfGqk/00vm9LWv+/4u8A/mz6zLCnH6d5H/iV4NOWN0g0Z/UbByLUgvu2fXMFuR6HeOPaL1LyYtehWl6bpBplMLNrd3Mar2nc9ypM+5MAW2TN30dnD06BCxdHzwvktb1rjz7Cvm9syAoo4rTolvbjFtu95p2l33QVq7qkoqQeTIa23A9pLgRbrcbauDhKUZ8sn6/C609KKEJLZTg4Q9R7t9ro68/CByjaiYvqgUt+CbfgAjo5jW0R/69PeiYkjzWJpgL61blEWXHekFeRPrhfLdR7hZ9GO5qoz7m/Czhlang/n+6GS1V0R95+jBcyEEgPMsDOMf8V5O9ON+qClK4eZIewcP7lb7vrdqcoLhA3hIfcj2E/XhVlOFd1MZSiYHru7kzVMrkkd4Nw6yRYly7ssU+YvmK97WAtfNJ+pCsO9Oc5RvzlaLgKzS9pPJUeL/3Px9EUUEIi5bFSs5QPaa5P8Rhc/hg155zD4f+yjLT5G/x6ATp0xy8no07NlQJwAAA' width='44'/></span><span class='brandtype'>An<em>LAB</em><small>SOFTWARE STUDIO</small></span></a>
+<button aria-expanded='false' aria-label='Mở điều hướng' class='navtoggle' type='button'><svg height='24' viewBox='0 0 24 24' width='24'><path d='M4 7H20 M4 12H20 M4 17H20' stroke='#333' stroke-width='2'/></svg></button>
+<nav class='mainnav' id='mainnav'>
+<a href='blog.html' data-en='Blog'>Blog</a>
+<a href='kien-thuc.html' data-en='Knowledge'>Kiến thức</a>
+<a href='cong-cu.html' data-en='Tools'>Công cụ</a>
+<a href='hoc-tap.html' data-en='Learning'>Học tập</a>
+<a href='tro-choi.html' data-en='Games'>Trò chơi</a>
+<a href='huong-dan.html' data-en='Guides'>Hướng dẫn</a>
+<a href='gioi-thieu.html' data-en='About'>Giới thiệu</a>
+<button class='donate-trigger' data-donate type='button'><span class='dn-heart'>♥</span><span data-en='Donate'>Ủng hộ</span></button>
+</nav>
+<div class='langswitch' role='group' aria-label='Language / Ngôn ngữ'>
+<button aria-pressed='true' class='on' data-set-lang='vi' title='Tiếng Việt' type='button'><svg aria-hidden='true' viewBox='0 0 30 20'><rect fill='#DA251D' height='20' width='30'/><polygon fill='#FFFF00' points='15,4 16.76,9.18 22.2,9.24 17.85,12.52 19.47,17.76 15,14.6 10.53,17.76 12.15,12.52 7.8,9.24 13.24,9.18'/></svg><span>VI</span></button>
+<button aria-pressed='false' data-set-lang='en' title='English' type='button'><svg aria-hidden='true' viewBox='0 0 60 40'><rect fill='#fff' height='40' width='60'/><rect fill='#B22234' y='0.00' width='60' height='3.08'/><rect fill='#B22234' y='6.15' width='60' height='3.08'/><rect fill='#B22234' y='12.31' width='60' height='3.08'/><rect fill='#B22234' y='18.46' width='60' height='3.08'/><rect fill='#B22234' y='24.62' width='60' height='3.08'/><rect fill='#B22234' y='30.77' width='60' height='3.08'/><rect fill='#B22234' y='36.92' width='60' height='3.08'/><rect fill='#3C3B6E' width='24' height='21.54'/><circle cx='2' cy='2.0' r='.75' fill='#fff'/><circle cx='6' cy='2.0' r='.75' fill='#fff'/><circle cx='10' cy='2.0' r='.75' fill='#fff'/><circle cx='14' cy='2.0' r='.75' fill='#fff'/><circle cx='18' cy='2.0' r='.75' fill='#fff'/><circle cx='22' cy='2.0' r='.75' fill='#fff'/><circle cx='4' cy='4.2' r='.75' fill='#fff'/><circle cx='8' cy='4.2' r='.75' fill='#fff'/><circle cx='12' cy='4.2' r='.75' fill='#fff'/><circle cx='16' cy='4.2' r='.75' fill='#fff'/><circle cx='20' cy='4.2' r='.75' fill='#fff'/><circle cx='2' cy='6.4' r='.75' fill='#fff'/><circle cx='6' cy='6.4' r='.75' fill='#fff'/><circle cx='10' cy='6.4' r='.75' fill='#fff'/><circle cx='14' cy='6.4' r='.75' fill='#fff'/><circle cx='18' cy='6.4' r='.75' fill='#fff'/><circle cx='22' cy='6.4' r='.75' fill='#fff'/><circle cx='4' cy='8.6' r='.75' fill='#fff'/><circle cx='8' cy='8.6' r='.75' fill='#fff'/><circle cx='12' cy='8.6' r='.75' fill='#fff'/><circle cx='16' cy='8.6' r='.75' fill='#fff'/><circle cx='20' cy='8.6' r='.75' fill='#fff'/><circle cx='2' cy='10.8' r='.75' fill='#fff'/><circle cx='6' cy='10.8' r='.75' fill='#fff'/><circle cx='10' cy='10.8' r='.75' fill='#fff'/><circle cx='14' cy='10.8' r='.75' fill='#fff'/><circle cx='18' cy='10.8' r='.75' fill='#fff'/><circle cx='22' cy='10.8' r='.75' fill='#fff'/><circle cx='4' cy='13.0' r='.75' fill='#fff'/><circle cx='8' cy='13.0' r='.75' fill='#fff'/><circle cx='12' cy='13.0' r='.75' fill='#fff'/><circle cx='16' cy='13.0' r='.75' fill='#fff'/><circle cx='20' cy='13.0' r='.75' fill='#fff'/><circle cx='2' cy='15.2' r='.75' fill='#fff'/><circle cx='6' cy='15.2' r='.75' fill='#fff'/><circle cx='10' cy='15.2' r='.75' fill='#fff'/><circle cx='14' cy='15.2' r='.75' fill='#fff'/><circle cx='18' cy='15.2' r='.75' fill='#fff'/><circle cx='22' cy='15.2' r='.75' fill='#fff'/><circle cx='4' cy='17.4' r='.75' fill='#fff'/><circle cx='8' cy='17.4' r='.75' fill='#fff'/><circle cx='12' cy='17.4' r='.75' fill='#fff'/><circle cx='16' cy='17.4' r='.75' fill='#fff'/><circle cx='20' cy='17.4' r='.75' fill='#fff'/><circle cx='2' cy='19.6' r='.75' fill='#fff'/><circle cx='6' cy='19.6' r='.75' fill='#fff'/><circle cx='10' cy='19.6' r='.75' fill='#fff'/><circle cx='14' cy='19.6' r='.75' fill='#fff'/><circle cx='18' cy='19.6' r='.75' fill='#fff'/><circle cx='22' cy='19.6' r='.75' fill='#fff'/></svg><span>EN</span></button>
+</div>
+<a class='top-action' href='index.html#/apps'>Khám phá tất cả ↗</a>
+</div></header>
+
+<div class='adzone adzone-leader'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 728×90 / 320×100</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+<div class='wrap' id='main-content'><div class='article-shell'><nav class='breadcrumbs'><a href='index.html'>Trang chủ</a><span>/</span><a href="kien-thuc.html" data-en="Knowledge">Kiến thức</a><span>/</span><a href="kien-thuc.html/qc" data-en="QC – Quality control">QC – Kiểm soát chất lượng</a><span>/</span><span data-en="Preloaded bolts: reading the strength grade and k-class, choosing the tightening method and accepting correctly">Bu lông dự ứng lực: đọc cấp bền, cấp k, chọn cách siết và nghiệm thu cho đúng</span></nav>
+<div class='blog-layout'><aside class='blog-left'><div class='bl-box' data-tree></div></aside><article class='article-card'><div class='article-in'>
+<div class='article-head'><div class='article-topline' data-en="KNOWLEDGE">KIẾN THỨC</div><h1 data-en="Preloaded bolts: reading the strength grade and k-class, choosing the tightening method and accepting correctly">Bu lông dự ứng lực: đọc cấp bền, cấp k, chọn cách siết và nghiệm thu cho đúng</h1>
+
+<p class="post-meta">AnLAB · <span data-en="Nov 27, 2026">27/11/2026</span></p></div>
+<hr class='article-divider'/>
+<div class='article-body post-body'>
+<style>
+.kt-fig{margin:18px 0 26px}.kt-fig figcaption{text-align:center;font-size:13px;color:#6b7391;margin-top:8px}
+.kt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(var(--mw,160px),1fr));gap:10px}
+.kt-card{background:#fff;border:1px solid #dfe3ee;border-top:4px solid var(--c,#444);border-radius:10px;padding:10px 12px}
+.kt-ct{font-weight:800;font-size:16px;color:#11182a;line-height:1.2}.kt-lab{font-size:11.5px;font-weight:700;letter-spacing:.5px;color:#7a819c;text-transform:uppercase;margin:3px 0 6px}
+.kt-cb{font-size:14px;line-height:1.45;color:#3d4463;margin-top:4px}.kt-n{font-size:26px;font-weight:900;line-height:1}.kt-wide{grid-column:1/-1}
+.kt-chip{text-align:left}.kt-big{color:#fff;font-weight:900;border-radius:8px;display:flex;align-items:center;justify-content:center;min-height:62px;padding:6px;text-align:center}.kt-cl{font-weight:800;font-size:14px;margin:8px 0 2px}.kt-cd{font-size:13px;line-height:1.4;color:#3d4463}
+.kt-svg{width:100%;height:auto;display:block}.kt-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;align-items:start}
+.kt-two2{display:flex;gap:18px;margin-top:8px}.kt-arrow{font-size:24px;font-weight:900}.kt-num{font-size:24px;font-weight:900}.kt-num2{font-size:20px;font-weight:800;color:#5a6180}
+.kt-formula{font-size:15px;font-weight:700;margin:8px 0;line-height:1.7;overflow-wrap:anywhere}.kt-red{color:#e31b23}
+.kt-bar{display:flex;height:34px;margin:10px 0 6px;font-weight:800;color:#fff;font-size:13px}.kt-bar>div{display:flex;align-items:center;justify-content:center}
+.kt-zbar{display:flex;height:42px;margin-bottom:0}.kt-zbar>div{flex:1;color:#fff;font-weight:900;font-size:20px;display:flex;align-items:center;justify-content:center}.kt-zl{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;color:#5a6180;margin:4px 0 10px}
+.kt-tw{overflow-x:auto;margin:12px 0 22px;-webkit-overflow-scrolling:touch}.kt-t{border-collapse:collapse;width:100%;min-width:520px;font-size:14.5px}
+.kt-t th{background:#2b2f45;color:#fff;text-align:left;padding:8px 10px;font-weight:700}.kt-t td{border-bottom:1px solid #e3e6f1;padding:8px 10px;vertical-align:top;line-height:1.4}.kt-t tr:nth-child(even) td{background:#f8f9fc}
+.kt-note{background:#fdecec;border-left:4px solid #e31b23;padding:10px 14px;border-radius:6px}
+.kt-tabbar{display:flex;gap:6px;flex-wrap:wrap;position:sticky;top:0;background:#fff;padding:8px 0;z-index:3;border-bottom:2px solid #e3e6f1;margin-bottom:16px}
+.kt-tab{border:1px solid #d5d9e8;background:#f4f5fb;color:#11182a;padding:9px 18px;border-radius:10px;font-weight:800;font-size:15px;cursor:pointer}.kt-tab.on{background:#e31b23;border-color:#e31b23;color:#fff}.kt-panel[hidden]{display:none}
+.post-body figure.post-hero img{cursor:zoom-in}.kt-lb{position:fixed;inset:0;background:rgba(10,12,24,.92);z-index:99999;display:flex;align-items:center;justify-content:center;padding:12px;cursor:zoom-out;overflow:auto}.kt-lb img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:8px;background:#fff}
+</style>
+<script>(function(){function sel(id){document.querySelectorAll('.kt-tabs').forEach(function(g){g.querySelectorAll('.kt-tab').forEach(function(b){var on=b.getAttribute('data-tab')===id;b.classList.toggle('on',on);b.setAttribute('aria-selected',on?'true':'false')});g.querySelectorAll('.kt-panel').forEach(function(p){if(p.getAttribute('data-panel')===id)p.removeAttribute('hidden');else p.setAttribute('hidden','')})})}
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.kt-tab');if(b){sel(b.getAttribute('data-tab'));try{history.replaceState(null,'','#'+b.getAttribute('data-tab'))}catch(x){}}
+var i=e.target;if(i&&i.tagName==='IMG'&&i.closest('.post-body figure.post-hero')&&!i.closest('.kt-lb')){var o=document.createElement('div');o.className='kt-lb';var m=document.createElement('img');m.src=i.currentSrc||i.src;m.alt=i.alt;o.appendChild(m);o.addEventListener('click',function(){o.remove()});document.addEventListener('keydown',function k(ev){if(ev.key==='Escape'){o.remove();document.removeEventListener('keydown',k)}});document.body.appendChild(o)}});
+var h=(location.hash||'').replace('#','');if(h&&document.querySelector('.kt-tab[data-tab="'+h+'"]'))sel(h);})();</script>
+<div class="lang-block" data-lang="vi">
+<p>Trong cả một kết cấu thép nặng hàng nghìn tấn, bu lông là chi tiết nhỏ nhất, và thường cũng là chi tiết bị kiểm tra qua loa nhất. Nhưng liên kết bu lông mới là nơi truyền lực từ cấu kiện này sang cấu kiện khác; hỏng một liên kết là hỏng cả đường truyền lực. Bài này đi qua những điều QC cần biết, theo đúng thứ tự mà bạn gặp chúng ngoài công trường.</p>
+<h2>Câu hỏi đầu tiên: liên kết có dự ứng lực hay không?</h2>
+<p>Có hai kiểu liên kết, và chúng khác nhau về nguyên lý. Với liên kết không dự ứng lực, tải truyền qua thân bu lông chịu cắt và ép mặt vào thành lỗ; chỉ cần siết chặt tay có kiểm soát. Với liên kết dự ứng lực, bu lông được siết đến một lực kẹp xác định. Chỉ liên kết chống trượt (Category B, C theo EN 1993-1-8) mới được thiết kế để truyền lực cắt bằng ma sát giữa các mặt. Dự ứng lực còn được dùng cho liên kết chịu kéo (Category E), chịu mỏi, chịu động đất, cho yêu cầu thi công hoặc như một biện pháp chất lượng (EN 1090-2:2018, 8.5.1); khi đó liên kết vẫn có thể được tính theo cắt và ép mặt.</p>
+<figure class="kt-fig" data-fig="b5_joints"><div style="max-width:420px;margin:0 auto"><svg class='kt-svg' viewBox='0 0 600 175' role='img' aria-label='Hai kiểu liên kết' xmlns='http://www.w3.org/2000/svg'><rect x='20' y='60' width='150' height='28' fill='#d8c9ca' stroke='#7a4a52' stroke-width='2'/><rect x='100' y='92' width='150' height='28' fill='#d8c9ca' stroke='#7a4a52' stroke-width='2'/><rect x='125' y='46' width='9' height='88' fill='#555'/><rect x='115' y='46' width='29' height='12' fill='#555'/><rect x='115' y='122' width='29' height='12' fill='#555'/><line x1='-4' y1='74' x2='20' y2='74' stroke='#c98a1a' stroke-width='5'/><line x1='274' y1='106' x2='250' y2='106' stroke='#c98a1a' stroke-width='5'/><line x1='134' y1='64' x2='134' y2='116' stroke='#e31b23' stroke-width='3'/><rect x='330' y='60' width='150' height='28' fill='#d8c9ca' stroke='#7a4a52' stroke-width='2'/><rect x='410' y='92' width='150' height='28' fill='#d8c9ca' stroke='#7a4a52' stroke-width='2'/><rect x='435' y='46' width='9' height='88' fill='#555'/><rect x='425' y='46' width='29' height='12' fill='#555'/><rect x='425' y='122' width='29' height='12' fill='#555'/><line x1='306' y1='74' x2='330' y2='74' stroke='#2e7d4f' stroke-width='5'/><line x1='584' y1='106' x2='560' y2='106' stroke='#2e7d4f' stroke-width='5'/><path d='M425,90 L425,92' stroke='#2e7d4f' stroke-width='3'/><line x1='385' y1='90' x2='480' y2='90' stroke='#2e7d4f' stroke-width='4' stroke-dasharray='5 3'/><text x='140' y='28' font-size='16' font-weight='900' fill='#b8741a' text-anchor='middle'>Không dự ứng lực</text><text x='140' y='162' font-size='14' text-anchor='middle' fill='#5a6180'>Thân bu lông chịu cắt</text><text x='450' y='28' font-size='16' font-weight='900' fill='#2e7d4f' text-anchor='middle'>Có dự ứng lực</text><text x='450' y='162' font-size='14' text-anchor='middle' fill='#5a6180'>Lực kẹp (chống trượt: ma sát)</text></svg></div><figcaption>Liên kết không dự ứng lực và liên kết có dự ứng lực</figcaption></figure>
+<p>Từ câu trả lời này kéo theo mọi thứ khác: loại bu lông phải mua, cách siết và hồ sơ phải lưu. Trả lời sai thì mua sai bu lông, siết sai cách và nghiệm thu sai. Với liên kết dự ứng lực, cấp k, phương pháp siết và biên bản siết là bắt buộc.</p>
+<h2>Ba hệ tiêu chuẩn bu lông kết cấu</h2>
+<p>Bu lông dự ứng lực theo hệ châu Âu thuộc bộ EN 14399, gồm nhiều phần: -1 yêu cầu chung, -2 tính phù hợp để dự ứng lực, -3 hệ HR, -4 hệ HV, -5 long đen phẳng, -6 long đen vát cạnh, -9 long đen chỉ thị lực DTI, -10 hệ HRC. Bu lông không dự ứng lực theo EN 15048 (ký hiệu SB trên đầu). Hệ Mỹ dùng ASTM F3125 với các cấp A325 (cùng nhóm cường độ với 8.8) và A490 (cùng nhóm cường độ với 10.9; không thay thế trực tiếp cho bộ bu lông EN) cùng các biến thể F1852 và F2280.</p>
+<p>Một nguyên tắc quan trọng: bu lông dự ứng lực phải mua nguyên bộ, từ một nhà sản xuất, một lô. Ghép bu lông của hãng này với đai ốc của hãng khác làm mất hiệu lực toàn bộ khai báo cấp k.</p>
+<h2>Cấp bền và lực dự ứng lực Fp,C</h2>
+<p>Cấp bền đọc rất nhanh nếu biết quy tắc. Với bu lông 10.9, số thứ nhất nhân 100 là độ bền kéo fub = 1000 MPa; số thứ hai chia 10 là tỷ số giới hạn chảy trên độ bền kéo, nên fyb = 900 MPa. Cấp 8.8 có fub = 800 MPa và fyb = 640 MPa. Đai ốc phải cùng cấp: bu lông 10.9 đi với đai ốc cấp 10.</p>
+<p>Lực dự ứng lực mà phương pháp siết nào cũng phải đạt là Fp,C = 0,7 · fub · As, trong đó As là diện tích tiết diện chịu kéo của ren, không phải diện tích thân. Fp,C là lực kẹp tối thiểu sau khi siết.</p>
+<figure class="kt-fig" data-fig="b5_fpc"><div style="max-width:420px;margin:0 auto"><svg class='kt-svg' viewBox='0 0 620 330' role='img' aria-label='Fp,C' xmlns='http://www.w3.org/2000/svg'><line x1='60' x2='600' y1='290.0' y2='290.0' stroke='#e6e8f0'/><text x='52' y='295.0' font-size='15' text-anchor='end' fill='#5a6180'>0</text><line x1='60' x2='600' y1='225.7' y2='225.7' stroke='#e6e8f0'/><text x='52' y='230.7' font-size='15' text-anchor='end' fill='#5a6180'>100</text><line x1='60' x2='600' y1='161.4' y2='161.4' stroke='#e6e8f0'/><text x='52' y='166.4' font-size='15' text-anchor='end' fill='#5a6180'>200</text><line x1='60' x2='600' y1='97.1' y2='97.1' stroke='#e6e8f0'/><text x='52' y='102.1' font-size='15' text-anchor='end' fill='#5a6180'>300</text><line x1='60' x2='600' y1='32.9' y2='32.9' stroke='#e6e8f0'/><text x='52' y='37.9' font-size='15' text-anchor='end' fill='#5a6180'>400</text><line x1='60' x2='60' y1='20' y2='290' stroke='#5a6180'/><line x1='60' x2='600' y1='290' y2='290' stroke='#5a6180'/><text transform='translate(8,155.0) rotate(-90)' font-size='16' text-anchor='middle' fill='#11182a' font-weight='700'>Fp,C (kN)</text><rect x='68.0' y='233.4' width='37.0' height='56.6' fill='#2563a8'/><rect x='105.0' y='219.3' width='37.0' height='70.7' fill='#e31b23'/><text x='86.5' y='228.4' font-size='12' font-weight='800' text-anchor='middle'>88</text><text x='123.5' y='214.3' font-size='12' font-weight='800' text-anchor='middle'>110</text><text x='105.0' y='310' font-size='14' font-weight='700' text-anchor='middle'>M16</text><rect x='158.0' y='201.9' width='37.0' height='88.1' fill='#2563a8'/><rect x='195.0' y='179.4' width='37.0' height='110.6' fill='#e31b23'/><text x='176.5' y='196.9' font-size='12' font-weight='800' text-anchor='middle'>137</text><text x='213.5' y='174.4' font-size='12' font-weight='800' text-anchor='middle'>172</text><text x='195.0' y='310' font-size='14' font-weight='700' text-anchor='middle'>M20</text><rect x='248.0' y='180.7' width='37.0' height='109.3' fill='#2563a8'/><rect x='285.0' y='153.7' width='37.0' height='136.3' fill='#e31b23'/><text x='266.5' y='175.7' font-size='12' font-weight='800' text-anchor='middle'>170</text><text x='303.5' y='148.7' font-size='12' font-weight='800' text-anchor='middle'>212</text><text x='285.0' y='310' font-size='14' font-weight='700' text-anchor='middle'>M22</text><rect x='338.0' y='162.7' width='37.0' height='127.3' fill='#2563a8'/><rect x='375.0' y='131.2' width='37.0' height='158.8' fill='#e31b23'/><text x='356.5' y='157.7' font-size='12' font-weight='800' text-anchor='middle'>198</text><text x='393.5' y='126.2' font-size='12' font-weight='800' text-anchor='middle'>247</text><text x='375.0' y='310' font-size='14' font-weight='700' text-anchor='middle'>M24</text><rect x='428.0' y='124.8' width='37.0' height='165.2' fill='#2563a8'/><rect x='465.0' y='83.6' width='37.0' height='206.4' fill='#e31b23'/><text x='446.5' y='119.8' font-size='12' font-weight='800' text-anchor='middle'>257</text><text x='483.5' y='78.6' font-size='12' font-weight='800' text-anchor='middle'>321</text><text x='465.0' y='310' font-size='14' font-weight='700' text-anchor='middle'>M27</text><rect x='518.0' y='88.1' width='37.0' height='201.9' fill='#2563a8'/><rect x='555.0' y='37.4' width='37.0' height='252.6' fill='#e31b23'/><text x='536.5' y='83.1' font-size='12' font-weight='800' text-anchor='middle'>314</text><text x='573.5' y='32.4' font-size='12' font-weight='800' text-anchor='middle'>393</text><text x='555.0' y='310' font-size='14' font-weight='700' text-anchor='middle'>M30</text><rect x='74' y='26' width='16' height='10' fill='#2563a8'/><text x='96' y='36' font-size='14' font-weight='700'>8.8</text><rect x='144' y='26' width='16' height='10' fill='#e31b23'/><text x='166' y='36' font-size='14' font-weight='700'>10.9</text></svg></div><figcaption>Lực dự ứng lực Fp,C của cấp 8.8 và 10.9 theo cỡ bu lông</figcaption></figure>
+<h2>Một bộ bu lông gồm những gì: hệ HR và hệ HV</h2>
+<p>Một bộ gồm bu lông, đai ốc và long đen. Hệ HR (EN 14399-3:2015) gồm các tổ hợp 8.8/8, 8.8/10 và 10.9/10, ren dài hơn và đai ốc cao hơn; dự trữ độ dẻo chủ yếu đến từ biến dạng dẻo kéo dài của thân bu lông. Hệ HV (EN 14399-4) dùng bu lông 10.9 đi với đai ốc cấp 10, ren ngắn hơn và đai ốc thấp hơn; dự trữ độ dẻo chủ yếu đến từ biến dạng dẻo của các ren ăn khớp. Các cơ chế này mô tả dự trữ độ dẻo khi siết, không có nghĩa là để bu lông biến dạng dẻo ở mức dự ứng lực quy định. Dự ứng lực kẹp chặt các tấm; sức cản trượt còn phụ thuộc bề mặt tiếp xúc và thiết kế liên kết. Không trộn bộ HR với bộ HV, và khi dùng long đen vát cạnh theo EN 14399-6, mặt vát phải quay về phía bán kính chân đầu bu lông.</p>
+<figure class="post-hero"><img src="kien-thuc-bu-long-ket-cau-du-ung-luc-pic1.webp" alt="Cấu tạo một bộ bu lông dự ứng lực: hệ HR và hệ HV" width="1672" height="941" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Cấu tạo một bộ bu lông dự ứng lực: hệ HR và hệ HV</figcaption></figure>
+<h2>Cấp k: thông tin quyết định cách bạn được phép siết</h2>
+<p>Hệ số k = M / (F · d), với M là mô-men siết, F là lực kẹp và d là đường kính danh nghĩa; nó cho biết mối quan hệ giữa mô-men siết và lực kẹp, và do lớp bôi trơn của nhà sản xuất quyết định. Nhà sản xuất khai báo ba cấp: K0 nghĩa là không khai báo hệ số k; K1 khai báo từng giá trị ki trong khoảng 0,10 đến 0,16; K2 khai báo giá trị trung bình km trong khoảng 0,10 đến 0,23 với hệ số biến động Vk không quá 0,06.</p>
+<figure class="post-hero"><img src="kien-thuc-bu-long-ket-cau-du-ung-luc-pic2.webp" alt="Ba cấp K0, K1, K2 và phương pháp siết được phép" width="1536" height="1024" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Ba cấp K0, K1, K2 và phương pháp siết được phép</figcaption></figure>
+<p>Mỗi phương pháp siết chỉ tương thích với một số cấp k: phương pháp mô-men dùng K2; phương pháp kết hợp dùng K1 hoặc K2; HRC dùng K0 (với đai ốc HRD) hoặc K2; DTI dùng K0, K1 hoặc K2. HRC chỉ áp dụng cho cụm bu lông hệ HRC phù hợp, không áp dụng cho bu lông lục giác thông thường. Cấp k và cấp bền 8.8/10.9 được khai báo riêng. Nhãn hộp phải ghi cấp k; với K2 phải có km và Vk (EN 14399-3:2015: 0,10 ≤ km ≤ 0,23 và Vk ≤ 0,06). Phương pháp mô-men chỉ dùng được với K2 (EN 1090-2:2018, Bảng 19); bộ K0 không khai báo hệ số k. Vì lớp bôi trơn quyết định hệ số k, việc rửa dầu, sơn thêm hay để gỉ đều làm sai mô-men.</p>
+<h2>Bốn phương pháp tạo dự ứng lực</h2>
+<p>Có bốn cách đưa bu lông đến lực kẹp yêu cầu. Phương pháp mô-men dùng cờ lê lực hiệu chuẩn với bu lông K2, siết theo hai bước mô-men quy định. Phương pháp kết hợp (K1 hoặc K2) siết mô-men bước một, đánh dấu vị trí để kiểm tra, rồi quay thêm một góc quy định ở bước hai; góc quay phụ thuộc chiều dày kẹp và quy trình áp dụng. Bu lông HRC (K0 với đai ốc HRD, hoặc K2) dùng cờ lê chuyên dụng có hai đầu đồng trục: đuôi ren gãy theo thiết kế khi đạt đủ lực. Long đen chỉ thị DTI (K0, K1 hoặc K2) có các vấu bị ép phẳng khi đủ lực; kiểm tra khe hở tại các vị trí quy định, còn chiều dày dưỡng đo và tiêu chí chấp nhận phụ thuộc cấu hình DTI.</p>
+<figure class="post-hero"><img src="kien-thuc-bu-long-ket-cau-du-ung-luc-pic3.webp" alt="Phương pháp mô-men, kết hợp, HRC và DTI" width="1536" height="1024" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Phương pháp mô-men, kết hợp, HRC và DTI</figcaption></figure>
+<p>Quy tắc bất di bất dịch: không tự đổi phương pháp siết ngoài công trường. Phương pháp phải khớp với cấp k đã mua (tóm tắt theo EN 1090-2:2018, Bảng 19; các cấp k theo EN 14399) và nằm trong quy trình lắp dựng đã duyệt, và cờ lê lực phải còn hạn hiệu chuẩn.</p>
+<h2>Ví dụ tính mô-men siết cho M20 cấp 10.9</h2>
+<p>Hãy tính cho một bu lông M20 cấp 10.9, cấp k là K2. Tra As = 245 mm² và fub = 1000 MPa, ta có Fp,C = 0,7 × 1000 × 245 = 171 500 N; EN 1090-2:2018 Bảng 18 làm tròn thành 172 kN và đây là giá trị dùng để tính. Nếu nhà sản xuất khai báo km = 0,13 thì mô-men chuẩn Mr,2 = km · d · Fp,C = 0,13 × 20 mm × 172 kN = 447 N·m. Bước siết thứ nhất khoảng 0,75 × 447 = 335 N·m cho toàn bộ bu lông của liên kết; bước thứ hai 1,10 × 447 = 492 N·m, siết theo trình tự từ phần cứng nhất đến phần kém cứng nhất của liên kết (EN 1090-2, 8.5.1 và 8.5.3). Với bộ K1 dùng phương pháp kết hợp, Mr,1 = 0,125 · d · Fp,C và bước 1 lấy 0,75 Mr,1 (Bảng 20: M20 10.9 = 322 N·m), sau đó xoay thêm theo Bảng 21.</p>
+<figure class="kt-fig" data-fig="b5_torque"><div class='kt-grid' style='--mw:150px'><div class='kt-card' style='--c:#444'><div class='kt-n' style='color:#444'>1</div><div class='kt-ct'>Tra As và fub</div><div class='kt-cb'>M20: As = 245 mm²<br>10.9: fub = 1000 MPa</div></div><div class='kt-card' style='--c:#2563a8'><div class='kt-n' style='color:#2563a8'>2</div><div class='kt-ct'>Lực dự ứng lực</div><div class='kt-cb'>Fp,C = 0,7 × 1000 × 245<br>= 171 500 N → 172 kN (Bảng 18)</div></div><div class='kt-card' style='--c:#c98a1a'><div class='kt-n' style='color:#c98a1a'>3</div><div class='kt-ct'>km từ nhãn hộp</div><div class='kt-cb'>Ví dụ km = 0,13 (K2)</div></div><div class='kt-card' style='--c:#e31b23'><div class='kt-n' style='color:#e31b23'>4</div><div class='kt-ct'>Mr,2 = km·d·Fp,C</div><div class='kt-cb'>0,13 × 20 × 172<br>= <b>447 N·m</b></div></div><div class='kt-card' style='--c:#2e7d4f'><div class='kt-n' style='color:#2e7d4f'>5</div><div class='kt-ct'>Bước siết 1</div><div class='kt-cb'>≈ 0,75 × 447 ≈ 335 N·m<br>toàn bộ bu lông</div></div><div class='kt-card' style='--c:#2e7d4f'><div class='kt-n' style='color:#2e7d4f'>6</div><div class='kt-ct'>Bước siết 2</div><div class='kt-cb'>1,10 × 447 = 492 N·m<br>từ phần cứng nhất</div></div></div><figcaption>Sáu bước tính mô-men siết cho bu lông M20 10.9</figcaption></figure>
+<p>Nếu bộ K1 mà nhà sản xuất không cho km, EN 1090-2 cho phép dùng km = 0,125 để tính bước mô-men đầu của phương pháp kết hợp. Các hệ số 0,75 và 1,10 trong ví dụ phải lấy theo EN 1090-2 điều 8.5 và 12.5.2 của ấn bản và quy trình lắp dựng đang áp dụng.</p>
+<h2>Những điều không được làm với bu lông dự ứng lực</h2>
+<ul>
+<li>Không dùng lại bu lông đã siết đến dự ứng lực rồi nới ra: EN 1090-2:2018 (8.5.1) yêu cầu tháo bỏ và loại toàn bộ bộ bu lông đó.</li>
+<li>Chỉ mở hộp khi dùng, giữ kín phần còn lại và không thay đổi lớp bôi trơn xuất xưởng (EN 1090-2, 8.5.1); bu lông gỉ, bẩn hoặc nghi mất bôi trơn phải được đánh giá lại trước khi dùng.</li>
+<li>Siết từ vùng cứng nhất ra mép, làm đủ hai bước cho toàn bộ liên kết rồi mới sang liên kết khác.</li>
+<li>Không trộn bộ của hai nhà sản xuất hoặc hai lô khác nhau.</li>
+</ul>
+<h2>QC kiểm gì khi nhận hàng và khi nghiệm thu</h2>
+<div class="kt-tw"><table class="kt-t"><thead><tr><th>Thời điểm</th><th>Hạng mục kiểm tra</th><th>Căn cứ / cách làm</th></tr></thead><tbody><tr><td>Nhận hàng</td><td>Chứng chỉ 3.1 theo số lô, kèm kết quả thử tính phù hợp</td><td>EN 1090-2 Bảng 1 (chú thích d, e): được miễn 3.1 nếu bộ bu lông có số lô và nhà sản xuất truy xuất được qua hồ sơ FPC; số lô trên nhãn hộp phải khớp</td></tr><tr><td>Nhận hàng</td><td>Ký hiệu trên đầu bu lông, đai ốc, long đen</td><td>Cấp bền + HR/HV (SB với EN 15048) và mã nhà sản xuất (EN 14399-3, 3.3 và 4.5); dấu CE nằm trên nhãn hoặc tài liệu kèm theo, không yêu cầu trên chi tiết</td></tr><tr><td>Nhận hàng</td><td>Nhãn hộp có cấp k; với K2 có km và Vk</td><td>Phương pháp mô-men chỉ dùng K2 (EN 1090-2, Bảng 19)</td></tr><tr><td>Nhận hàng</td><td>Kích thước, chiều dài, lớp phủ, gỉ và dầu bôi trơn</td><td>Kiểm mẫu theo lô; hộp đã mở phải đánh giá bảo quản, bẩn, gỉ và bôi trơn</td></tr><tr><td>Trước lắp</td><td>Chiều dài bu lông so với chiều dài kẹp thực tế</td><td>Bảng chiều dài kẹp trong Phụ lục A của EN 14399-3/-4</td></tr><tr><td>Khi siết</td><td>Cờ lê lực còn hạn hiệu chuẩn; đúng phương pháp theo cấp k</td><td>Hồ sơ hiệu chuẩn; quy trình lắp dựng đã duyệt</td></tr><tr><td>Sau khi siết</td><td>HRC: 100% đã đứt đuôi, kèm kiểm tra đúng bộ bu lông, đủ long đen và các bản ghép ép sát (khe hở dư ≤ 2 mm trước khi siết, EN 1090-2 8.5.1). DTI: đo khe hở bằng thước lá</td><td>Kiểm 100% bằng mắt với HRC; đo mẫu với DTI</td></tr><tr><td>Sau khi siết</td><td>Phương pháp mô-men và kết hợp: kiểm tra lại theo tỷ lệ quy định</td><td>EN 1090-2 điều 12.5.2; ghi biên bản siết bu lông</td></tr><tr><td>Sau khi siết</td><td>Phần ren nhô ra sau đai ốc tối thiểu một bước ren</td><td>Kiểm bằng mắt toàn bộ liên kết</td></tr></tbody></table></div>
+<p class="kt-note">Một biên bản siết bu lông không có số lô và không có thông số siết phù hợp với phương pháp (mô-men các bước với phương pháp mô-men; mô-men bước 1 và góc xoay với phương pháp kết hợp; xác nhận đứt đuôi với HRC; khe hở DTI) là biên bản không dùng được khi audit.</p>
+<p>Nếu chỉ nhớ một điều từ bài này, hãy nhớ ba thứ phải khớp nhau: cấp k trên nhãn hộp, phương pháp siết trong quy trình, và dụng cụ siết đang cầm trên tay.</p>
+</div>
+
+<div class="lang-block" data-lang="en">
+<p>In a steel structure weighing thousands of tonnes, the bolt is the smallest part, and often the one checked most casually. But the bolted joint is where force passes from one member to another; a failed joint breaks the whole load path. This article covers what QC needs to know, in the order in which you meet it on site.</p>
+<h2>The first question: is the joint preloaded?</h2>
+<p>There are two kinds of joint and they differ in principle. In a non-preloaded joint the load passes through the bolt shank in shear and bearing on the hole wall; controlled snug tightening is enough. In a preloaded joint the bolt is tightened to a defined clamping force. Only slip-resistant joints (Categories B and C in EN 1993-1-8) are designed to transfer shear by friction between the faces. Preload is also used for tension joints (Category E), fatigue, seismic connections, execution purposes or as a quality measure (EN 1090-2:2018, 8.5.1); such joints may still be designed for shear and bearing.</p>
+<figure class="kt-fig" data-fig="b5_joints"><div style="max-width:420px;margin:0 auto"><svg class='kt-svg' viewBox='0 0 600 175' role='img' aria-label='Two kinds of joint' xmlns='http://www.w3.org/2000/svg'><rect x='20' y='60' width='150' height='28' fill='#d8c9ca' stroke='#7a4a52' stroke-width='2'/><rect x='100' y='92' width='150' height='28' fill='#d8c9ca' stroke='#7a4a52' stroke-width='2'/><rect x='125' y='46' width='9' height='88' fill='#555'/><rect x='115' y='46' width='29' height='12' fill='#555'/><rect x='115' y='122' width='29' height='12' fill='#555'/><line x1='-4' y1='74' x2='20' y2='74' stroke='#c98a1a' stroke-width='5'/><line x1='274' y1='106' x2='250' y2='106' stroke='#c98a1a' stroke-width='5'/><line x1='134' y1='64' x2='134' y2='116' stroke='#e31b23' stroke-width='3'/><rect x='330' y='60' width='150' height='28' fill='#d8c9ca' stroke='#7a4a52' stroke-width='2'/><rect x='410' y='92' width='150' height='28' fill='#d8c9ca' stroke='#7a4a52' stroke-width='2'/><rect x='435' y='46' width='9' height='88' fill='#555'/><rect x='425' y='46' width='29' height='12' fill='#555'/><rect x='425' y='122' width='29' height='12' fill='#555'/><line x1='306' y1='74' x2='330' y2='74' stroke='#2e7d4f' stroke-width='5'/><line x1='584' y1='106' x2='560' y2='106' stroke='#2e7d4f' stroke-width='5'/><path d='M425,90 L425,92' stroke='#2e7d4f' stroke-width='3'/><line x1='385' y1='90' x2='480' y2='90' stroke='#2e7d4f' stroke-width='4' stroke-dasharray='5 3'/><text x='140' y='28' font-size='16' font-weight='900' fill='#b8741a' text-anchor='middle'>Non-preloaded</text><text x='140' y='162' font-size='14' text-anchor='middle' fill='#5a6180'>Bolt shank in shear</text><text x='450' y='28' font-size='16' font-weight='900' fill='#2e7d4f' text-anchor='middle'>Preloaded</text><text x='450' y='162' font-size='14' text-anchor='middle' fill='#5a6180'>Clamping force (slip-resistant: friction)</text></svg></div><figcaption>Non-preloaded and preloaded joints</figcaption></figure>
+<p>Everything else follows from this answer: which bolts to buy, how to tighten and which records to keep. A wrong answer means buying the wrong bolts, tightening the wrong way and accepting the wrong way. For preloaded joints the k-class, the tightening method and the tightening record are mandatory.</p>
+<h2>Three structural bolt standard systems</h2>
+<p>Preloaded bolts in the European system belong to the EN 14399 series, with several parts: -1 general requirements, -2 suitability for preloading, -3 HR system, -4 HV system, -5 flat washers, -6 chamfered washers, -9 DTI washers, -10 HRC system. Non-preloaded bolts follow EN 15048 (marked SB on the head). The US system uses ASTM F3125 with grades A325 (same strength group as 8.8) and A490 (same strength group as 10.9; not a direct substitute for EN assemblies) plus the variants F1852 and F2280.</p>
+<p>An important rule: preloaded bolts must be bought as a full set, from one manufacturer, one lot. Mixing one maker’s bolt with another’s nut voids the whole k-class declaration.</p>
+<h2>Strength grade and the preload Fp,C</h2>
+<p>The strength grade is quick to read if you know the rule. For a 10.9 bolt, the first number times 100 is the tensile strength fub = 1000 MPa; the second number divided by 10 is the yield-to-tensile ratio, so fyb = 900 MPa. Grade 8.8 has fub = 800 MPa and fyb = 640 MPa. The nut must match: a 10.9 bolt goes with a class 10 nut.</p>
+<p>The preload that every tightening method must achieve is Fp,C = 0.7 · fub · As, where As is the tensile stress area of the thread, not the shank area. Fp,C is the minimum clamping force after tightening.</p>
+<figure class="kt-fig" data-fig="b5_fpc"><div style="max-width:420px;margin:0 auto"><svg class='kt-svg' viewBox='0 0 620 330' role='img' aria-label='Fp,C' xmlns='http://www.w3.org/2000/svg'><line x1='60' x2='600' y1='290.0' y2='290.0' stroke='#e6e8f0'/><text x='52' y='295.0' font-size='15' text-anchor='end' fill='#5a6180'>0</text><line x1='60' x2='600' y1='225.7' y2='225.7' stroke='#e6e8f0'/><text x='52' y='230.7' font-size='15' text-anchor='end' fill='#5a6180'>100</text><line x1='60' x2='600' y1='161.4' y2='161.4' stroke='#e6e8f0'/><text x='52' y='166.4' font-size='15' text-anchor='end' fill='#5a6180'>200</text><line x1='60' x2='600' y1='97.1' y2='97.1' stroke='#e6e8f0'/><text x='52' y='102.1' font-size='15' text-anchor='end' fill='#5a6180'>300</text><line x1='60' x2='600' y1='32.9' y2='32.9' stroke='#e6e8f0'/><text x='52' y='37.9' font-size='15' text-anchor='end' fill='#5a6180'>400</text><line x1='60' x2='60' y1='20' y2='290' stroke='#5a6180'/><line x1='60' x2='600' y1='290' y2='290' stroke='#5a6180'/><text transform='translate(8,155.0) rotate(-90)' font-size='16' text-anchor='middle' fill='#11182a' font-weight='700'>Fp,C (kN)</text><rect x='68.0' y='233.4' width='37.0' height='56.6' fill='#2563a8'/><rect x='105.0' y='219.3' width='37.0' height='70.7' fill='#e31b23'/><text x='86.5' y='228.4' font-size='12' font-weight='800' text-anchor='middle'>88</text><text x='123.5' y='214.3' font-size='12' font-weight='800' text-anchor='middle'>110</text><text x='105.0' y='310' font-size='14' font-weight='700' text-anchor='middle'>M16</text><rect x='158.0' y='201.9' width='37.0' height='88.1' fill='#2563a8'/><rect x='195.0' y='179.4' width='37.0' height='110.6' fill='#e31b23'/><text x='176.5' y='196.9' font-size='12' font-weight='800' text-anchor='middle'>137</text><text x='213.5' y='174.4' font-size='12' font-weight='800' text-anchor='middle'>172</text><text x='195.0' y='310' font-size='14' font-weight='700' text-anchor='middle'>M20</text><rect x='248.0' y='180.7' width='37.0' height='109.3' fill='#2563a8'/><rect x='285.0' y='153.7' width='37.0' height='136.3' fill='#e31b23'/><text x='266.5' y='175.7' font-size='12' font-weight='800' text-anchor='middle'>170</text><text x='303.5' y='148.7' font-size='12' font-weight='800' text-anchor='middle'>212</text><text x='285.0' y='310' font-size='14' font-weight='700' text-anchor='middle'>M22</text><rect x='338.0' y='162.7' width='37.0' height='127.3' fill='#2563a8'/><rect x='375.0' y='131.2' width='37.0' height='158.8' fill='#e31b23'/><text x='356.5' y='157.7' font-size='12' font-weight='800' text-anchor='middle'>198</text><text x='393.5' y='126.2' font-size='12' font-weight='800' text-anchor='middle'>247</text><text x='375.0' y='310' font-size='14' font-weight='700' text-anchor='middle'>M24</text><rect x='428.0' y='124.8' width='37.0' height='165.2' fill='#2563a8'/><rect x='465.0' y='83.6' width='37.0' height='206.4' fill='#e31b23'/><text x='446.5' y='119.8' font-size='12' font-weight='800' text-anchor='middle'>257</text><text x='483.5' y='78.6' font-size='12' font-weight='800' text-anchor='middle'>321</text><text x='465.0' y='310' font-size='14' font-weight='700' text-anchor='middle'>M27</text><rect x='518.0' y='88.1' width='37.0' height='201.9' fill='#2563a8'/><rect x='555.0' y='37.4' width='37.0' height='252.6' fill='#e31b23'/><text x='536.5' y='83.1' font-size='12' font-weight='800' text-anchor='middle'>314</text><text x='573.5' y='32.4' font-size='12' font-weight='800' text-anchor='middle'>393</text><text x='555.0' y='310' font-size='14' font-weight='700' text-anchor='middle'>M30</text><rect x='74' y='26' width='16' height='10' fill='#2563a8'/><text x='96' y='36' font-size='14' font-weight='700'>8.8</text><rect x='144' y='26' width='16' height='10' fill='#e31b23'/><text x='166' y='36' font-size='14' font-weight='700'>10.9</text></svg></div><figcaption>Preload Fp,C of grades 8.8 and 10.9 by bolt size</figcaption></figure>
+<h2>What a bolt set contains: HR and HV systems</h2>
+<p>A set consists of a bolt, a nut and washers. The HR system (EN 14399-3:2015) covers the combinations 8.8/8, 8.8/10 and 10.9/10, a longer thread and a taller nut; ductility reserve comes mainly from plastic elongation of the bolt shank. The HV system (EN 14399-4) uses 10.9 bolts with class 10 nuts, a shorter thread and a lower nut; ductility reserve comes mainly from plastic deformation of the engaged threads. These mechanisms describe ductility reserve during tightening, not plastic deformation intended at the specified preload. Preload clamps the plates; slip resistance also depends on the faying surfaces and the connection design. Do not mix HR and HV sets, and when using chamfered washers to EN 14399-6, the chamfer must face the fillet under the bolt head.</p>
+<figure class="post-hero"><img src="kien-thuc-bu-long-ket-cau-du-ung-luc-pic1-en.webp" alt="Assembly of a preloaded bolt set: HR and HV systems" width="1672" height="941" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Assembly of a preloaded bolt set: HR and HV systems</figcaption></figure>
+<h2>The k-class: the information that decides how you may tighten</h2>
+<p>The k-factor k = M / (F · d), where M is the tightening torque, F the clamping force and d the nominal diameter, gives the relation between tightening torque and clamping force, and it is set by the manufacturer’s lubricant. The manufacturer declares one of three classes: K0 means no k-factor is declared; K1 declares individual ki values between 0.10 and 0.16; K2 declares a mean km between 0.10 and 0.23 with a coefficient of variation Vk not above 0.06.</p>
+<figure class="post-hero"><img src="kien-thuc-bu-long-ket-cau-du-ung-luc-pic2-en.webp" alt="The three classes K0, K1, K2 and the permitted tightening method" width="1536" height="1024" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">The three classes K0, K1, K2 and the permitted tightening method</figcaption></figure>
+<p>Each tightening method is compatible only with certain k-classes: the torque method uses K2; the combined method uses K1 or K2; HRC uses K0 (with HRD nuts) or K2; DTI uses K0, K1 or K2. HRC applies only to a matching HRC bolting assembly, not to ordinary hexagon bolts. The k-class and the 8.8/10.9 property class are declared separately. The box label must show the k-class; for K2 it must also give km and Vk (EN 14399-3:2015: 0.10 ≤ km ≤ 0.23 and Vk ≤ 0.06). The torque method can only be used with K2 (EN 1090-2:2018, Table 19); K0 assemblies declare no k-factor. Because the lubricant sets the k-factor, washing it off, painting or letting it rust all falsify the torque.</p>
+<h2>Four ways to apply preload</h2>
+<p>There are four ways to bring a bolt to the required clamping force. The torque method uses a calibrated torque wrench with K2 bolts, in two specified torque stages. The combined method (K1 or K2) applies a torque in step one, marks a reference for checking, then rotates a specified further angle in step two; the rotation depends on the grip thickness and the applicable procedure. HRC bolts (K0 with HRD nuts, or K2) use a dedicated wrench with two coaxial sockets: the spline shears off by design at full force. DTI washers (K0, K1 or K2) have protrusions that flatten at full force; gaps are inspected at specified positions, and the feeler-gauge thickness and acceptance criteria depend on the DTI configuration.</p>
+<figure class="post-hero"><img src="kien-thuc-bu-long-ket-cau-du-ung-luc-pic3-en.webp" alt="Torque, combined, HRC and DTI methods" width="1536" height="1024" loading="lazy"/><figcaption style="text-align:center;font-size:13px;color:#6b7391;margin-top:8px">Torque, combined, HRC and DTI methods</figcaption></figure>
+<p>An unbreakable rule: never change the tightening method on site. The method must match the k-class purchased (summarised in EN 1090-2:2018, Table 19; k-classes per EN 14399) and be in the approved erection procedure, and the torque wrench must be within its calibration date.</p>
+<h2>Worked torque example for M20 grade 10.9</h2>
+<p>Let us calculate for an M20 grade 10.9 bolt with k-class K2. Looking up As = 245 mm² and fub = 1000 MPa, we get Fp,C = 0.7 × 1000 × 245 = 171,500 N; EN 1090-2:2018 Table 18 rounds it to 172 kN, which is the value used. If the manufacturer declares km = 0.13 then the reference torque Mr,2 = km · d · Fp,C = 0.13 × 20 mm × 172 kN = 447 N·m. Step one is about 0.75 × 447 = 335 N·m on all bolts of the joint; step two is 1.10 × 447 = 492 N·m, tightened progressively from the most rigid to the least rigid part of the joint (EN 1090-2, 8.5.1 and 8.5.3). For K1 assemblies with the combined method, Mr,1 = 0.125 · d · Fp,C and step one is 0.75 Mr,1 (Table 20: M20 10.9 = 322 N·m), followed by the part turn of Table 21.</p>
+<figure class="kt-fig" data-fig="b5_torque"><div class='kt-grid' style='--mw:150px'><div class='kt-card' style='--c:#444'><div class='kt-n' style='color:#444'>1</div><div class='kt-ct'>Find As and fub</div><div class='kt-cb'>M20: As = 245 mm²<br>10.9: fub = 1000 MPa</div></div><div class='kt-card' style='--c:#2563a8'><div class='kt-n' style='color:#2563a8'>2</div><div class='kt-ct'>Preload</div><div class='kt-cb'>Fp,C = 0.7 × 1000 × 245<br>= 171,500 N → 172 kN (Table 18)</div></div><div class='kt-card' style='--c:#c98a1a'><div class='kt-n' style='color:#c98a1a'>3</div><div class='kt-ct'>km from the label</div><div class='kt-cb'>Example km = 0.13 (K2)</div></div><div class='kt-card' style='--c:#e31b23'><div class='kt-n' style='color:#e31b23'>4</div><div class='kt-ct'>Mr,2 = km·d·Fp,C</div><div class='kt-cb'>0.13 × 20 × 172<br>= <b>447 N·m</b></div></div><div class='kt-card' style='--c:#2e7d4f'><div class='kt-n' style='color:#2e7d4f'>5</div><div class='kt-ct'>Step 1</div><div class='kt-cb'>≈ 0.75 × 447 ≈ 335 N·m<br>all bolts</div></div><div class='kt-card' style='--c:#2e7d4f'><div class='kt-n' style='color:#2e7d4f'>6</div><div class='kt-ct'>Step 2</div><div class='kt-cb'>1.10 × 447 = 492 N·m<br>most rigid part first</div></div></div><figcaption>Six steps to calculate the tightening torque for an M20 10.9 bolt</figcaption></figure>
+<p>If a K1 set has no declared km, EN 1090-2 allows km = 0.125 for the first torque step of the combined method. The factors 0.75 and 1.10 in the example must be taken from EN 1090-2 clauses 8.5 and 12.5.2 of the edition and erection procedure in force.</p>
+<h2>What must not be done with preloaded bolts</h2>
+<ul>
+<li>Do not reuse a bolt that has been tightened to preload and then loosened: EN 1090-2:2018 (8.5.1) requires the whole assembly to be removed and discarded.</li>
+<li>Open boxes only when needed, keep the rest sealed and do not alter the as-delivered lubrication (EN 1090-2, 8.5.1); rusty, dirty or possibly de-lubricated bolts must be re-assessed before use.</li>
+<li>Tighten from the stiffest zone outward, completing both steps on the whole joint before the next joint.</li>
+<li>Do not mix sets from two manufacturers or two different lots.</li>
+</ul>
+<h2>What QC checks on receipt and at acceptance</h2>
+<div class="kt-tw"><table class="kt-t"><thead><tr><th>When</th><th>Check</th><th>Basis / method</th></tr></thead><tbody><tr><td>On receipt</td><td>3.1 certificate by lot, including suitability test results</td><td>EN 1090-2 Table 1 (notes d, e): 3.1 may be omitted if assemblies carry a lot number traceable in the manufacturer's FPC records; lot number on the box label must match</td></tr><tr><td>On receipt</td><td>Markings on bolt head, nut, washer</td><td>Grade + HR/HV (SB for EN 15048) and manufacturer mark (EN 14399-3, 3.3 and 4.5); CE marking is on the label or accompanying documents, not on the parts</td></tr><tr><td>On receipt</td><td>Box label with k-class; for K2 also km and Vk</td><td>Torque method only with K2 (EN 1090-2, Table 19)</td></tr><tr><td>On receipt</td><td>Dimensions, length, coating, rust and lubricant</td><td>Sample by lot; opened boxes are assessed for storage, dirt, rust and lubrication</td></tr><tr><td>Before fit-up</td><td>Bolt length versus actual grip length</td><td>Grip-length table in Annex A of EN 14399-3/-4</td></tr><tr><td>While tightening</td><td>Torque wrench in calibration; method matching k-class</td><td>Calibration record; approved erection procedure</td></tr><tr><td>After tightening</td><td>HRC: 100% tails sheared off, plus correct assembly, washers present and plies drawn together (residual gap ≤ 2 mm before preloading, EN 1090-2 8.5.1). DTI: gap measured with feeler gauge</td><td>100% visual for HRC; sample measurement for DTI</td></tr><tr><td>After tightening</td><td>Torque and combined methods: re-check at the specified rate</td><td>EN 1090-2 clause 12.5.2; keep a bolt-tightening record</td></tr><tr><td>After tightening</td><td>Thread protruding beyond the nut by at least one pitch</td><td>Visual check of the whole joint</td></tr></tbody></table></div>
+<p class="kt-note">A bolt-tightening record with no lot number and no tightening data matching the method (torque values for the torque method; step-one torque and part turn for the combined method; sheared tails for HRC; DTI gaps) is unusable at audit.</p>
+<p>If you remember only one thing from this article, remember the three things that must match each other: the k-class on the box label, the tightening method in the procedure, and the tool in your hand.</p>
+</div>
+
+<p class="post-end"><a href="https://anlabstudio.org/">AnLABstudio.org</a></p>
+</div>
+</div></article><aside class='blog-right'><div class='adzone adzone-rect' data-ad-target='anlab-slot-sidebar'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 300×250 / 300×600</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div><div class='adzone adzone-rect' data-ad-target='anlab-slot-sidebar-2'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 300×250 / 300×600</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div></aside></div></div></div>
+<div class='adzone adzone-leader' style='margin-bottom:46px'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 970×250 / 728×90</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+
+<div class='adzone adzone-leader' style='margin-bottom:34px'><div class='adlabel'>ĐỐI TÁC &amp; NHÀ TÀI TRỢ</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 728×90 / logo đối tác</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+<footer class='site-footer'><div class='wrap'><div><div class='footbrand'><img alt='' class='footlogo' height='26' src='data:image/webp;base64,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' width='26'/><span>An<em>LAB</em></span></div><div class='footnote'>© 2026 AnLAB Software Studio. <span data-en='Create with purpose.'>Sáng tạo có chủ đích.</span></div></div><div class='footlinks'>
+<a href='blog.html'>Blog</a>
+<a href='huong-dan.html'>Hướng dẫn</a>
+<a href='gioi-thieu.html'>Giới thiệu</a>
+<a href='chinh-sach-bao-mat.html'>Chính sách bảo mật</a>
+<a href='quang-cao.html'>Quảng cáo</a>
+<a href='lien-he.html'>Liên hệ</a>
+</div></div></footer>
+<div class='ad-staging' id='ad-staging'>
+<div class='adzone adzone-infeed' data-ad-target='anlab-slot-infeed'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner toàn chiều ngang (responsive)</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+<div class='adzone adzone-leader' data-ad-target='anlab-slot-post-top'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 728×90 / 336×280</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+<div class='adzone adzone-rect' data-ad-target='anlab-slot-sidebar'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 300×250 / 300×600</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+<div class='adzone adzone-leader' data-ad-target='anlab-slot-post-bottom'><div class='adlabel'>QUẢNG CÁO</div><a class='ad-empty' href='quang-cao.html'><strong>Vị trí banner 728×90 / 336×280</strong><span>Còn trống — liên hệ đặt quảng cáo →</span></a></div>
+</div>
+
+<script>
+/* AnLAB Blogger enhancement: no user data collection, no API keys. */
+(function(){
+  'use strict';
+  /* ===== CÀI ĐẶT QUẢNG CÁO =====
+     SHOW_EMPTY_AD_SLOTS: true  = khu vực chưa có banner hiện khung "Còn trống — liên hệ đặt quảng cáo"
+                          false = khu vực trống ẩn hoàn toàn (nên đặt false khi đã chạy AdSense) */
+  var SHOW_EMPTY_AD_SLOTS=true;
+  var INFEED_AFTER_CARD=3; /* banner xen giữa danh sách xuất hiện sau thẻ app thứ mấy */
+  var header=document.querySelector('.topbar');
+  var toggle=document.querySelector('.navtoggle');
+  if(toggle&&header){toggle.addEventListener('click',function(){
+    var isOpen=header.classList.toggle('nav-open');
+    toggle.setAttribute('aria-expanded',String(isOpen));
+  });}
+
+  function safeColor(v){return /^#[0-9a-fA-F]{6}$/.test(v||'')?v:null;}
+  function safeURL(raw){
+    if(!raw)return null;raw=String(raw).trim();
+    if(!/^https:\/\//i.test(raw))return null;
+    try{var u=new URL(raw);return u.protocol==='https:'?u.href:null;}catch(e){return null;}
+  }
+  function getInfo(holder){
+    if(!holder)return null;
+    var root=holder.content||holder; /* <template> keeps post HTML inert (no image loading) */
+    return root.querySelector('.anlab-app-data,[data-anlab-app]');
+  }
+  function firstLetter(text){
+    var t=(text||'').trim();
+    return t?t.charAt(0).toUpperCase():'A';
+  }
+  function setIcon(box,url){
+    var img=safeURL(url);if(!box||!img)return;
+    var el=document.createElement('img');el.src=img;el.alt='';el.loading='lazy';
+    el.onerror=function(){el.remove();};
+    box.textContent='';box.appendChild(el);
+  }
+
+  /* ---- Catalog cards ---- */
+  document.querySelectorAll('.app-card').forEach(function(card){
+    var title=card.querySelector('.card-title');
+    var icon=card.querySelector('.card-icon');
+    if(icon&&title)icon.textContent=firstLetter(title.textContent);
+    var info=getInfo(card.querySelector('.post-source'));
+    if(!info)return;
+    var v=info.dataset;
+    if(safeColor(v.accent))card.style.setProperty('--app-bg',v.accent);
+    if(safeColor(v.accent2))card.style.setProperty('--app-bg2',v.accent2);
+    var p=card.querySelector('.app-platform');if(p&&v.platform)p.textContent=v.platform;
+    var ver=card.querySelector('.app-version');if(ver&&v.version)ver.textContent='VERSION '+v.version;
+    setIcon(icon,v.icon);
+  });
+
+  /* ---- Count & search/label heading ---- */
+  var list=document.querySelector('.cards');
+  var count=document.querySelector('[data-app-count]');
+  if(count)count.textContent=(list?list.querySelectorAll('.app-card').length:0)+' sản phẩm trên trang';
+
+  var path=decodeURIComponent(location.pathname);
+  var labelMatch=path.match(/\/search\/label\/([^/]+)/);
+  var q=new URLSearchParams(location.search).get('q');
+  var heading=document.querySelector('[data-catalog-title]');
+  var note=document.querySelector('[data-search-note]');
+  if(heading&&(labelMatch||q)){
+    heading.textContent='';
+    heading.appendChild(document.createTextNode(labelMatch?'Danh mục ':'Kết quả '));
+    var s=document.createElement('span');
+    s.textContent=labelMatch?labelMatch[1]+'.':'“'+q+'”';
+    heading.appendChild(s);
+    if(note)note.classList.remove('hide');
+  }
+  var input=document.querySelector('.searchwrap input[name="q"]');
+  if(input&&q)input.value=q;
+
+  /* ---- Active chip ---- */
+  document.querySelectorAll('.chip').forEach(function(chip){
+    var href=chip.getAttribute('href')||'';
+    var cp='';try{cp=decodeURIComponent(new URL(href,location.href).pathname);}catch(e){}
+    var isAll=chip.dataset.all==='yes';
+    if((labelMatch&&cp===path)||(!labelMatch&&!q&&isAll))chip.classList.add('active');
+  });
+
+  /* ---- Ad zones: Blogger forbids b:section inside a widget, so zones are moved after render ---- */
+  if(!SHOW_EMPTY_AD_SLOTS)document.documentElement.classList.add('ads-hide-empty');
+  if(list){
+    var cardsEls=list.querySelectorAll('.app-card');
+    if(cardsEls.length){
+      var slot=document.createElement('div');slot.className='ad-target';slot.id='anlab-slot-infeed';
+      var after=cardsEls[Math.min(INFEED_AFTER_CARD,cardsEls.length)-1];
+      after.parentNode.insertBefore(slot,after.nextSibling);
+    }
+  }
+  document.querySelectorAll('#ad-staging .adzone[data-ad-target]').forEach(function(zone){
+    var target=document.getElementById(zone.getAttribute('data-ad-target'));
+    if(target)target.appendChild(zone);else zone.remove();
+  });
+
+  /* ---- Post detail: download box ---- */
+  var doc=document.querySelector('.article-shell');
+  if(doc){
+    var info=getInfo(doc.querySelector('.article-body'));
+    var dlIcon=doc.querySelector('.dl-icon');
+    var h=doc.querySelector('.article-head h1');
+    if(dlIcon&&h)dlIcon.textContent=firstLetter(h.textContent);
+    if(info){
+      var v=info.dataset;
+      ['version','platform','size','license','format','sha256'].forEach(function(key){
+        var row=doc.querySelector('[data-app-row="'+key+'"]');
+        var span=doc.querySelector('[data-app-field="'+key+'"]');
+        if(span&&v[key]){span.textContent=v[key];if(row)row.classList.remove('hide');}
+      });
+      setIcon(dlIcon,v.icon);
+      if(dlIcon&&safeColor(v.accent)&&safeColor(v.accent2))
+        dlIcon.style.background='linear-gradient(135deg,'+v.accent+','+v.accent2+')';
+      var dl=doc.querySelector('.dl-btn');
+      var href=safeURL(v.download);
+      /* Only an https link activates the button — never show a working-looking fake download */
+      if(dl&&href){
+        dl.href=href;dl.target='_blank';dl.rel='noopener noreferrer';
+        dl.classList.remove('disabled');dl.removeAttribute('aria-disabled');
+        dl.textContent='↓  TẢI PHẦN MỀM';
+      }
+    }
+  }
+})();
+
+
+
+/* AnLAB language switch (Tiếng Việt / English). Theme text is translated from the dictionary below;
+   posts can add <div class="lang-block" data-lang="vi"> ... </div> and <div class="lang-block" data-lang="en" hidden> ... </div>. */
+(function(){
+  'use strict';
+  var EN={
+    'Ứng dụng':'Apps','Công cụ':'Tools','Học tập':'Learning','Trò chơi':'Games','Mô phỏng':'Simulation','Giới thiệu':'About','Hướng dẫn':'Guides',
+    'Khám phá tất cả ↗':'Explore all ↗','Khám phá ứng dụng ↗':'Explore apps ↗','Về AnLAB →':'About AnLAB →',
+    'Ý tưởng nhỏ.':'Small ideas.','Giá trị lớn.':'Big value.',
+    'Một không gian để giới thiệu, chia sẻ những ứng dụng thực tế — từ công cụ công việc, học tập đến trò chơi. Mọi ý tưởng đều có thể trở thành sản phẩm hữu ích.':'A space to introduce and share practical apps — from work tools and learning to games. Every idea can become a useful product.',
+    'QUẢNG CÁO':'ADVERTISEMENT','ĐỐI TÁC & NHÀ TÀI TRỢ':'PARTNERS & SPONSORS',
+    'Còn trống — liên hệ đặt quảng cáo →':'Available — contact us to advertise →',
+    'Vị trí banner toàn chiều ngang (responsive)':'Banner slot — full width (responsive)',
+    'Vị trí banner 728×90 / logo đối tác':'Banner slot 728×90 / partner logos',
+    'Khám phá':'Explore','sản phẩm.':'products.','Danh mục':'Category','Kết quả':'Results',
+    'Phần mềm do AnLAB giới thiệu, với hướng dẫn cài đặt, ghi chú phiên bản và liên kết tải rõ ràng.':'Software presented by AnLAB, with clear installation guides, release notes and download links.',
+    'Tất cả':'All','KHO ỨNG DỤNG':'APP LIBRARY','Đang lọc kết quả.':'Filtering results.','← Xem tất cả ứng dụng':'← View all apps',
+    'Tìm tên phần mềm...':'Search software name...','Tìm ứng dụng':'Search apps','Tìm':'Search','Mở điều hướng':'Open navigation',
+    'Xem chi tiết ↗':'View details ↗','← Mới hơn':'← Newer','Xem thêm ứng dụng →':'More apps →',
+    'Chưa có ứng dụng nào':'No apps yet','Hãy đăng bài đầu tiên trong Blogger → Bài đăng (mỗi bài = một phần mềm).':'Publish your first post in Blogger → Posts (one post = one app).',
+    'Không tìm thấy trang bạn yêu cầu.':'The page you requested could not be found.','← Về kho ứng dụng':'← Back to the app library',
+    'Trang chủ':'Home','Tải xuống':'Download','Bản phát hành chính thức từ AnLAB.':'Official release from AnLAB.',
+    'CHƯA CÓ LIÊN KẾT TẢI':'NO DOWNLOAD LINK YET','↓ TẢI PHẦN MỀM':'↓ DOWNLOAD',
+    'Phiên bản':'Version','Nền tảng':'Platform','Định dạng':'Format','Dung lượng':'Size','Giấy phép':'License','Miễn phí':'Free',
+    'File được lưu tại kho ngoài (GitHub/Drive). Chỉ tải từ nút này; quảng cáo trên trang không phải nút tải.':'The file is hosted externally (GitHub/Drive). Only download via this button; ads on this page are not download buttons.',
+    'Không chỉ là':'More than','phần mềm.':'software.',
+    'Đó là cách biến ý tưởng thành những công cụ hữu ích. Tập trung vào trải nghiệm đơn giản, chất lượng rõ ràng và các bản cập nhật có ý nghĩa.':'It is a way to turn ideas into useful tools — focused on simple experiences, clear quality and meaningful updates.',
+    'Chính sách bảo mật':'Privacy Policy','Quảng cáo':'Advertise','Liên hệ':'Contact'
+  };
+  var RX=[[/^Cập nhật: (.*)$/,'Updated: $1'],[/^(\d+) sản phẩm trên trang$/,'$1 apps on this page'],[/^Vị trí banner (.*)$/,'Banner slot $1']];
+  var SKIP='.article-body,.post-source,.card-title,.card-description,.article-head h1,.side-title,.breadcrumbs span,.langswitch,[data-en],[data-en-html]';
+  var orig=new WeakMap(), lang='vi';
+
+  function tr(raw){
+    var k=raw.replace(/\s+/g,' ').trim();
+    if(!k)return null;
+    if(Object.prototype.hasOwnProperty.call(EN,k))return EN[k];
+    for(var i=0;i<RX.length;i++){if(RX[i][0].test(k))return k.replace(RX[i][0],RX[i][1]);}
+    return null;
+  }
+  function textNodes(){
+    var out=[],w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n;
+    while((n=w.nextNode())){
+      var p=n.parentNode;if(!p)continue;
+      var t=p.nodeName;if(t==='SCRIPT'||t==='STYLE'||t==='TEMPLATE'||t==='NOSCRIPT')continue;
+      if(p.closest&&p.closest(SKIP))continue;
+      out.push(n);
+    }
+    return out;
+  }
+  function applyText(){
+    textNodes().forEach(function(n){
+      var o=orig.get(n);
+      if(o===undefined){if(tr(n.nodeValue)===null)return;o=n.nodeValue;orig.set(n,o);}
+      var next=o;
+      if(lang==='en'){
+        var lead=o.match(/^\s*/)[0],trail=o.match(/\s*$/)[0];
+        next=lead+tr(o)+trail;
+      }
+      if(n.nodeValue!==next)n.nodeValue=next;
+    });
+  }
+  function applyAttrs(){
+    document.querySelectorAll('[placeholder],[aria-label]').forEach(function(el){
+      if(el.closest('.langswitch'))return;
+      ['placeholder','aria-label'].forEach(function(a){
+        var cur=el.getAttribute(a);if(cur===null)return;
+        var key='data-vi-'+a,o=el.getAttribute(key);
+        if(o===null){if(tr(cur)===null)return;o=cur;el.setAttribute(key,o);}
+        var next=lang==='en'?tr(o):o;
+        if(cur!==next)el.setAttribute(a,next);
+      });
+    });
+  }
+  function setLang(l){
+    lang=(l==='en')?'en':'vi';
+    document.querySelectorAll('.lang-block').forEach(function(b){b.hidden=b.getAttribute('data-lang')!==lang;});
+    document.querySelectorAll('[data-set-lang]').forEach(function(b){
+      var on=b.getAttribute('data-set-lang')===lang;
+      b.classList.toggle('on',on);b.setAttribute('aria-pressed',String(on));
+    });
+    try{document.documentElement.lang=lang;}catch(e){}
+    applyText();applyAttrs();
+    try{localStorage.setItem('anlab_lang',lang);}catch(e){}
+  }
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){
+    b.addEventListener('click',function(){setLang(b.getAttribute('data-set-lang'));});
+  });
+  var saved='vi';
+  try{saved=localStorage.getItem('anlab_lang')||'vi';}catch(e){}
+  setLang(saved);
+  window.addEventListener('load',function(){setLang(lang);});
+})();
+</script>
+<script>(function(){
+  document.querySelectorAll('.app-card').forEach(function(card){var ps=card.querySelector('.post-source .anlab-app-data');var c=ps&&ps.getAttribute('data-cover');var cv=card.querySelector('.card-cover');if(c&&/^https:\/\//.test(c)&&cv){cv.style.backgroundImage="url('"+c+"'),linear-gradient(135deg,var(--app-bg,#302862),var(--app-bg2,#1b173e))";cv.style.backgroundSize='cover';cv.style.backgroundPosition='center';var ic=cv.querySelector('.card-icon');if(ic)ic.style.display='none';var sg=cv.querySelector('.cover-sign');if(sg)sg.style.display='none';}});
+  document.querySelectorAll('[data-play] .play-poster').forEach(function(b){b.addEventListener('click',function(){var f=document.createElement('iframe');f.src='on-ly-thuyet-lai-xe.html';f.title='Ôn lý thuyết lái xe';f.setAttribute('allowfullscreen','');f.style.cssText='width:100%;height:640px;border:1px solid #e3e6f1;border-radius:14px;background:#fff;display:block';b.replaceWith(f);});});
+  function actionLabel(){
+    var info=document.querySelector('.article-body .anlab-app-data');var b=document.querySelector('.article-shell .dl-btn');
+    if(!info||!b||!info.dataset.actionVi||b.classList.contains('disabled'))return;
+    var en=(document.documentElement.lang==='en');
+    b.textContent=en?info.dataset.actionEn:info.dataset.actionVi;
+  }
+  actionLabel();setTimeout(actionLabel,50);setTimeout(actionLabel,500);
+  window.addEventListener('load',function(){setTimeout(actionLabel,100);});
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){b.addEventListener('click',function(){setTimeout(actionLabel,30);setTimeout(actionLabel,300);});});
+  var q=new URLSearchParams(location.search);
+  var cat=q.get('cat'), term=(q.get('q')||'').trim().toLowerCase();
+  var cards=[].slice.call(document.querySelectorAll('.app-card'));
+  if(cards.length&&(cat||term)){
+    cards.forEach(function(c){
+      var t=(c.querySelector('.card-title')||{}).textContent||'';
+      var d=(c.querySelector('.card-description')||{}).textContent||'';
+      var okCat=!cat||c.getAttribute('data-cat')===cat;
+      var okQ=!term||(t+' '+d).toLowerCase().indexOf(term)>-1;
+      if(!(okCat&&okQ))c.style.display='none';
+    });
+    var n=cards.filter(function(c){return c.style.display!=='none';}).length;
+    var cnt=document.querySelector('[data-app-count]');if(cnt)cnt.textContent=n+' sản phẩm trên trang';
+    var h=document.querySelector('[data-catalog-title]');
+    if(h&&cat){h.textContent='';h.appendChild(document.createTextNode('Danh mục '));var s=document.createElement('span');s.textContent=cat+'.';h.appendChild(s);}
+    var note=document.querySelector('[data-search-note]');if(note)note.classList.remove('hide');
+    if(!n){var box=document.querySelector('.cards');if(box){var p=document.createElement('div');p.className='noapps';p.innerHTML='<strong>Không có kết quả</strong><p>Thử từ khoá hoặc danh mục khác.</p>';box.parentNode.insertBefore(p,box);}}
+  }
+  document.querySelectorAll('.chip').forEach(function(ch){
+    var u=new URL(ch.getAttribute('href'),location.href);
+    var c=u.searchParams.get('cat');
+    ch.classList.toggle('active',(c||null)===(cat||null)&&!term);
+  });
+})();
+</script>
+</body></html>
